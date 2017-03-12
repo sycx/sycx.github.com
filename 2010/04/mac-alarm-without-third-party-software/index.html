@@ -1,0 +1,95 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.19" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Mac不用第三方软件实现闹钟功能 &middot; sycx&#39;s Blog</title>
+  
+
+  
+  <link rel="stylesheet" href="http://blog.sycx.me/css/poole.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/syntax.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="sycx&#39;s Blog" />
+</head>
+
+	<body class="theme-base-0c layout-reverse">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://blog.sycx.me/"><h1>sycx&#39;s Blog</h1></a>
+      <p class="lead">
+       Nothing here 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Mac不用第三方软件实现闹钟功能</h1>
+			  <span class="post-date">Fri, Apr 23, 2010</span>
+			      <p><ul>
+    <li>在iTunes创建一个播放列表wakeup,列表中添加当闹钟的音乐文件</li>
+    <li>Automator创建一个应用程序，实现启动iTunes播放wakeup列表</li>
+    <li>iCal设定事件，定好提醒时间，提醒方式选择打开上一步创建的程序</li>
+</ul>
+<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9E163uPIFI/AAAAAAAAAGA/P2A_R10-rj4/s1600/wakeup_snapshot2.png"><img src="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9E163uPIFI/AAAAAAAAAGA/P2A_R10-rj4/s320/wakeup_snapshot2.png" border="0" alt="" /></a></div>
+<ul>
+    <li>最后，设置自动开机时间，比提醒时间早个5分钟左右</li>
+</ul>
+为了避免年纪轻轻就得心脏病，我需要声音能由小到大有个渐变过程
+一开始我在Automator流程里加了几个设置音量并暂停的重复操作
+<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9EmUFhmShI/AAAAAAAAAF4/3zZtpKSibhA/s1600/Wakeup_snapshot1.png"><img src="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9EmUFhmShI/AAAAAAAAAF4/3zZtpKSibhA/s320/Wakeup_snapshot1.png" border="0" alt="" /></a></div>
+<div>
+<div>
+<div>但是这样的实现方式看着就不舒服，而且声音变化不够平滑</div>
+<div>正好在学objective-C，试着写一个小程序实现，可惜我这个门外汉实在搞不懂设置系统音量应该调用什么函数
+用google搜索资料倒是意外得到了一个shell命令
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;">{% codeblock %}osascript -e &ldquo;set Volume 0&rdquo;
+<del datetime="2010-10-21T03:20:19+00:00">Volume值范围是 0.0-10.0</del>
+Update: Volume值范围是 0.0-7.0
+Update2: 在AppleScript里查到了&rdquo;set volume&rdquo;的详细定义,改用&rdquo;[<strong>set volume output volume</strong> integer] &ldquo;命令,integer的值范围是0-100;
+于是改用shell脚本实现音量平缓变化
+<div class="separator" style="clear: both; text-align: center;"><a style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" href="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s1600/Wakeup_snapshot.png"><img src="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s400/Wakeup_snapshot.png" border="0" alt="" width="360" height="400" /></a></div>
+<div class="separator" style="clear: both; text-align: left;">shell脚本代码如下</div>
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;">{% codeblock %}for((i=0;i&lt;=100;++i))
+do
+osascript -e &ldquo;set Volume output volume $i&rdquo;
+sleep 0.2
+done
+<span style="font-family: arial;"><span style="font-size: small;">
+</span></span></p>
+
+<p></div>
+</div>
+</div></p>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>

@@ -1,0 +1,124 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.19" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Cisco IPSec VPN Automatic Routing Table &middot; sycx&#39;s Blog</title>
+  
+
+  
+  <link rel="stylesheet" href="http://blog.sycx.me/css/poole.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/syntax.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="sycx&#39;s Blog" />
+</head>
+
+	<body class="theme-base-0c layout-reverse">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://blog.sycx.me/"><h1>sycx&#39;s Blog</h1></a>
+      <p class="lead">
+       Nothing here 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Cisco IPSec VPN Automatic Routing Table</h1>
+			  <span class="post-date">Fri, Dec 21, 2012</span>
+			      
+
+<h2 id="what-s-wrong">What&rsquo;s wrong?</h2>
+
+<p>In PPTP/L2TP world:</p>
+
+<ul>
+<li><code>/etc/ppp/ip-up</code> will be run on VPN startup<br /></li>
+<li><code>/etc/ppp/ip-down</code> will be run on VPN shutdown</li>
+</ul>
+
+<p>But Cisco IPSec just ignore these files, why?</p>
+
+<p>After doing some Googling, I figured out the difference:</p>
+
+<ul>
+<li><strong>PPTP/L2TP</strong> managed by <strong>pppd</strong></li>
+<li><strong>Cisco IPSec</strong> managed by <strong>racoon</strong></li>
+</ul>
+
+<p>And, here is the solution</p>
+
+<h2 id="base-environment-configure">Base environment configure</h2>
+
+<ol>
+<li><p>Backup your <code>racoon.conf</code> </p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo cp /etc/racoon/racoon.conf<span style="color: #f92672">{</span>,.bak<span style="color: #f92672">}</span>
+</pre></div>
+
+
+<li><p>Make a directory <code>/etc/racoon/remote</code> to put our custom config files</p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo mkdir /etc/racoon/remote
+</pre></div>
+
+
+<li><p>Patch <code>racoon.conf</code> to include our directory</p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo sh -c <span style="color: #e6db74">&#39;echo &quot;include \&quot;/etc/racoon/remote/*.conf\&quot; ;&quot; &gt;&gt; /etc/racoon/racoon.conf&#39;</span>
+</pre></div>
+
+    
+</ol>
+## Make custom vpn conf file per server
+
+<ol>
+<li><p>Connect your Cisco IPSec VPN first</p></li>
+
+<li><p><strong>racoon</strong> will create a configuration file based your vpn server's IP under <code>/var/run/racoon/</code>, Copy that file to our directory</p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/
+</pre></div>
+
+ 
+<li><p>Edit  <code>/etc/racoon/remote/YOUR_VPN_SERVER_IP.conf</code>, insert two lines below:</p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>script <span style="color: #e6db74">&quot;/etc/ppp/ip-up&quot;</span> phase1_up<span style="color: #f8f8f2">;</span>	
+script <span style="color: #e6db74">&quot;/etc/ppp/ip-down&quot;</span> phase1_down<span style="color: #f8f8f2">;</span>
+</pre></div>
+
+
+<li><p>Have fun!</p></li>
+</ol>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>

@@ -1,0 +1,95 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.19" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Tip:如何设置VoodooHDA的NodesToPatch &middot; sycx&#39;s Blog</title>
+  
+
+  
+  <link rel="stylesheet" href="http://blog.sycx.me/css/poole.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/syntax.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="sycx&#39;s Blog" />
+</head>
+
+	<body class="theme-base-0c layout-reverse">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://blog.sycx.me/"><h1>sycx&#39;s Blog</h1></a>
+      <p class="lead">
+       Nothing here 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Tip:如何设置VoodooHDA的NodesToPatch</h1>
+			  <span class="post-date">Fri, Feb 11, 2011</span>
+			      <p>大部分参考自：<a href="http://www.projectosx.com/forum/index.php?showtopic=465" target="_blank"><a href="http://www.projectosx.com/forum/index.php?showtopic=465">http://www.projectosx.com/forum/index.php?showtopic=465</a></a></p>
+
+<p>进Linux ，开 Terminal ，执行
+<blockquote>cd ~/Desktop &amp;&amp; mkdir CodecDump &amp;&amp; for c in /proc/asound/card<em>/codec#</em>; do f=&ldquo;${c/\/*card/card}&ldquo;; cat &ldquo;$c&rdquo; &gt; CodecDump/${f//\//-}.txt; done &amp;&amp; zip -r CodecDump.zip CodecDump</blockquote>
+将桌面上的 CodecDump.zip 带回OS X</p>
+
+<p>解开CodecDump.zip ,会有一些txt文件，打开他们，查看第一行，找到含有你声卡型号的文件</p>
+
+<p>例如我的ALC888就在 card0-codec#0.txt里</p>
+
+<p><a href="http://blog.sycx.me/uploads/2011/02/dump1.png"><img class="alignnone size-full wp-image-133" title="dump1" src="http://blog.sycx.me/uploads/2011/02/dump1.png" alt="" width="478" height="84" /></a></p>
+
+<p>下载我修改过的脚本 <a href="http://blog.sycx.me/uploads/2011/02/verbit.zip">verbit</a></p>
+
+<p>解压到card0-codec#0.txt所在目录</p>
+
+<p>开Terminal，切换到Dump文件所在目录</p>
+
+<p>执行命令
+<blockquote>./verbit card0-codec#0.txt</blockquote>
+<a href="http://blog.sycx.me/uploads/2011/02/dump2.png"><img class="alignnone size-full wp-image-138" title="dump2" src="http://blog.sycx.me/uploads/2011/02/dump2.png" alt="" width="769" height="702" /></a></p>
+
+<p>打开VoodooHDA.kext/Contents/Info.plist</p>
+
+<p>NodesToPatch里需要设置的三个数值 Codec、Node、Config如上图所示</p>
+
+<p>若不需要某个Node，则将相应的Config值设为 0x40f000f0</p>
+
+<p>附上我的<a href="http://blog.sycx.me/uploads/2011/02/Info.plist_.zip">Info.plist</a>作为参考</p>
+
+<p>Config值手动修改指南：</p>
+
+<p>参照上图，取前三个数值为例</p>
+
+<p><a href="http://blog.sycx.me/uploads/2011/02/dump3.png"><img class="alignnone size-full wp-image-146" title="dump3" src="http://blog.sycx.me/uploads/2011/02/dump3.png" alt="" width="510" height="366" /></a></p>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>

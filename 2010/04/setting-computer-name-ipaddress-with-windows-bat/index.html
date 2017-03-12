@@ -1,0 +1,122 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.19" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>批处理设置计算机名及IP &middot; sycx&#39;s Blog</title>
+  
+
+  
+  <link rel="stylesheet" href="http://blog.sycx.me/css/poole.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/syntax.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="sycx&#39;s Blog" />
+</head>
+
+	<body class="theme-base-0c layout-reverse">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://blog.sycx.me/"><h1>sycx&#39;s Blog</h1></a>
+      <p class="lead">
+       Nothing here 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>批处理设置计算机名及IP</h1>
+			  <span class="post-date">Wed, Apr 28, 2010</span>
+			      <p>管着两间学生机房，每间机器数量64台，每次网刻后设置计算机名和IP总是件麻烦的事情</p>
+
+<p>于是就写了个批处理方便设置了</p>
+
+<p>功能说明：运行后获取输入的两位数字的机器号后，将计算机名改为PCxx, IP改为192.168.0.1xx</p>
+
+<dl>
+<dt>set /p cNum=请输入机号(两位数字)：</dt>
+<dt>::添加计算机名前缀PC
+set name=PC%cNum%</dt>
+</dl>
+
+<dl>
+<dt>输入机号(两位数字)：</dt>
+<dt>::添加计算机名前缀PC
+set name=PC%cNum%</dt>
+</dl>
+
+<p>::设置计算机名
+reg add &ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\ComputerName\ActiveComputerName&rdquo; /v ComputerName /t reg_sz /d %name% /f &gt;nul 2&gt;nul
+reg add &ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters&rdquo; /v &ldquo;NV Hostname&rdquo; /t reg_sz /d %name% /f &gt;nul 2&gt;nul
+reg add &ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters&rdquo; /v Hostname /t reg_sz /d %name% /f &gt;nul 2&gt;nul
+  ::尝试修复重名问题
+reg add &ldquo;HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam&rdquo; /v @ /t REG_SZ /d &ldquo;%name%&rdquo; /f &gt;nul 2&gt;nul
+reg add &ldquo;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName&rdquo; /v &ldquo;ComputerName&rdquo; /t REG_SZ /d &ldquo;%name%&rdquo; /f &gt;nul 2&gt;nul
+reg add &ldquo;HKLM\SYSTEM\CurrentControlSet\Services\Eventlog&rdquo; /v &ldquo;ComputerName&rdquo; /t REG_SZ /d &ldquo;%name%&rdquo; /f &gt;nul 2&gt;nul</p>
+
+<dl>
+<dt>set IPDNS2=8.8.4.4</dt>
+<dt>::为&rdquo;本地连接&rdquo;设置IP
+netsh interface ip set address name=&ldquo;本地连接&rdquo; source=static addr=%IPAddress% mask=%IPMask% gateway=%IPGateway% gwmetric=1</dt>
+</dl>
+
+<dl>
+<dt>sh interface ip set address name=&ldquo;本地连接&rdquo; source=static addr=%IPAddress% mask=%IPMask% gateway=%IPGateway% gwmetric=1</dt>
+</dl>
+
+<p>::设置DNS
+netsh interface ip set dns name=&ldquo;本地连接&rdquo; source=static addr=%IPDNS1% register=PRIMARY
+netsh interface ip add dns name=&ldquo;本地连接&rdquo; addr=%IPDNS2%</p>
+
+<p>cls
+echo.
+echo.
+echo.
+echo.
+echo        =====================设置成功====================
+echo.
+echo                计算机名:  %name%
+echo                      IP:  %IPAddress%
+echo                子网掩码:  %IPMask%
+echo                    网关:  %IPGateway%
+echo                    DNS1:  %IPDNS1%
+echo                    DNS2:  %IPDNS2%
+echo.
+echo        =================================================
+echo.
+::等待15秒退出
+ping /n 15 127.1&gt;nul{% endcodeblock %}
+本想写个功能强大点的批处理，比如加上根据MAC地址自动设置，但是看了看实现方法，一堆麻烦的for语句，goto语句，顿觉头大，最终还是选择放弃，简单够用就行了</p>
+
+<p>Update:添加几句代码，尝试修复提示重名的问题</p>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>

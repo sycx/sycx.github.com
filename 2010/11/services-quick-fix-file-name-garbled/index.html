@@ -1,0 +1,95 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.19" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Services:快速修正乱码的文件名 &middot; sycx&#39;s Blog</title>
+  
+
+  
+  <link rel="stylesheet" href="http://blog.sycx.me/css/poole.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/syntax.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="sycx&#39;s Blog" />
+</head>
+
+	<body class="theme-base-0c layout-reverse">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://blog.sycx.me/"><h1>sycx&#39;s Blog</h1></a>
+      <p class="lead">
+       Nothing here 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Services:快速修正乱码的文件名</h1>
+			  <span class="post-date">Tue, Nov 23, 2010</span>
+			      <p>使用OS X的时候，下载文件总是会遇到乱码的情况：</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-Question.png"><img class="alignnone size-full wp-image-83" title="Screenshot-Question" src="http://blog.sycx.me/uploads/2010/11/Screenshot-Question.png" alt="" width="428" height="49" /></a></p>
+
+<p>搜索找不到令人满意的解决方案，于是我自己动手写了个服务(Services)</p>
+
+<p>图解：</p>
+
+<p>在乱码的文件上右击，选择ConvertFileName</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-preConvert-.png"><img class="alignnone size-full wp-image-82" title="Screenshot-preConvert" src="http://blog.sycx.me/uploads/2010/11/Screenshot-preConvert-.png" alt="" width="525" height="506" /></a></p>
+
+<p>之后会弹出确认框,确认无误点击OK</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-Convert-process.png"><img class="alignnone size-full wp-image-80" title="Screenshot-Convert-process" src="http://blog.sycx.me/uploads/2010/11/Screenshot-Convert-process.png" alt="" width="442" height="157" /></a></p>
+
+<p>效果如下</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-Converted.png"><img class="alignnone size-full wp-image-81" title="Screenshot-Converted" src="http://blog.sycx.me/uploads/2010/11/Screenshot-Converted.png" alt="" width="556" height="151" /></a></p>
+
+<p>也支持文件夹改名</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-Convert-finish1.png"><img class="alignnone size-full wp-image-79" title="Screenshot-Convert-finish" src="http://blog.sycx.me/uploads/2010/11/Screenshot-Convert-finish1.png" alt="" width="436" height="57" /></a></p>
+
+<p>==Download=============</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/ConvertFileName.workflow.zip">ConvertFileName.workflow</a></p>
+
+<p>解压至 ~/Library/Services/</p>
+
+<p>Tip:此服务用于因URL解码错误，呈“%xx”形式的文件名修复.默认设置尝试UTF-8/GB2312/GBK三种编码</p>
+
+<p>如果解码失败，请参考文件源，自行修改文件，添加相关的编码</p>
+
+<p>======================</p>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>

@@ -1,0 +1,105 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.19" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Windows下SSH&#43;PAC全局自动代理设置 &middot; sycx&#39;s Blog</title>
+  
+
+  
+  <link rel="stylesheet" href="http://blog.sycx.me/css/poole.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/syntax.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="sycx&#39;s Blog" />
+</head>
+
+	<body class="theme-base-0c layout-reverse">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://blog.sycx.me/"><h1>sycx&#39;s Blog</h1></a>
+      <p class="lead">
+       Nothing here 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Windows下SSH&#43;PAC全局自动代理设置</h1>
+			  <span class="post-date">Wed, Jun 2, 2010</span>
+			      <p>首先，给出整个设置的流程图：<a href="http://blog.sycx.me/uploads/2010/07/win_ssh_pac_processflow_1.png"><img class="alignnone size-full wp-image-69" title="win_ssh_pac_processflow_1" src="http://blog.sycx.me/uploads/2010/07/win_ssh_pac_processflow_1.png" alt="" width="524" height="196" /></a>
+<ol>
+    <li>
+<h4>SSH客户端的设置</h4>
+<ul>
+    <li>下载安装 <a href="http://www.bitvise.com/download-area" target="_blank">Bitvise Tunnelier</a></li>
+    <li>Login选项卡填上服务器地址，用户名，密码</li>
+    <li>Option选项卡On Login处去掉Open Terminal和Open SFTP</li>
+    <li>Services选项卡开启SOCKS / HTTP Proxy Forwarding
+<ul>
+    <li>Listen Interface处，只本机使用就保持默认的127.0.0.1 ；要共享多机使用就填你的内网IP或外网IP</li>
+    <li>Listen Port自己指定个端口</li>
+</ul>
+</li>
+    <li>Save Profile保存配置</li>
+</ul>
+</li>
+    <li>
+<h4>设置http代理转向</h4>
+<ul>
+    <li>Bitvise Tunnelier提供的只是socks5代理，我们使用Privoxy提供一个HTTP代理服务，将HTTP协议请求转换为socks5协议，并将连接转发到Bitvise Tunnelier</li>
+    <li>下载安装 <a href="http://www.privoxy.org/" target="_blank">Privoxy</a></li>
+    <li>打开Main Configuration
+<ul>
+    <li>搜索forward-socks5 ，找到一行 # forward-socks5 / 127.0.0.1:8118，去掉行首“#”注释符，IP及端口改为在上一步Bitvise所设置的</li>
+    <li>如果需要共享多机使用，则再搜索listen-address，找到一行listen-address  127.0.0.1:8118 ； 将IP改成你的内网或外网IP</li>
+</ul>
+</li>
+</ul>
+</li>
+    <li>
+<h4>PAC的设置</h4>
+<ul>
+    <li>从 <a href="http://autoproxy2pac.appspot.com/" target="_blank">autoproxy2pac</a> 上获取pac文件，代理方式选择HTTP, IP和端口填上一步Privoxy中listen-address的参数，下载文件或者获取在线版本地址</li>
+    <li>设置internet选项
+<ul>
+    <li>打开internet选项，选择 连接 选项卡</li>
+    <li>使用拨号上网的点击 设置，局域网通过路由上网的点击 局域网设置</li>
+    <li>勾选 使用自动配置脚本，在其下方地址处填入PAC文件的URL地址</li>
+    <li><a href="http://blog.sycx.me/uploads/2010/06/win_ssh_pac_pacsetting.png"><img class="alignnone size-full wp-image-56" title="win_ssh_pac_pacsetting" src="http://blog.sycx.me/uploads/2010/06/win_ssh_pac_pacsetting.png" alt="" width="365" height="178" /></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol></p>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>

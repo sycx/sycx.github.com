@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.19" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>sycx&#39;s Blog</title>
+  
+
+  
+  <link rel="stylesheet" href="http://blog.sycx.me/css/poole.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/syntax.css">
+  <link rel="stylesheet" href="http://blog.sycx.me/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="http://blog.sycx.me/index.xml" rel="alternate" type="application/rss+xml" title="sycx&#39;s Blog" />
+</head>
+
+<body class="theme-base-0c layout-reverse">
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://blog.sycx.me/"><h1>sycx&#39;s Blog</h1></a>
+      <p class="lead">
+       Nothing here 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="posts">
+
+      
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/blog/2013/01/01/food-taste-pizza-dumplings/">
+        闷骚型披萨：披萨饺
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Jan 1, 2013</span>
+
+    <p>第一眼见到它的时候，我不由得为它的干净利落赞叹不已。如此简洁的食物，实在是不多见。</p>
+
+<p><a href="http://www.flickr.com/photos/sycx/8333724910/" title="Flickr 上 碎月成星 的未命名相片"><img src="http://farm9.staticflickr.com/8493/8333724910_c7435fc798.jpg" width="375" height="500" alt="無標題"></a></p>
+
+<p>拿披萨当做饺子皮，做成饺子样，这就是披萨饺。</p>
+
+<p>原本热情奔放的披萨，一朝沾染上了含蓄性格，害羞的蜷缩成一团，将自身的一切美好藏在内里，徒留质朴的面饼示人。非得你一刀将其躯壳斩开，才能见得到其满腹的美好，这就是披萨饺。</p>
+
+<p>这种性格，对于人类来讲，一般称为闷骚，所以说披萨饺又名闷骚披萨（雾</p>
+
+<hr />
+
+<table>
+<thead>
+<tr>
+<th align="left">店名</th>
+<th align="right">Papa Johns</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">菜名</td>
+<td align="right">腊肠蘑菇披萨饺</td>
+</tr>
+
+<tr>
+<td align="left">价格</td>
+<td align="right">32 CNY</td>
+</tr>
+
+<tr>
+<td align="left">其它</td>
+<td align="right">饮料4选1，无限续杯</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/blog/2012/12/21/cisco-ipsec-vpn-automatic-routing-table/">
+        Cisco IPSec VPN Automatic Routing Table
+      </a>
+    </h1>
+
+    <span class="post-date">Fri, Dec 21, 2012</span>
+
+    
+
+<h2 id="what-s-wrong">What&rsquo;s wrong?</h2>
+
+<p>In PPTP/L2TP world:</p>
+
+<ul>
+<li><code>/etc/ppp/ip-up</code> will be run on VPN startup<br /></li>
+<li><code>/etc/ppp/ip-down</code> will be run on VPN shutdown</li>
+</ul>
+
+<p>But Cisco IPSec just ignore these files, why?</p>
+
+<p>After doing some Googling, I figured out the difference:</p>
+
+<ul>
+<li><strong>PPTP/L2TP</strong> managed by <strong>pppd</strong></li>
+<li><strong>Cisco IPSec</strong> managed by <strong>racoon</strong></li>
+</ul>
+
+<p>And, here is the solution</p>
+
+<h2 id="base-environment-configure">Base environment configure</h2>
+
+<ol>
+<li><p>Backup your <code>racoon.conf</code> </p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo cp /etc/racoon/racoon.conf<span style="color: #f92672">{</span>,.bak<span style="color: #f92672">}</span>
+</pre></div>
+
+
+<li><p>Make a directory <code>/etc/racoon/remote</code> to put our custom config files</p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo mkdir /etc/racoon/remote
+</pre></div>
+
+
+<li><p>Patch <code>racoon.conf</code> to include our directory</p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo sh -c <span style="color: #e6db74">&#39;echo &quot;include \&quot;/etc/racoon/remote/*.conf\&quot; ;&quot; &gt;&gt; /etc/racoon/racoon.conf&#39;</span>
+</pre></div>
+
+    
+</ol>
+## Make custom vpn conf file per server
+
+<ol>
+<li><p>Connect your Cisco IPSec VPN first</p></li>
+
+<li><p><strong>racoon</strong> will create a configuration file based your vpn server's IP under <code>/var/run/racoon/</code>, Copy that file to our directory</p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/
+</pre></div>
+
+ 
+<li><p>Edit  <code>/etc/racoon/remote/YOUR_VPN_SERVER_IP.conf</code>, insert two lines below:</p></li>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>script <span style="color: #e6db74">&quot;/etc/ppp/ip-up&quot;</span> phase1_up<span style="color: #f8f8f2">;</span>	
+script <span style="color: #e6db74">&quot;/etc/ppp/ip-down&quot;</span> phase1_down<span style="color: #f8f8f2">;</span>
+</pre></div>
+
+
+<li><p>Have fun!</p></li>
+</ol>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/blog/2012/05/01/oct-hello-world/">
+        Hello Octopress
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, May 1, 2012</span>
+
+    <p>开始使用Octopress。</p>
+
+<p>以上。</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2011/04/thunder-batch-download-under-mac-applescript-offline-files/">
+        Mac下批量下载迅雷离线文件-AppleScript
+      </a>
+    </h1>
+
+    <span class="post-date">Thu, Apr 7, 2011</span>
+
+    
+
+<h2 id="update">[Update]</h2>
+
+<h3 id="2011年6月3日">2011年6月3日：</h3>
+
+<p>添加了反序功能（默认开启），对非BT类批量下载链接进行倒序，功能开关请直接改代码。</p>
+
+<p>代码整理，并增加了一些注释。</p>
+
+<p>下载：<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixian-110603.zip">ThunderLixian-110603</a></p>
+
+<h3 id="2011年4月28日">2011年4月28日：</h3>
+
+<p>给AppleScript方法添加了BT类任务支持</p>
+
+<p>新代码请自行打开Service查看，懒得贴上来了..</p>
+
+<p>新Service下载：<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixian-BTSupport.zip">ThunderLixian-BTSupport</a></p>
+
+<p>用法：对BT任务点击 &ldquo;显示BT列表&rdquo;，之后勾选要下载的文件，然后运行Service。</p>
+
+<h2 id="new-bookmarklet">[NEW]Bookmarklet:</h2>
+
+<p>研究了下JavaScript，现学现卖，于是有了个更通用的解决方案</p>
+
+<h3 id="添加书签">添加书签：</h3>
+
+<p><a style="text-decoration: none; background: #f4f4f4; border-radius: 5px; color: #666; border: 1px solid #999; padding: 5px; cursor: move;" href="javascript:(function(){cA=document.getElementsByClassName('con')[0];hA=document.getElementById('hackArea');if(hA){cA.removeChild(hA);}hA=document.createElement('div');hA.id='hackArea';sO=document.getElementsByName('ck');sV=sO.length;for(i=0;i&lt;sV;i++){if(sO[i].checked==true){tI=sO[i].value;lI='dl_url'+tI.toString();nI='durl'+tI.toString();oL=document.getElementById(lI).value;lN=document.getElementById(nI).value;link=document.createElement('A');link.href=oL;link.innerHTML=lN;hA.appendChild(link);hA.appendChild(document.createElement('br'));}}cA.appendChild(hA);})()">迅雷批量</a></p>
+
+<p>将上方按钮拖到书签栏</p>
+
+<p><a href="http://blog.sycx.me/uploads/2011/04/ThunderLixianBookmark1.png"><img class="alignnone size-full wp-image-191" title="ThunderLixianBookmark1" src="http://blog.sycx.me/uploads/2011/04/ThunderLixianBookmark1.png" alt="" width="329" height="369" /></a></p>
+
+<h3 id="用法">用法：</h3>
+
+<p>如图：</p>
+
+<p><a href="http://blog.sycx.me/uploads/2011/04/ThunderLixianBookmark2.png"><img class="alignnone size-full wp-image-192" title="ThunderLixianBookmark2" src="http://blog.sycx.me/uploads/2011/04/ThunderLixianBookmark2.png" alt="" width="358" height="598" /></a></p>
+
+<h3 id="已知限制">已知限制：</h3>
+
+<p><ol>
+    <li>Safari和Chrome测试可用，但是Firefox3.6无效，原因不知。</li>
+    <li>依然不支持BT类任务，哪天我有下到BT资源可能会解决。</li>
+</ol></p>
+
+<h2 id="old-applescript">[Old]AppleScript:</h2>
+
+<h3 id="创建">创建：</h3>
+
+<p>打开Automator,创建一个Service
+拖放一个Action &ldquo;Run AppleScript&rdquo;
+复制下方代码进去，保存。
+如图：
+<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixianSample.png"><img class="alignnone size-full wp-image-181" title="ThunderLixianSample" src="http://blog.sycx.me/uploads/2011/04/ThunderLixianSample.png" alt="" width="607" height="707" /></a></p>
+
+<p>或者直接下载文件：<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixian.workflow.zip">ThunderLixian.workflow</a> 解压放到 ~/Library/Services/</p>
+
+<h3 id="使用">使用：</h3>
+
+<p>用Safari打开迅雷离线网页,勾选你要下载的文件，然后运行Service
+<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixianSample2.png"><img class="alignnone size-full wp-image-183" title="ThunderLixianSample2" src="http://blog.sycx.me/uploads/2011/04/ThunderLixianSample2.png" alt="" width="524" height="329" /></a></p>
+
+<p>如此，便会自动调用iGetter批量下载了。</p>
+
+<h3 id="局限">局限：</h3>
+
+<p>这个Service是随便写来自用的，只达到刚好够用的标准，所以很有局限性：
+<ol>
+    <li>所勾选的文件请必须是已下载完成的，而且不支持BT类文件</li>
+    <li>调用iGetter下载，要用其它下载工具得自己改代码哦～</li>
+    <li>只支持Safari</li>
+</ol></p>
+
+<h3 id="初版代码">初版代码：</h3>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">tell</span> <span style="color: #f8f8f2">application</span> <span style="color: #e6db74">&quot;Safari&quot;</span>
+	<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(exists</span> <span style="color: #a6e22e">document</span> <span style="color: #e6db74">&quot;迅雷会员-离线下载&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">then</span>
+		<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">doc</span> <span style="color: #66d9ef">to</span> <span style="color: #a6e22e">document</span> <span style="color: #e6db74">&quot;迅雷会员-离线下载&quot;</span>
+		<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">src</span> <span style="color: #66d9ef">to</span> <span style="color: #e6db74">&quot;var syO = document.getElementsByName(&#39;ck&#39;);</span>
+<span style="color: #e6db74">var syVal = syO.length;</span>
+<span style="color: #e6db74">var syList=[];</span>
+<span style="color: #e6db74">for(var i=0; i&lt; syVal;i++){</span>
+<span style="color: #e6db74">    if(syO[i].checked == true){</span>
+<span style="color: #e6db74">    var taskid = syO[i].value;</span>
+<span style="color: #e6db74">    var linkId = &#39;dl_url&#39;+taskid.toString();</span>
+<span style="color: #e6db74">    var oneLink = document.getElementById(linkId).value;</span>
+<span style="color: #e6db74">    syList.push(oneLink);</span>
+<span style="color: #e6db74">    }}</span>
+<span style="color: #e6db74">syList;&quot;</span>
+		<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">downList</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">do</span> <span style="color: #f8f8f2">JavaScript</span> <span style="color: #f8f8f2">src</span> <span style="color: #66d9ef">in</span> <span style="color: #f8f8f2">doc</span>
+
+		<span style="color: #66d9ef">tell</span> <span style="color: #f8f8f2">application</span> <span style="color: #e6db74">&quot;iGetter&quot;</span>
+			<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">newDownList</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">{}</span>
+			<span style="color: #66d9ef">repeat</span> <span style="color: #f8f8f2">with</span> <span style="color: #f8f8f2">i</span> <span style="color: #66d9ef">from</span> <span style="color: #ae81ff">1</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">number</span> <span style="color: #66d9ef">of</span> <span style="color: #f8f8f2">items</span> <span style="color: #66d9ef">in</span> <span style="color: #f8f8f2">downList</span>
+				<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">this_item</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">item</span> <span style="color: #f8f8f2">i</span> <span style="color: #66d9ef">of</span> <span style="color: #f8f8f2">downList</span>
+				<span style="color: #75715e">-- insert actions here</span>
+				<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">newItem</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">{url:this_item}</span>
+				<span style="color: #f8f8f2">copy</span> <span style="color: #f8f8f2">newItem</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">the</span> <span style="color: #66d9ef">end</span> <span style="color: #66d9ef">of</span> <span style="color: #f8f8f2">newDownList</span>
+			<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">repeat</span>
+			<span style="color: #f8f8f2">DownloadURL</span> <span style="color: #f8f8f2">newDownList</span>
+		<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">tell</span>
+	<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">if</span>
+<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">tell</span>
+</pre></div>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2011/03/my-first-ios-app-happylyric">
+        我的第一个iOS App -HappyLyric
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Mar 19, 2011</span>
+
+    <p>最初这个app的目的是练手+自用，当时App Store上的歌词类软件没一个令我满意的
+项目开始于大年初一，于正月底完成。
+写完自己用的很high的同时，也就想着顺便传到App Store上
+然后就是总计历时18天的上架审核
+两次提交皆因歌词的版权问题被拒，最后含泪砍功能才得以通过。
+期间也理解了歌词类软件渣的原因；</p>
+
+<p>由于自动网络下载歌词的功能被砍了
+结果，app成了一个纯粹的LRC Viewer, 需要通过iTunes File Sharing自己放入.lrc文件。</p>
+
+<p>[app 423535479]</p>
+
+<p>[appimg 423535479]</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2011/03/115urlaction-mac-115-the-next-batch-file-download">
+        115URLAction -Mac下批量下载115文件
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Mar 15, 2011</span>
+
+    <p>一个Automator的Action
+用法参考下图：</p>
+
+<p><a href="http://blog.sycx.me/uploads/2011/03/115URLAction.png"><img class="alignnone size-full wp-image-156" title="115URLAction" src="http://blog.sycx.me/uploads/2011/03/115URLAction.png" alt="" width="616" height="632" /></a></p>
+
+<p>下载：<a href="http://min.us/mvx3sz" target="_blank">115URLAction</a></p>
+
+<p>源代码： <a href="https://github.com/sycx/115URLAction" target="_blank">github</a></p>
+
+<p>感谢： <a href="https://github.com/realaddin/115SpeedUp" target="_blank">115SpeedUp项目</a></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2011/02/howto-how-to-set-the-nodestopatch-voodoohda">
+        Tip:如何设置VoodooHDA的NodesToPatch
+      </a>
+    </h1>
+
+    <span class="post-date">Fri, Feb 11, 2011</span>
+
+    <p>大部分参考自：<a href="http://www.projectosx.com/forum/index.php?showtopic=465" target="_blank"><a href="http://www.projectosx.com/forum/index.php?showtopic=465">http://www.projectosx.com/forum/index.php?showtopic=465</a></a></p>
+
+<p>进Linux ，开 Terminal ，执行
+<blockquote>cd ~/Desktop &amp;&amp; mkdir CodecDump &amp;&amp; for c in /proc/asound/card<em>/codec#</em>; do f=&ldquo;${c/\/*card/card}&ldquo;; cat &ldquo;$c&rdquo; &gt; CodecDump/${f//\//-}.txt; done &amp;&amp; zip -r CodecDump.zip CodecDump</blockquote>
+将桌面上的 CodecDump.zip 带回OS X</p>
+
+<p>解开CodecDump.zip ,会有一些txt文件，打开他们，查看第一行，找到含有你声卡型号的文件</p>
+
+<p>例如我的ALC888就在 card0-codec#0.txt里</p>
+
+<p><a href="http://blog.sycx.me/uploads/2011/02/dump1.png"><img class="alignnone size-full wp-image-133" title="dump1" src="http://blog.sycx.me/uploads/2011/02/dump1.png" alt="" width="478" height="84" /></a></p>
+
+<p>下载我修改过的脚本 <a href="http://blog.sycx.me/uploads/2011/02/verbit.zip">verbit</a></p>
+
+<p>解压到card0-codec#0.txt所在目录</p>
+
+<p>开Terminal，切换到Dump文件所在目录</p>
+
+<p>执行命令
+<blockquote>./verbit card0-codec#0.txt</blockquote>
+<a href="http://blog.sycx.me/uploads/2011/02/dump2.png"><img class="alignnone size-full wp-image-138" title="dump2" src="http://blog.sycx.me/uploads/2011/02/dump2.png" alt="" width="769" height="702" /></a></p>
+
+<p>打开VoodooHDA.kext/Contents/Info.plist</p>
+
+<p>NodesToPatch里需要设置的三个数值 Codec、Node、Config如上图所示</p>
+
+<p>若不需要某个Node，则将相应的Config值设为 0x40f000f0</p>
+
+<p>附上我的<a href="http://blog.sycx.me/uploads/2011/02/Info.plist_.zip">Info.plist</a>作为参考</p>
+
+<p>Config值手动修改指南：</p>
+
+<p>参照上图，取前三个数值为例</p>
+
+<p><a href="http://blog.sycx.me/uploads/2011/02/dump3.png"><img class="alignnone size-full wp-image-146" title="dump3" src="http://blog.sycx.me/uploads/2011/02/dump3.png" alt="" width="510" height="366" /></a></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2010/11/how-to-mac-version-of-world-of-warcraft-update-prompt-internal-error-of-the-analysis-and-solution">
+        HOW TO: Mac版魔兽世界更新提示“内部错误”的分析以及解决办法
+      </a>
+    </h1>
+
+    <span class="post-date">Thu, Nov 25, 2010</span>
+
+    
+
+<p>今天台服魔兽更新了4.0.3a,相信很多MAC玩家都会遇到更新问题
+<blockquote>發生內部錯誤，Blizzard更新程式無法進行更新。請聯絡Blizzard的技術支援部門。</blockquote>
+如下图</p>
+
+<p><a href="http://farm8.staticflickr.com/7084/7132084417_bc05f0d2dd.jpg"><img class="alignnone size-full wp-image-102" title="MacWOW-00" src="http://farm8.staticflickr.com/7084/7132084417_bc05f0d2dd.jpg" alt="" width="361" height="539" /></a></p>
+
+<p>很多人问，这该如何解决，很多人这么建议
+<blockquote>运行 Repair 程序修复</blockquote>
+不过，一般都是修复失败的结果
+于是，大部分人的解决办法是
+<blockquote>切换到Windows下完成更新，然后到<a href="http://www.x-only.net/Article/56.aspx" target="_blank">《X-Only》</a>下载最新的App</blockquote>
+但是，这个办法总是麻烦，而且上述问题依然存在，每次更新总得这么麻烦一次</p>
+
+<p>====================</p>
+
+<h2 id="分析部分-analyze-part">分析部分(analyze part):</h2>
+
+<p><p style="padding-left: 30px;">那么有没有办法一劳永逸解决这个问题呢？抱着这个想法，我趁着这次更新，研究了一番这个问题</p>
+首先，单单一个“内部错误”的错误提示没有提供任何有价值的信息，需要查查看有没有Log记录精确点的问题所在</p>
+
+<p>很容易在WOW目录下找到一个Logs文件夹，找到了一个关键文件
+<blockquote><span>World of <span>Warcraft</span>/Logs/Blizzard Updater Log.html</span></blockquote>
+于是我马上见到了关键的错误信息
+<blockquote><span>錯誤: 更新檔&rdquo;mac-game-<span>hdfiles</span>/World of <span>Warcraft</span>.app/Contents/<span>MacOS</span>/World of <span>Warcraft</span>&ldquo;無法安裝。</span>
+<span> (MD5 mismatch: expected 0x7058660C35AE508717519CF21B7A3AF0, actual 0xFB9666B037DCB8782339A1DCB2F3400B.)(<span>PTCApply</span>_<span>BSDiff</span> failed.)</span></blockquote>
+这句话说明，补丁升级需要目标文件的MD5值为 0x7058660C35AE508717519CF21B7A3AF0 ，但是现有文件的MD5却是 0xFB9666B037DCB8782339A1DCB2F3400B
+两者不匹配，版本不对，升级无法继续
+<span> 那么，文件“World of <span>Warcraft</span>” 在哪里呢</span>
+首先，我定位到魔兽目录下的World of Warcraft.app文件，试着计算它的MD5值
+<a href="http://farm9.staticflickr.com/8017/7132083853_a50b197bb7.jpg"><img class="alignnone size-full wp-image-103" title="MacWOW-000" src="http://farm9.staticflickr.com/8017/7132083853_a50b197bb7.jpg" alt="" width="468" height="454" /></a>
+计算结果是：7058660c35ae508717519cf21b7a3af0</p>
+
+<p>这不是没问题吗？那为什么Updater计算出来的会是 0xFB9666B037DCB8782339A1DCB2F3400B</p>
+
+<p>是程序计算错误吗？不，肯定不是，因为很多人都能正常更新。</p>
+
+<p>那么就是说 Updater检查的不是这个文件，那它检查的是哪里的文件？</p>
+
+<p>MPQ！MPQ里也有这个文件</p>
+
+<p>于是我定位到了4个文件
+<blockquote><span>World of <span>Warcraft</span>/Data/<span>zhTW</span>/base-<span>zhTW</span>.MPQ</span>
+<span> World of <span>Warcraft</span>/Data/<span>zhTW</span>/backup-<span>zhTW</span>.MPQ</span>
+<span> World of <span>Warcraft</span>/Data/<span>enTW</span>/base-<span>enTW</span>.MPQ</span>
+World of Warcraft/Data/enTW/backup-enTW.MPQ</blockquote>
+Mac下没有好用的MPQ工具，于是我切换到Windows</p>
+
+<p><span>用MPQ Editor打开base-<span>zhTW</span>.MPQ,解压World of <span>Warcraft</span>.app</span>
+<a href="http://farm9.staticflickr.com/8013/6986000420_e6b6ecf391_b.jpg"><img class="alignnone size-full wp-image-105" title="MacWOW-01" src="http://farm9.staticflickr.com/8013/6986000420_e6b6ecf391_b.jpg" alt="" width="820" height="537" /></a></p>
+
+<p><span>找到 World of <span>Warcraft</span>.app/Contents/<span>MacOS</span>/World of <span>Warcraft</span> ,计算它的MD5值</span>
+<a href="http://farm8.staticflickr.com/7229/7132083585_a85aa84a3a_b.jpg"><img class="alignnone size-full wp-image-106" title="MacWOW-02" src="http://farm8.staticflickr.com/7229/7132083585_a85aa84a3a_b.jpg" alt="" width="837" height="453" /></a>
+fb9666b037dcb8782339a1dcb2f3400b !!! 我找到它了</p>
+
+<p>那么，为什么，MPQ里面的文件的MD5值为什么会不一样呢</p>
+
+<p>查看MPQ里的这个app的info.plist文件，我注意到它的版本是 4.0.0.12911 真是古老的版本</p>
+
+<p><span>那么出错的只有World of <span>Warcraft</span>.app这个文件吗？其它几个文件有没有错？</span></p>
+
+<p>经过对比，4个MPQ文件里的app版本统统错了</p>
+
+<p>那么解决办法出来了，把这MPQ里的5个app文件替换掉</p>
+
+<p>修复问题之前，想下出现这个问题的原因是什么</p>
+
+<p>我得出了一个<strong><span style="color: #ff0000;">结论</span></strong>：
+<blockquote><span style="color: #ff0000;"><strong>Blizzard Updater每次更新只会升级当前系统的相关文件</strong></span></blockquote>
+也就是说，你在Windows下更新，Blizzard Updater只会更新MPQ里Windows版的文件，对Mac版的5个.app文件置之不理，因此下次你用Mac版更新就会因为MPQ里的文件版本过旧而遭遇“内部错误”
+<blockquote><strong>只要你在Windows下成功更新一次，以后也只能在Windows下更新</strong></blockquote></p>
+
+<h1 id="blockquote-strong-同理-在mac下成功更新一次-下次用windows更新的话-相信你也会遇到-内部错误-strong-blockquote"><blockquote><strong>同理，在Mac下成功更新一次，下次用Windows更新的话，相信你也会遇到“内部错误”</strong></blockquote></h1>
+
+<p><h2><strong>解决方案(solution part)：</strong></h2>
+<strong><em>Step1: </em></strong>复制当前正确版本的5个app文件
+<blockquote><span>World of <span>Warcraft</span>/Blizzard <span>Downloader</span>.app</span>
+World of Warcraft/Blizzard Updater.app
+<span> World of <span>Warcraft</span>/World of <span>Warcraft</span>.app</span>
+<span> World of <span>Warcraft</span>/World of <span>Warcraft</span> Launcher.app</span>
+World of Warcraft/World of Warcraft Repair.app</blockquote>
+以及4个.MPQ文件
+<blockquote><span>World of <span>Warcraft</span>/Data/<span>zhTW</span>/base-<span>zhTW</span>.MPQ</span>
+<span> World of <span>Warcraft</span>/Data/<span>zhTW</span>/backup-<span>zhTW</span>.MPQ</span>
+<span> World of <span>Warcraft</span>/Data/<span>enTW</span>/base-<span>enTW</span>.MPQ</span>
+World of Warcraft/Data/enTW/backup-enTW.MPQ</blockquote>
+<strong><em>Step2</em></strong>: 进入Windows系统，下载MPQ Editor, &lt;<a href="http://www.zezula.net/en/mpq/download.html">传送门：下载页</a>&gt;</p>
+
+<p><span>用MPQ Editor打开base-<span>zhTW</span>.MPQ,将5个.app文件拖入其中</span>
+<a href="http://farm8.staticflickr.com/7198/6985998824_0fcd19ec4d_b.jpg"><img class="alignnone size-full wp-image-107" title="MacWOW-03" src="http://farm8.staticflickr.com/7198/6985998824_0fcd19ec4d_b.jpg" alt="" width="887" height="834" /></a>
+<strong><em> </em></strong></p>
+
+<p><strong><em>Step 3</em></strong>: 之后保持Locale ID为Neutral,点击Rulesets按钮，选择World of Warcraft游戏
+<a href="http://farm9.staticflickr.com/8145/7132082615_02f6134571_b.jpg"><img class="alignnone size-full wp-image-108" title="MacWOW-04" src="http://farm9.staticflickr.com/8145/7132082615_02f6134571_b.jpg" alt="" width="876" height="691" /></a>
+<em><strong> </strong></em></p>
+
+<p><em><strong>Step 4:</strong></em> 文件覆盖提示，选择Yes All
+<a href="http://farm8.staticflickr.com/7245/6985997312_48c8aa42d0_b.jpg"><img class="alignnone size-full wp-image-110" title="MacWOW-05" src="http://farm8.staticflickr.com/7245/6985997312_48c8aa42d0_b.jpg" alt="" width="872" height="413" /></a>
+<span style="color: #ff0000;"><em><strong> </strong></em></span></p>
+
+<p><span style="color: #ff0000;"><em><strong>Step 5:</strong></em> 重要</span>，一定要记得选择 Operations 菜单下的 <span style="color: #ff0000;">Change(attributes)</span> 命令
+<a href="http://farm9.staticflickr.com/8143/6985998046_bbaf89c6af_b.jpg"><img class="alignnone size-full wp-image-111" title="MacWOW-06" src="http://farm9.staticflickr.com/8143/6985998046_bbaf89c6af_b.jpg" alt="" width="707" height="473" /></a></p>
+
+<p><strong><em>Step 6:</em></strong> 对另外三个.MPQ文件重复Step 2~Step 5的操作</p>
+
+<p><strong><em>Step 7:</em></strong>最后，回到Mac，将修改后的4个MPQ文件覆盖回原来位置</p>
+
+<p>现在，打开Launcher,你已经可以正常更新了，恭喜！</p>
+
+<p>然后，记住：下次不要用Windows更新了&amp;下次你也没办法在Windows下更新了。</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2010/11/services-quick-fix-file-name-garbled">
+        Services:快速修正乱码的文件名
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Nov 23, 2010</span>
+
+    <p>使用OS X的时候，下载文件总是会遇到乱码的情况：</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-Question.png"><img class="alignnone size-full wp-image-83" title="Screenshot-Question" src="http://blog.sycx.me/uploads/2010/11/Screenshot-Question.png" alt="" width="428" height="49" /></a></p>
+
+<p>搜索找不到令人满意的解决方案，于是我自己动手写了个服务(Services)</p>
+
+<p>图解：</p>
+
+<p>在乱码的文件上右击，选择ConvertFileName</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-preConvert-.png"><img class="alignnone size-full wp-image-82" title="Screenshot-preConvert" src="http://blog.sycx.me/uploads/2010/11/Screenshot-preConvert-.png" alt="" width="525" height="506" /></a></p>
+
+<p>之后会弹出确认框,确认无误点击OK</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-Convert-process.png"><img class="alignnone size-full wp-image-80" title="Screenshot-Convert-process" src="http://blog.sycx.me/uploads/2010/11/Screenshot-Convert-process.png" alt="" width="442" height="157" /></a></p>
+
+<p>效果如下</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-Converted.png"><img class="alignnone size-full wp-image-81" title="Screenshot-Converted" src="http://blog.sycx.me/uploads/2010/11/Screenshot-Converted.png" alt="" width="556" height="151" /></a></p>
+
+<p>也支持文件夹改名</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/Screenshot-Convert-finish1.png"><img class="alignnone size-full wp-image-79" title="Screenshot-Convert-finish" src="http://blog.sycx.me/uploads/2010/11/Screenshot-Convert-finish1.png" alt="" width="436" height="57" /></a></p>
+
+<p>==Download=============</p>
+
+<p><a href="http://blog.sycx.me/uploads/2010/11/ConvertFileName.workflow.zip">ConvertFileName.workflow</a></p>
+
+<p>解压至 ~/Library/Services/</p>
+
+<p>Tip:此服务用于因URL解码错误，呈“%xx”形式的文件名修复.默认设置尝试UTF-8/GB2312/GBK三种编码</p>
+
+<p>如果解码失败，请参考文件源，自行修改文件，添加相关的编码</p>
+
+<p>======================</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2010/06/windows-ssh-pac-proxy-setting">
+        Windows下SSH&#43;PAC全局自动代理设置
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Jun 2, 2010</span>
+
+    <p>首先，给出整个设置的流程图：<a href="http://blog.sycx.me/uploads/2010/07/win_ssh_pac_processflow_1.png"><img class="alignnone size-full wp-image-69" title="win_ssh_pac_processflow_1" src="http://blog.sycx.me/uploads/2010/07/win_ssh_pac_processflow_1.png" alt="" width="524" height="196" /></a>
+<ol>
+    <li>
+<h4>SSH客户端的设置</h4>
+<ul>
+    <li>下载安装 <a href="http://www.bitvise.com/download-area" target="_blank">Bitvise Tunnelier</a></li>
+    <li>Login选项卡填上服务器地址，用户名，密码</li>
+    <li>Option选项卡On Login处去掉Open Terminal和Open SFTP</li>
+    <li>Services选项卡开启SOCKS / HTTP Proxy Forwarding
+<ul>
+    <li>Listen Interface处，只本机使用就保持默认的127.0.0.1 ；要共享多机使用就填你的内网IP或外网IP</li>
+    <li>Listen Port自己指定个端口</li>
+</ul>
+</li>
+    <li>Save Profile保存配置</li>
+</ul>
+</li>
+    <li>
+<h4>设置http代理转向</h4>
+<ul>
+    <li>Bitvise Tunnelier提供的只是socks5代理，我们使用Privoxy提供一个HTTP代理服务，将HTTP协议请求转换为socks5协议，并将连接转发到Bitvise Tunnelier</li>
+    <li>下载安装 <a href="http://www.privoxy.org/" target="_blank">Privoxy</a></li>
+    <li>打开Main Configuration
+<ul>
+    <li>搜索forward-socks5 ，找到一行 # forward-socks5 / 127.0.0.1:8118，去掉行首“#”注释符，IP及端口改为在上一步Bitvise所设置的</li>
+    <li>如果需要共享多机使用，则再搜索listen-address，找到一行listen-address  127.0.0.1:8118 ； 将IP改成你的内网或外网IP</li>
+</ul>
+</li>
+</ul>
+</li>
+    <li>
+<h4>PAC的设置</h4>
+<ul>
+    <li>从 <a href="http://autoproxy2pac.appspot.com/" target="_blank">autoproxy2pac</a> 上获取pac文件，代理方式选择HTTP, IP和端口填上一步Privoxy中listen-address的参数，下载文件或者获取在线版本地址</li>
+    <li>设置internet选项
+<ul>
+    <li>打开internet选项，选择 连接 选项卡</li>
+    <li>使用拨号上网的点击 设置，局域网通过路由上网的点击 局域网设置</li>
+    <li>勾选 使用自动配置脚本，在其下方地址处填入PAC文件的URL地址</li>
+    <li><a href="http://blog.sycx.me/uploads/2010/06/win_ssh_pac_pacsetting.png"><img class="alignnone size-full wp-image-56" title="win_ssh_pac_pacsetting" src="http://blog.sycx.me/uploads/2010/06/win_ssh_pac_pacsetting.png" alt="" width="365" height="178" /></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2010/05/move-snow-leopard-to-new-disk">
+        就这么简单的给Snow Leopard系统挪了个窝
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, May 18, 2010</span>
+
+    <p>今天,我将Snow Leopard系统迁移到了另一个硬盘上,整个过程是如此令我惊奇的简单
+<div>只需从安装盘启动,打开磁盘工具,按如下拖动,点击恢复,30分钟解决</div>
+<div><img class="alignnone size-full wp-image-47" title="Move-System-to-New-Disk" src="http://blog.sycx.me/uploads/2010/05/Move-System-to-New-Disk.jpg" alt="" width="591" height="512" /></div>
+重起,引导进新硬盘上的系统,对于我等黑苹果用户,再给新硬盘上装上引导工具</p>
+
+<p>然后,完成了,可以把原来的系统干掉了
+<div>第三方工具?那是什么?</div></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2010/04/setting-computer-name-ipaddress-with-windows-bat">
+        批处理设置计算机名及IP
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Apr 28, 2010</span>
+
+    <p>管着两间学生机房，每间机器数量64台，每次网刻后设置计算机名和IP总是件麻烦的事情</p>
+
+<p>于是就写了个批处理方便设置了</p>
+
+<p>功能说明：运行后获取输入的两位数字的机器号后，将计算机名改为PCxx, IP改为192.168.0.1xx</p>
+
+<dl>
+<dt>set /p cNum=请输入机号(两位数字)：</dt>
+<dt>::添加计算机名前缀PC
+set name=PC%cNum%</dt>
+</dl>
+
+<dl>
+<dt>输入机号(两位数字)：</dt>
+<dt>::添加计算机名前缀PC
+set name=PC%cNum%</dt>
+</dl>
+
+<p>::设置计算机名
+reg add &ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\ComputerName\ActiveComputerName&rdquo; /v ComputerName /t reg_sz /d %name% /f &gt;nul 2&gt;nul
+reg add &ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters&rdquo; /v &ldquo;NV Hostname&rdquo; /t reg_sz /d %name% /f &gt;nul 2&gt;nul
+reg add &ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters&rdquo; /v Hostname /t reg_sz /d %name% /f &gt;nul 2&gt;nul
+  ::尝试修复重名问题
+reg add &ldquo;HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam&rdquo; /v @ /t REG_SZ /d &ldquo;%name%&rdquo; /f &gt;nul 2&gt;nul
+reg add &ldquo;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName&rdquo; /v &ldquo;ComputerName&rdquo; /t REG_SZ /d &ldquo;%name%&rdquo; /f &gt;nul 2&gt;nul
+reg add &ldquo;HKLM\SYSTEM\CurrentControlSet\Services\Eventlog&rdquo; /v &ldquo;ComputerName&rdquo; /t REG_SZ /d &ldquo;%name%&rdquo; /f &gt;nul 2&gt;nul</p>
+
+<dl>
+<dt>set IPDNS2=8.8.4.4</dt>
+<dt>::为&rdquo;本地连接&rdquo;设置IP
+netsh interface ip set address name=&ldquo;本地连接&rdquo; source=static addr=%IPAddress% mask=%IPMask% gateway=%IPGateway% gwmetric=1</dt>
+</dl>
+
+<dl>
+<dt>sh interface ip set address name=&ldquo;本地连接&rdquo; source=static addr=%IPAddress% mask=%IPMask% gateway=%IPGateway% gwmetric=1</dt>
+</dl>
+
+<p>::设置DNS
+netsh interface ip set dns name=&ldquo;本地连接&rdquo; source=static addr=%IPDNS1% register=PRIMARY
+netsh interface ip add dns name=&ldquo;本地连接&rdquo; addr=%IPDNS2%</p>
+
+<p>cls
+echo.
+echo.
+echo.
+echo.
+echo        =====================设置成功====================
+echo.
+echo                计算机名:  %name%
+echo                      IP:  %IPAddress%
+echo                子网掩码:  %IPMask%
+echo                    网关:  %IPGateway%
+echo                    DNS1:  %IPDNS1%
+echo                    DNS2:  %IPDNS2%
+echo.
+echo        =================================================
+echo.
+::等待15秒退出
+ping /n 15 127.1&gt;nul{% endcodeblock %}
+本想写个功能强大点的批处理，比如加上根据MAC地址自动设置，但是看了看实现方法，一堆麻烦的for语句，goto语句，顿觉头大，最终还是选择放弃，简单够用就行了</p>
+
+<p>Update:添加几句代码，尝试修复提示重名的问题</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2010/04/mac-alarm-without-third-party-software">
+        Mac不用第三方软件实现闹钟功能
+      </a>
+    </h1>
+
+    <span class="post-date">Fri, Apr 23, 2010</span>
+
+    <p><ul>
+    <li>在iTunes创建一个播放列表wakeup,列表中添加当闹钟的音乐文件</li>
+    <li>Automator创建一个应用程序，实现启动iTunes播放wakeup列表</li>
+    <li>iCal设定事件，定好提醒时间，提醒方式选择打开上一步创建的程序</li>
+</ul>
+<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9E163uPIFI/AAAAAAAAAGA/P2A_R10-rj4/s1600/wakeup_snapshot2.png"><img src="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9E163uPIFI/AAAAAAAAAGA/P2A_R10-rj4/s320/wakeup_snapshot2.png" border="0" alt="" /></a></div>
+<ul>
+    <li>最后，设置自动开机时间，比提醒时间早个5分钟左右</li>
+</ul>
+为了避免年纪轻轻就得心脏病，我需要声音能由小到大有个渐变过程
+一开始我在Automator流程里加了几个设置音量并暂停的重复操作
+<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9EmUFhmShI/AAAAAAAAAF4/3zZtpKSibhA/s1600/Wakeup_snapshot1.png"><img src="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9EmUFhmShI/AAAAAAAAAF4/3zZtpKSibhA/s320/Wakeup_snapshot1.png" border="0" alt="" /></a></div>
+<div>
+<div>
+<div>但是这样的实现方式看着就不舒服，而且声音变化不够平滑</div>
+<div>正好在学objective-C，试着写一个小程序实现，可惜我这个门外汉实在搞不懂设置系统音量应该调用什么函数
+用google搜索资料倒是意外得到了一个shell命令
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;">{% codeblock %}osascript -e &ldquo;set Volume 0&rdquo;
+<del datetime="2010-10-21T03:20:19+00:00">Volume值范围是 0.0-10.0</del>
+Update: Volume值范围是 0.0-7.0
+Update2: 在AppleScript里查到了&rdquo;set volume&rdquo;的详细定义,改用&rdquo;[<strong>set volume output volume</strong> integer] &ldquo;命令,integer的值范围是0-100;
+于是改用shell脚本实现音量平缓变化
+<div class="separator" style="clear: both; text-align: center;"><a style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" href="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s1600/Wakeup_snapshot.png"><img src="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s400/Wakeup_snapshot.png" border="0" alt="" width="360" height="400" /></a></div>
+<div class="separator" style="clear: both; text-align: left;">shell脚本代码如下</div>
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;">{% codeblock %}for((i=0;i&lt;=100;++i))
+do
+osascript -e &ldquo;set Volume output volume $i&rdquo;
+sleep 0.2
+done
+<span style="font-family: arial;"><span style="font-size: small;">
+</span></span></p>
+
+<p></div>
+</div>
+</div></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://blog.sycx.me/2010/04/mac-services-translate-with-google">
+        添加一个”Services&#34;-Translate with Google
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Apr 12, 2010</span>
+
+    <p>依照<a href="http://www.lixiaolai.com/">笑来</a>老师的<a href="http://www.lixiaolai.com/apple/index.php/archives/211.html">教程</a>添加了几个Services
+今天试图添加一个Translate with Google的时候却遇到了点问题</p>
+
+<p>Google translate的Prefix是这样的
+<div style="text-align: center;">&ldquo;<span style="color: #cc0000;"><a href="http://translate.google.cn/#auto|zh-CN|">http://translate.google.cn/#auto|zh-CN|</a></span>&ldquo;</div>
+按教程到了Display Webpages步骤却会将网址编码转换为
+<div style="text-align: center;">&ldquo;<span style="color: #cc0000;"><a href="http://translate.google.cn/%23auto%7Czh-CN%7C">http://translate.google.cn/%23auto%7Czh-CN%7C</a></span>&ldquo;</div>
+问题在于Google translate不支持编码后的‘#’
+<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S8MrbqOuBPI/AAAAAAAAAFg/-lif9lRAU9Y/s1600/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2010-04-12+%E4%B8%8B%E5%8D%8810.16.47.png"><img src="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S8MrbqOuBPI/AAAAAAAAAFg/-lif9lRAU9Y/s400/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2010-04-12+%E4%B8%8B%E5%8D%8810.16.47.png" border="0" alt="" width="400" height="182" /></a></div>
+研究了下于是用AppleScript解决
+<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://1.bp.blogspot.com/_Vo5KzvUXSkY/S8MsijWZPtI/AAAAAAAAAFo/uI8Bv3FNHJg/s1600/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2010-04-12+%E4%B8%8B%E5%8D%8810.20.25.png"><img src="http://1.bp.blogspot.com/_Vo5KzvUXSkY/S8MsijWZPtI/AAAAAAAAAFo/uI8Bv3FNHJg/s400/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2010-04-12+%E4%B8%8B%E5%8D%8810.20.25.png" border="0" alt="" width="400" height="342" /></a></div>
+<div class="separator" style="clear: both; text-align: left;">以下是代码</div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 28.8px; text-indent: -28.9px;">on run {input, parameters}</div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; min-height: 14.0px; text-indent: -57.7px;"><span style="white-space: pre;"> </span></div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; text-indent: -57.7px;"><span style="white-space: pre;"> </span>set thePre to &ldquo;<a href="http://translate.google.cn/#auto|zh-CN|&quot;">http://translate.google.cn/#auto|zh-CN|&quot;</a></div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; text-indent: -57.7px;"><span style="white-space: pre;"> </span>set theUrl to thePre &amp; input</div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; min-height: 14.0px; text-indent: -57.7px;"><span style="white-space: pre;"> </span></div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; text-indent: -57.7px;"><span style="white-space: pre;"> </span>tell application &ldquo;Safari&rdquo;</div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 86.4px; text-indent: -86.4px;"><span style="white-space: pre;"> </span>activate</div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 86.4px; text-indent: -86.4px;"><span style="white-space: pre;"> </span>make new document</div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 86.4px; text-indent: -86.4px;"><span style="white-space: pre;"> </span>set the URL of front document to theUrl</div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; text-indent: -57.7px;"><span style="white-space: pre;"> </span>end tell</div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; min-height: 14.0px; text-indent: -57.7px;"><span style="white-space: pre;"> </span></div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; min-height: 14.0px; text-indent: -57.7px;"><span style="white-space: pre;"> <span style="white-space: normal;">return input</span></span></div>
+<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 28.8px; text-indent: -28.9px;">end run</div></p>
+
+  </div>
+  
+</div>
+</div>
+
+  </body>
+</html>
