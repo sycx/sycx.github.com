@@ -76,18 +76,22 @@ ga('send', 'pageview');
 <div>但是这样的实现方式看着就不舒服，而且声音变化不够平滑</div>
 <div>正好在学objective-C，试着写一个小程序实现，可惜我这个门外汉实在搞不懂设置系统音量应该调用什么函数
 用google搜索资料倒是意外得到了一个shell命令
-<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;">{% codeblock %}osascript -e &ldquo;set Volume 0&rdquo;
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>osascript -e <span style="background-color: #fff0f0">&quot;set Volume 0&quot;</span>
+</pre></div>
+
 <del datetime="2010-10-21T03:20:19+00:00">Volume值范围是 0.0-10.0</del>
 Update: Volume值范围是 0.0-7.0
 Update2: 在AppleScript里查到了&rdquo;set volume&rdquo;的详细定义,改用&rdquo;[<strong>set volume output volume</strong> integer] &ldquo;命令,integer的值范围是0-100;
 于是改用shell脚本实现音量平缓变化
 <div class="separator" style="clear: both; text-align: center;"><a style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" href="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s1600/Wakeup_snapshot.png"><img src="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s400/Wakeup_snapshot.png" border="0" alt="" width="360" height="400" /></a></div>
 <div class="separator" style="clear: both; text-align: left;">shell脚本代码如下</div>
-<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;">{% codeblock %}for((i=0;i&lt;=100;++i))
-do
-osascript -e &ldquo;set Volume output volume $i&rdquo;
-sleep 0.2
-done
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">((</span><span style="color: #996633">i</span><span style="color: #333333">=</span><span style="color: #6600EE; font-weight: bold">0</span>;i&lt;<span style="color: #333333">=</span><span style="color: #6600EE; font-weight: bold">100</span>;++i<span style="color: #333333">))</span>
+<span style="color: #008800; font-weight: bold">do</span>
+osascript -e <span style="background-color: #fff0f0">&quot;set Volume output volume </span><span style="color: #996633">$i</span><span style="background-color: #fff0f0">&quot;</span>
+sleep <span style="color: #6600EE; font-weight: bold">0</span>.2
+<span style="color: #008800; font-weight: bold">done</span>
+</pre></div>
+
 <span style="font-family: arial;"><span style="font-size: small;">
 </span></span></p>
 

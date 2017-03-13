@@ -88,19 +88,19 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Backup your &lt;code&gt;racoon.conf&lt;/code&gt; &lt;/p&gt;&lt;/li&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo cp /etc/racoon/racoon.conf&lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;,.bak&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo cp /etc/racoon/racoon.conf&lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;,.bak&lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;li&gt;&lt;p&gt;Make a directory &lt;code&gt;/etc/racoon/remote&lt;/code&gt; to put our custom config files&lt;/p&gt;&lt;/li&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo mkdir /etc/racoon/remote
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo mkdir /etc/racoon/remote
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;li&gt;&lt;p&gt;Patch &lt;code&gt;racoon.conf&lt;/code&gt; to include our directory&lt;/p&gt;&lt;/li&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo sh -c &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;echo &amp;quot;include \&amp;quot;/etc/racoon/remote/*.conf\&amp;quot; ;&amp;quot; &amp;gt;&amp;gt; /etc/racoon/racoon.conf&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo sh -c &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;echo &amp;quot;include \&amp;quot;/etc/racoon/remote/*.conf\&amp;quot; ;&amp;quot; &amp;gt;&amp;gt; /etc/racoon/racoon.conf&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     
@@ -112,14 +112,14 @@
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;racoon&lt;/strong&gt; will create a configuration file based your vpn server&#39;s IP under &lt;code&gt;/var/run/racoon/&lt;/code&gt;, Copy that file to our directory&lt;/p&gt;&lt;/li&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/
 &lt;/pre&gt;&lt;/div&gt;
 
  
 &lt;li&gt;&lt;p&gt;Edit  &lt;code&gt;/etc/racoon/remote/YOUR_VPN_SERVER_IP.conf&lt;/code&gt;, insert two lines below:&lt;/p&gt;&lt;/li&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;script &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/etc/ppp/ip-up&amp;quot;&lt;/span&gt; phase1_up&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;	
-script &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/etc/ppp/ip-down&amp;quot;&lt;/span&gt; phase1_down&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;script &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;/etc/ppp/ip-up&amp;quot;&lt;/span&gt; phase1_up;	
+script &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;/etc/ppp/ip-down&amp;quot;&lt;/span&gt; phase1_down;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -222,37 +222,35 @@ script &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;/etc/ppp/ip-down&amp
 &lt;/ol&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;初版代码&#34;&gt;初版代码：&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;tell&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;application&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Safari&amp;quot;&lt;/span&gt;
+	&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color: #007020&#34;&gt;exists&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;document&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;迅雷会员-离线下载&amp;quot;&lt;/span&gt;) &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;then&lt;/span&gt;
+		&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;doc&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;document&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;迅雷会员-离线下载&amp;quot;&lt;/span&gt;
+		&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;src&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;var syO = document.getElementsByName(&amp;#39;ck&amp;#39;);&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;var syVal = syO.length;&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;var syList=[];&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;for(var i=0; i&amp;lt; syVal;i++){&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;    if(syO[i].checked == true){&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;    var taskid = syO[i].value;&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;    var linkId = &amp;#39;dl_url&amp;#39;+taskid.toString();&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;    var oneLink = document.getElementById(linkId).value;&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;    syList.push(oneLink);&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;    }}&lt;/span&gt;
+&lt;span style=&#34;background-color: #fff0f0&#34;&gt;syList;&amp;quot;&lt;/span&gt;
+		&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;downList&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;JavaScript&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;src&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;doc&lt;/span&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;tell&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;application&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Safari&amp;quot;&lt;/span&gt;
-	&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(exists&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;document&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;迅雷会员-离线下载&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;then&lt;/span&gt;
-		&lt;span style=&#34;color: #66d9ef&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;doc&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;document&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;迅雷会员-离线下载&amp;quot;&lt;/span&gt;
-		&lt;span style=&#34;color: #66d9ef&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;src&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;var syO = document.getElementsByName(&amp;#39;ck&amp;#39;);&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;var syVal = syO.length;&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;var syList=[];&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;for(var i=0; i&amp;lt; syVal;i++){&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;    if(syO[i].checked == true){&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;    var taskid = syO[i].value;&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;    var linkId = &amp;#39;dl_url&amp;#39;+taskid.toString();&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;    var oneLink = document.getElementById(linkId).value;&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;    syList.push(oneLink);&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;    }}&lt;/span&gt;
-&lt;span style=&#34;color: #e6db74&#34;&gt;syList;&amp;quot;&lt;/span&gt;
-		&lt;span style=&#34;color: #66d9ef&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;downList&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;JavaScript&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;src&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;doc&lt;/span&gt;
-
-		&lt;span style=&#34;color: #66d9ef&#34;&gt;tell&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;application&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;iGetter&amp;quot;&lt;/span&gt;
-			&lt;span style=&#34;color: #66d9ef&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;newDownList&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{}&lt;/span&gt;
-			&lt;span style=&#34;color: #66d9ef&#34;&gt;repeat&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;number&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;of&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;items&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;downList&lt;/span&gt;
-				&lt;span style=&#34;color: #66d9ef&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;this_item&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;item&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;of&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;downList&lt;/span&gt;
-				&lt;span style=&#34;color: #75715e&#34;&gt;-- insert actions here&lt;/span&gt;
-				&lt;span style=&#34;color: #66d9ef&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;newItem&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{url:this_item}&lt;/span&gt;
-				&lt;span style=&#34;color: #f8f8f2&#34;&gt;copy&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;newItem&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;the&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;of&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;newDownList&lt;/span&gt;
-			&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;repeat&lt;/span&gt;
-			&lt;span style=&#34;color: #f8f8f2&#34;&gt;DownloadURL&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;newDownList&lt;/span&gt;
-		&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;tell&lt;/span&gt;
-	&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt;
-&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;tell&lt;/span&gt;
+		&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;tell&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;application&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;iGetter&amp;quot;&lt;/span&gt;
+			&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;newDownList&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;to&lt;/span&gt; {}
+			&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;repeat&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;number&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;of&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;items&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;downList&lt;/span&gt;
+				&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;this_item&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;item&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;of&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;downList&lt;/span&gt;
+				&lt;span style=&#34;color: #888888&#34;&gt;-- insert actions here&lt;/span&gt;
+				&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;newItem&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;to&lt;/span&gt; {&lt;span style=&#34;color: #996633&#34;&gt;url&lt;/span&gt;:&lt;span style=&#34;color: #996633&#34;&gt;this_item&lt;/span&gt;}
+				&lt;span style=&#34;color: #007020&#34;&gt;copy&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;newItem&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;the&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;of&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;newDownList&lt;/span&gt;
+			&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;repeat&lt;/span&gt;
+			&lt;span style=&#34;color: #996633&#34;&gt;DownloadURL&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;newDownList&lt;/span&gt;
+		&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;tell&lt;/span&gt;
+	&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;tell&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
 </description>
     </item>
     
@@ -669,18 +667,22 @@ ping /n 15 127.1&amp;gt;nul{% endcodeblock %}
 &lt;div&gt;但是这样的实现方式看着就不舒服，而且声音变化不够平滑&lt;/div&gt;
 &lt;div&gt;正好在学objective-C，试着写一个小程序实现，可惜我这个门外汉实在搞不懂设置系统音量应该调用什么函数
 用google搜索资料倒是意外得到了一个shell命令
-&lt;pre style=&#34;background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;&#34;&gt;{% codeblock %}osascript -e &amp;ldquo;set Volume 0&amp;rdquo;
+&lt;pre style=&#34;background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;&#34;&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;osascript -e &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;set Volume 0&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 &lt;del datetime=&#34;2010-10-21T03:20:19+00:00&#34;&gt;Volume值范围是 0.0-10.0&lt;/del&gt;
 Update: Volume值范围是 0.0-7.0
 Update2: 在AppleScript里查到了&amp;rdquo;set volume&amp;rdquo;的详细定义,改用&amp;rdquo;[&lt;strong&gt;set volume output volume&lt;/strong&gt; integer] &amp;ldquo;命令,integer的值范围是0-100;
 于是改用shell脚本实现音量平缓变化
 &lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a style=&#34;clear: left; float: left; margin-bottom: 1em; margin-right: 1em;&#34; href=&#34;http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s1600/Wakeup_snapshot.png&#34;&gt;&lt;img src=&#34;http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s400/Wakeup_snapshot.png&#34; border=&#34;0&#34; alt=&#34;&#34; width=&#34;360&#34; height=&#34;400&#34; /&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;shell脚本代码如下&lt;/div&gt;
-&lt;pre style=&#34;background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;&#34;&gt;{% codeblock %}for((i=0;i&amp;lt;=100;++i))
-do
-osascript -e &amp;ldquo;set Volume output volume $i&amp;rdquo;
-sleep 0.2
-done
+&lt;pre style=&#34;background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;&#34;&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;100&lt;/span&gt;;++i&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;do&lt;/span&gt;
+osascript -e &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;set Volume output volume &lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;$i&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;
+sleep &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt;.2
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 &lt;span style=&#34;font-family: arial;&#34;&gt;&lt;span style=&#34;font-size: small;&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 

@@ -86,19 +86,19 @@ ga('send', 'pageview');
 <ol>
 <li><p>Backup your <code>racoon.conf</code> </p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo cp /etc/racoon/racoon.conf<span style="color: #f92672">{</span>,.bak<span style="color: #f92672">}</span>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo cp /etc/racoon/racoon.conf<span style="color: #333333">{</span>,.bak<span style="color: #333333">}</span>
 </pre></div>
 
 
 <li><p>Make a directory <code>/etc/racoon/remote</code> to put our custom config files</p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo mkdir /etc/racoon/remote
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo mkdir /etc/racoon/remote
 </pre></div>
 
 
 <li><p>Patch <code>racoon.conf</code> to include our directory</p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo sh -c <span style="color: #e6db74">&#39;echo &quot;include \&quot;/etc/racoon/remote/*.conf\&quot; ;&quot; &gt;&gt; /etc/racoon/racoon.conf&#39;</span>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo sh -c <span style="background-color: #fff0f0">&#39;echo &quot;include \&quot;/etc/racoon/remote/*.conf\&quot; ;&quot; &gt;&gt; /etc/racoon/racoon.conf&#39;</span>
 </pre></div>
 
     
@@ -110,14 +110,14 @@ ga('send', 'pageview');
 
 <li><p><strong>racoon</strong> will create a configuration file based your vpn server's IP under <code>/var/run/racoon/</code>, Copy that file to our directory</p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/
 </pre></div>
 
  
 <li><p>Edit  <code>/etc/racoon/remote/YOUR_VPN_SERVER_IP.conf</code>, insert two lines below:</p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>script <span style="color: #e6db74">&quot;/etc/ppp/ip-up&quot;</span> phase1_up<span style="color: #f8f8f2">;</span>	
-script <span style="color: #e6db74">&quot;/etc/ppp/ip-down&quot;</span> phase1_down<span style="color: #f8f8f2">;</span>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>script <span style="background-color: #fff0f0">&quot;/etc/ppp/ip-up&quot;</span> phase1_up;	
+script <span style="background-color: #fff0f0">&quot;/etc/ppp/ip-down&quot;</span> phase1_down;
 </pre></div>
 
 

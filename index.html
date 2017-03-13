@@ -145,19 +145,19 @@ ga('send', 'pageview');
 <ol>
 <li><p>Backup your <code>racoon.conf</code> </p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo cp /etc/racoon/racoon.conf<span style="color: #f92672">{</span>,.bak<span style="color: #f92672">}</span>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo cp /etc/racoon/racoon.conf<span style="color: #333333">{</span>,.bak<span style="color: #333333">}</span>
 </pre></div>
 
 
 <li><p>Make a directory <code>/etc/racoon/remote</code> to put our custom config files</p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo mkdir /etc/racoon/remote
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo mkdir /etc/racoon/remote
 </pre></div>
 
 
 <li><p>Patch <code>racoon.conf</code> to include our directory</p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo sh -c <span style="color: #e6db74">&#39;echo &quot;include \&quot;/etc/racoon/remote/*.conf\&quot; ;&quot; &gt;&gt; /etc/racoon/racoon.conf&#39;</span>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo sh -c <span style="background-color: #fff0f0">&#39;echo &quot;include \&quot;/etc/racoon/remote/*.conf\&quot; ;&quot; &gt;&gt; /etc/racoon/racoon.conf&#39;</span>
 </pre></div>
 
     
@@ -169,14 +169,14 @@ ga('send', 'pageview');
 
 <li><p><strong>racoon</strong> will create a configuration file based your vpn server's IP under <code>/var/run/racoon/</code>, Copy that file to our directory</p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/
 </pre></div>
 
  
 <li><p>Edit  <code>/etc/racoon/remote/YOUR_VPN_SERVER_IP.conf</code>, insert two lines below:</p></li>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>script <span style="color: #e6db74">&quot;/etc/ppp/ip-up&quot;</span> phase1_up<span style="color: #f8f8f2">;</span>	
-script <span style="color: #e6db74">&quot;/etc/ppp/ip-down&quot;</span> phase1_down<span style="color: #f8f8f2">;</span>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>script <span style="background-color: #fff0f0">&quot;/etc/ppp/ip-up&quot;</span> phase1_up;	
+script <span style="background-color: #fff0f0">&quot;/etc/ppp/ip-down&quot;</span> phase1_down;
 </pre></div>
 
 
@@ -285,37 +285,35 @@ script <span style="color: #e6db74">&quot;/etc/ppp/ip-down&quot;</span> phase1_d
 </ol></p>
 
 <h3 id="初版代码">初版代码：</h3>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">tell</span> <span style="color: #007020">application</span> <span style="background-color: #fff0f0">&quot;Safari&quot;</span>
+	<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #007020">exists</span> <span style="color: #0000CC">document</span> <span style="background-color: #fff0f0">&quot;迅雷会员-离线下载&quot;</span>) <span style="color: #008800; font-weight: bold">then</span>
+		<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">doc</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #0000CC">document</span> <span style="background-color: #fff0f0">&quot;迅雷会员-离线下载&quot;</span>
+		<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">src</span> <span style="color: #008800; font-weight: bold">to</span> <span style="background-color: #fff0f0">&quot;var syO = document.getElementsByName(&#39;ck&#39;);</span>
+<span style="background-color: #fff0f0">var syVal = syO.length;</span>
+<span style="background-color: #fff0f0">var syList=[];</span>
+<span style="background-color: #fff0f0">for(var i=0; i&lt; syVal;i++){</span>
+<span style="background-color: #fff0f0">    if(syO[i].checked == true){</span>
+<span style="background-color: #fff0f0">    var taskid = syO[i].value;</span>
+<span style="background-color: #fff0f0">    var linkId = &#39;dl_url&#39;+taskid.toString();</span>
+<span style="background-color: #fff0f0">    var oneLink = document.getElementById(linkId).value;</span>
+<span style="background-color: #fff0f0">    syList.push(oneLink);</span>
+<span style="background-color: #fff0f0">    }}</span>
+<span style="background-color: #fff0f0">syList;&quot;</span>
+		<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">downList</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #996633">do</span> <span style="color: #996633">JavaScript</span> <span style="color: #996633">src</span> <span style="color: #008800; font-weight: bold">in</span> <span style="color: #996633">doc</span>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">tell</span> <span style="color: #f8f8f2">application</span> <span style="color: #e6db74">&quot;Safari&quot;</span>
-	<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(exists</span> <span style="color: #a6e22e">document</span> <span style="color: #e6db74">&quot;迅雷会员-离线下载&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">then</span>
-		<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">doc</span> <span style="color: #66d9ef">to</span> <span style="color: #a6e22e">document</span> <span style="color: #e6db74">&quot;迅雷会员-离线下载&quot;</span>
-		<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">src</span> <span style="color: #66d9ef">to</span> <span style="color: #e6db74">&quot;var syO = document.getElementsByName(&#39;ck&#39;);</span>
-<span style="color: #e6db74">var syVal = syO.length;</span>
-<span style="color: #e6db74">var syList=[];</span>
-<span style="color: #e6db74">for(var i=0; i&lt; syVal;i++){</span>
-<span style="color: #e6db74">    if(syO[i].checked == true){</span>
-<span style="color: #e6db74">    var taskid = syO[i].value;</span>
-<span style="color: #e6db74">    var linkId = &#39;dl_url&#39;+taskid.toString();</span>
-<span style="color: #e6db74">    var oneLink = document.getElementById(linkId).value;</span>
-<span style="color: #e6db74">    syList.push(oneLink);</span>
-<span style="color: #e6db74">    }}</span>
-<span style="color: #e6db74">syList;&quot;</span>
-		<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">downList</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">do</span> <span style="color: #f8f8f2">JavaScript</span> <span style="color: #f8f8f2">src</span> <span style="color: #66d9ef">in</span> <span style="color: #f8f8f2">doc</span>
-
-		<span style="color: #66d9ef">tell</span> <span style="color: #f8f8f2">application</span> <span style="color: #e6db74">&quot;iGetter&quot;</span>
-			<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">newDownList</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">{}</span>
-			<span style="color: #66d9ef">repeat</span> <span style="color: #f8f8f2">with</span> <span style="color: #f8f8f2">i</span> <span style="color: #66d9ef">from</span> <span style="color: #ae81ff">1</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">number</span> <span style="color: #66d9ef">of</span> <span style="color: #f8f8f2">items</span> <span style="color: #66d9ef">in</span> <span style="color: #f8f8f2">downList</span>
-				<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">this_item</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">item</span> <span style="color: #f8f8f2">i</span> <span style="color: #66d9ef">of</span> <span style="color: #f8f8f2">downList</span>
-				<span style="color: #75715e">-- insert actions here</span>
-				<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">newItem</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">{url:this_item}</span>
-				<span style="color: #f8f8f2">copy</span> <span style="color: #f8f8f2">newItem</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">the</span> <span style="color: #66d9ef">end</span> <span style="color: #66d9ef">of</span> <span style="color: #f8f8f2">newDownList</span>
-			<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">repeat</span>
-			<span style="color: #f8f8f2">DownloadURL</span> <span style="color: #f8f8f2">newDownList</span>
-		<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">tell</span>
-	<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">if</span>
-<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">tell</span>
+		<span style="color: #008800; font-weight: bold">tell</span> <span style="color: #007020">application</span> <span style="background-color: #fff0f0">&quot;iGetter&quot;</span>
+			<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">newDownList</span> <span style="color: #008800; font-weight: bold">to</span> {}
+			<span style="color: #008800; font-weight: bold">repeat</span> <span style="color: #996633">with</span> <span style="color: #996633">i</span> <span style="color: #008800; font-weight: bold">from</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #996633">number</span> <span style="color: #008800; font-weight: bold">of</span> <span style="color: #007020">items</span> <span style="color: #008800; font-weight: bold">in</span> <span style="color: #996633">downList</span>
+				<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">this_item</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #007020">item</span> <span style="color: #996633">i</span> <span style="color: #008800; font-weight: bold">of</span> <span style="color: #996633">downList</span>
+				<span style="color: #888888">-- insert actions here</span>
+				<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">newItem</span> <span style="color: #008800; font-weight: bold">to</span> {<span style="color: #996633">url</span>:<span style="color: #996633">this_item</span>}
+				<span style="color: #007020">copy</span> <span style="color: #996633">newItem</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #007020">the</span> <span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">of</span> <span style="color: #996633">newDownList</span>
+			<span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">repeat</span>
+			<span style="color: #996633">DownloadURL</span> <span style="color: #996633">newDownList</span>
+		<span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">tell</span>
+	<span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">if</span>
+<span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">tell</span>
 </pre></div>
-
 
   </div>
   
@@ -759,18 +757,22 @@ ping /n 15 127.1&gt;nul{% endcodeblock %}
 <div>但是这样的实现方式看着就不舒服，而且声音变化不够平滑</div>
 <div>正好在学objective-C，试着写一个小程序实现，可惜我这个门外汉实在搞不懂设置系统音量应该调用什么函数
 用google搜索资料倒是意外得到了一个shell命令
-<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;">{% codeblock %}osascript -e &ldquo;set Volume 0&rdquo;
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>osascript -e <span style="background-color: #fff0f0">&quot;set Volume 0&quot;</span>
+</pre></div>
+
 <del datetime="2010-10-21T03:20:19+00:00">Volume值范围是 0.0-10.0</del>
 Update: Volume值范围是 0.0-7.0
 Update2: 在AppleScript里查到了&rdquo;set volume&rdquo;的详细定义,改用&rdquo;[<strong>set volume output volume</strong> integer] &ldquo;命令,integer的值范围是0-100;
 于是改用shell脚本实现音量平缓变化
 <div class="separator" style="clear: both; text-align: center;"><a style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" href="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s1600/Wakeup_snapshot.png"><img src="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s400/Wakeup_snapshot.png" border="0" alt="" width="360" height="400" /></a></div>
 <div class="separator" style="clear: both; text-align: left;">shell脚本代码如下</div>
-<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;">{% codeblock %}for((i=0;i&lt;=100;++i))
-do
-osascript -e &ldquo;set Volume output volume $i&rdquo;
-sleep 0.2
-done
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">((</span><span style="color: #996633">i</span><span style="color: #333333">=</span><span style="color: #6600EE; font-weight: bold">0</span>;i&lt;<span style="color: #333333">=</span><span style="color: #6600EE; font-weight: bold">100</span>;++i<span style="color: #333333">))</span>
+<span style="color: #008800; font-weight: bold">do</span>
+osascript -e <span style="background-color: #fff0f0">&quot;set Volume output volume </span><span style="color: #996633">$i</span><span style="background-color: #fff0f0">&quot;</span>
+sleep <span style="color: #6600EE; font-weight: bold">0</span>.2
+<span style="color: #008800; font-weight: bold">done</span>
+</pre></div>
+
 <span style="font-family: arial;"><span style="font-size: small;">
 </span></span></p>
 

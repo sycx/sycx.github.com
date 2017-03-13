@@ -135,37 +135,35 @@ ga('send', 'pageview');
 </ol></p>
 
 <h3 id="初版代码">初版代码：</h3>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">tell</span> <span style="color: #007020">application</span> <span style="background-color: #fff0f0">&quot;Safari&quot;</span>
+	<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #007020">exists</span> <span style="color: #0000CC">document</span> <span style="background-color: #fff0f0">&quot;迅雷会员-离线下载&quot;</span>) <span style="color: #008800; font-weight: bold">then</span>
+		<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">doc</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #0000CC">document</span> <span style="background-color: #fff0f0">&quot;迅雷会员-离线下载&quot;</span>
+		<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">src</span> <span style="color: #008800; font-weight: bold">to</span> <span style="background-color: #fff0f0">&quot;var syO = document.getElementsByName(&#39;ck&#39;);</span>
+<span style="background-color: #fff0f0">var syVal = syO.length;</span>
+<span style="background-color: #fff0f0">var syList=[];</span>
+<span style="background-color: #fff0f0">for(var i=0; i&lt; syVal;i++){</span>
+<span style="background-color: #fff0f0">    if(syO[i].checked == true){</span>
+<span style="background-color: #fff0f0">    var taskid = syO[i].value;</span>
+<span style="background-color: #fff0f0">    var linkId = &#39;dl_url&#39;+taskid.toString();</span>
+<span style="background-color: #fff0f0">    var oneLink = document.getElementById(linkId).value;</span>
+<span style="background-color: #fff0f0">    syList.push(oneLink);</span>
+<span style="background-color: #fff0f0">    }}</span>
+<span style="background-color: #fff0f0">syList;&quot;</span>
+		<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">downList</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #996633">do</span> <span style="color: #996633">JavaScript</span> <span style="color: #996633">src</span> <span style="color: #008800; font-weight: bold">in</span> <span style="color: #996633">doc</span>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">tell</span> <span style="color: #f8f8f2">application</span> <span style="color: #e6db74">&quot;Safari&quot;</span>
-	<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(exists</span> <span style="color: #a6e22e">document</span> <span style="color: #e6db74">&quot;迅雷会员-离线下载&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">then</span>
-		<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">doc</span> <span style="color: #66d9ef">to</span> <span style="color: #a6e22e">document</span> <span style="color: #e6db74">&quot;迅雷会员-离线下载&quot;</span>
-		<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">src</span> <span style="color: #66d9ef">to</span> <span style="color: #e6db74">&quot;var syO = document.getElementsByName(&#39;ck&#39;);</span>
-<span style="color: #e6db74">var syVal = syO.length;</span>
-<span style="color: #e6db74">var syList=[];</span>
-<span style="color: #e6db74">for(var i=0; i&lt; syVal;i++){</span>
-<span style="color: #e6db74">    if(syO[i].checked == true){</span>
-<span style="color: #e6db74">    var taskid = syO[i].value;</span>
-<span style="color: #e6db74">    var linkId = &#39;dl_url&#39;+taskid.toString();</span>
-<span style="color: #e6db74">    var oneLink = document.getElementById(linkId).value;</span>
-<span style="color: #e6db74">    syList.push(oneLink);</span>
-<span style="color: #e6db74">    }}</span>
-<span style="color: #e6db74">syList;&quot;</span>
-		<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">downList</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">do</span> <span style="color: #f8f8f2">JavaScript</span> <span style="color: #f8f8f2">src</span> <span style="color: #66d9ef">in</span> <span style="color: #f8f8f2">doc</span>
-
-		<span style="color: #66d9ef">tell</span> <span style="color: #f8f8f2">application</span> <span style="color: #e6db74">&quot;iGetter&quot;</span>
-			<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">newDownList</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">{}</span>
-			<span style="color: #66d9ef">repeat</span> <span style="color: #f8f8f2">with</span> <span style="color: #f8f8f2">i</span> <span style="color: #66d9ef">from</span> <span style="color: #ae81ff">1</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">number</span> <span style="color: #66d9ef">of</span> <span style="color: #f8f8f2">items</span> <span style="color: #66d9ef">in</span> <span style="color: #f8f8f2">downList</span>
-				<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">this_item</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">item</span> <span style="color: #f8f8f2">i</span> <span style="color: #66d9ef">of</span> <span style="color: #f8f8f2">downList</span>
-				<span style="color: #75715e">-- insert actions here</span>
-				<span style="color: #66d9ef">set</span> <span style="color: #f8f8f2">newItem</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">{url:this_item}</span>
-				<span style="color: #f8f8f2">copy</span> <span style="color: #f8f8f2">newItem</span> <span style="color: #66d9ef">to</span> <span style="color: #f8f8f2">the</span> <span style="color: #66d9ef">end</span> <span style="color: #66d9ef">of</span> <span style="color: #f8f8f2">newDownList</span>
-			<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">repeat</span>
-			<span style="color: #f8f8f2">DownloadURL</span> <span style="color: #f8f8f2">newDownList</span>
-		<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">tell</span>
-	<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">if</span>
-<span style="color: #66d9ef">end</span> <span style="color: #66d9ef">tell</span>
+		<span style="color: #008800; font-weight: bold">tell</span> <span style="color: #007020">application</span> <span style="background-color: #fff0f0">&quot;iGetter&quot;</span>
+			<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">newDownList</span> <span style="color: #008800; font-weight: bold">to</span> {}
+			<span style="color: #008800; font-weight: bold">repeat</span> <span style="color: #996633">with</span> <span style="color: #996633">i</span> <span style="color: #008800; font-weight: bold">from</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #996633">number</span> <span style="color: #008800; font-weight: bold">of</span> <span style="color: #007020">items</span> <span style="color: #008800; font-weight: bold">in</span> <span style="color: #996633">downList</span>
+				<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">this_item</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #007020">item</span> <span style="color: #996633">i</span> <span style="color: #008800; font-weight: bold">of</span> <span style="color: #996633">downList</span>
+				<span style="color: #888888">-- insert actions here</span>
+				<span style="color: #008800; font-weight: bold">set</span> <span style="color: #996633">newItem</span> <span style="color: #008800; font-weight: bold">to</span> {<span style="color: #996633">url</span>:<span style="color: #996633">this_item</span>}
+				<span style="color: #007020">copy</span> <span style="color: #996633">newItem</span> <span style="color: #008800; font-weight: bold">to</span> <span style="color: #007020">the</span> <span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">of</span> <span style="color: #996633">newDownList</span>
+			<span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">repeat</span>
+			<span style="color: #996633">DownloadURL</span> <span style="color: #996633">newDownList</span>
+		<span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">tell</span>
+	<span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">if</span>
+<span style="color: #008800; font-weight: bold">end</span> <span style="color: #008800; font-weight: bold">tell</span>
 </pre></div>
-
 
 			</div>
 
