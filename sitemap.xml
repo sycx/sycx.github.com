@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.sycx.me/post/cat-ear-headphones-review/</loc>
+    <lastmod>2017-03-13T20:45:22+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.sycx.me/blog/2013/01/01/food-taste-pizza-dumplings/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
@@ -72,14 +77,48 @@
   </url>
   
   <url>
+    <loc>http://blog.sycx.me/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sycx.me/tags/development/</loc>
+    <lastmod>2017-03-13T20:45:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sycx.me/categories/development/</loc>
+    <lastmod>2017-03-13T20:45:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sycx.me/tags/golang/</loc>
+    <lastmod>2017-03-13T20:45:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sycx.me/categories/golang/</loc>
+    <lastmod>2017-03-13T20:45:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.sycx.me/post/</loc>
-    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-13T20:45:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sycx.me/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.sycx.me/</loc>
-    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-13T20:45:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
