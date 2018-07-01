@@ -1,22 +1,22 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.19" />
+  <meta name="generator" content="Hugo 0.42.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  
   <title>Mac不用第三方软件实现闹钟功能 &middot; sycx blog</title>
-  
 
   
-  <link rel="stylesheet" href="http://blog.sycx.me/css/poole.css">
-  <link rel="stylesheet" href="http://blog.sycx.me/css/syntax.css">
-  <link rel="stylesheet" href="http://blog.sycx.me/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
 
   
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
@@ -26,42 +26,32 @@
   <link href="" rel="alternate" type="application/rss+xml" title="sycx blog" />
 
   
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-19868922-3', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 </head>
 
-	<body class="theme-base-0c layout-reverse">
-		<div class="sidebar">
+  <body class="theme-base-0c layout-reverse">
+  <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.sycx.me/"><h1>sycx blog</h1></a>
+      <a href="https://blog.sycx.me/"><h1>sycx blog</h1></a>
       <p class="lead">
       碎月有把杀猪刀 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
       </p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      
-        <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li>
-      
+      <li><a href="https://blog.sycx.me/">Home</a> </li>
+      <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li>
     </ul>
 
-    <p>&copy; 2017. All rights reserved. </p>
+    <p>&copy; 2018. All rights reserved. </p>
   </div>
 </div>
 
-
-		<div class="content container">
-			<div class="post">
-			 	<h1>Mac不用第三方软件实现闹钟功能</h1>
-			  <span class="post-date">Fri, Apr 23, 2010</span>
-			      <p><ul>
+    <div class="content container">
+    <div class="post">
+  <h1>Mac不用第三方软件实现闹钟功能</h1>
+  <span class="post-date">Fri, Apr 23, 2010</span>
+  <p><ul>
     <li>在iTunes创建一个播放列表wakeup,列表中添加当闹钟的音乐文件</li>
     <li>Automator创建一个应用程序，实现启动iTunes播放wakeup列表</li>
     <li>iCal设定事件，定好提醒时间，提醒方式选择打开上一步创建的程序</li>
@@ -78,22 +68,18 @@ ga('send', 'pageview');
 <div>但是这样的实现方式看着就不舒服，而且声音变化不够平滑</div>
 <div>正好在学objective-C，试着写一个小程序实现，可惜我这个门外汉实在搞不懂设置系统音量应该调用什么函数
 用google搜索资料倒是意外得到了一个shell命令
-<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>osascript -e <span style="background-color: #fff0f0">&quot;set Volume 0&quot;</span>
-</pre></div>
-
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">osascript -e <span style="background-color:#fff0f0">&#34;set Volume 0&#34;</span></code></pre></div>
 <del datetime="2010-10-21T03:20:19+00:00">Volume值范围是 0.0-10.0</del>
 Update: Volume值范围是 0.0-7.0
 Update2: 在AppleScript里查到了&rdquo;set volume&rdquo;的详细定义,改用&rdquo;[<strong>set volume output volume</strong> integer] &ldquo;命令,integer的值范围是0-100;
 于是改用shell脚本实现音量平缓变化
 <div class="separator" style="clear: both; text-align: center;"><a style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" href="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s1600/Wakeup_snapshot.png"><img src="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s400/Wakeup_snapshot.png" border="0" alt="" width="360" height="400" /></a></div>
 <div class="separator" style="clear: both; text-align: left;">shell脚本代码如下</div>
-<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">((</span><span style="color: #996633">i</span><span style="color: #333333">=</span><span style="color: #6600EE; font-weight: bold">0</span>;i&lt;<span style="color: #333333">=</span><span style="color: #6600EE; font-weight: bold">100</span>;++i<span style="color: #333333">))</span>
-<span style="color: #008800; font-weight: bold">do</span>
-osascript -e <span style="background-color: #fff0f0">&quot;set Volume output volume </span><span style="color: #996633">$i</span><span style="background-color: #fff0f0">&quot;</span>
-sleep <span style="color: #6600EE; font-weight: bold">0</span>.2
-<span style="color: #008800; font-weight: bold">done</span>
-</pre></div>
-
+<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;font-weight:bold">for</span><span style="color:#333">((</span><span style="color:#963">i</span><span style="color:#333">=</span><span style="color:#60e;font-weight:bold">0</span>;i&amp;lt;<span style="color:#333">=</span><span style="color:#60e;font-weight:bold">100</span>;++i<span style="color:#333">))</span>
+<span style="color:#080;font-weight:bold">do</span>
+osascript -e <span style="background-color:#fff0f0">&#34;set Volume output volume </span><span style="color:#963">$i</span><span style="background-color:#fff0f0">&#34;</span>
+sleep <span style="color:#60e;font-weight:bold">0</span>.2
+<span style="color:#080;font-weight:bold">done</span></code></pre></div>
 <span style="font-family: arial;"><span style="font-size: small;">
 </span></span></p>
 
@@ -101,26 +87,42 @@ sleep <span style="color: #6600EE; font-weight: bold">0</span>.2
 </div>
 </div></p>
 
-			</div>
+</div>
 
-			
-				<h2>Comments</h2>
-				<div id="disqus_thread"></div>
-<script type="text/javascript">
-     
-    var disqus_shortname = 'sycx'; 
-
-     
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sycx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-			
-		</div>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-19868922-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
   </body>
 </html>

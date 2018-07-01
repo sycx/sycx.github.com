@@ -1,123 +1,125 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://blog.sycx.me/post/cat-ear-headphones-review/</loc>
+    <loc>https://blog.sycx.me/post/cat-ear-headphones-review/</loc>
     <lastmod>2017-03-13T20:45:22+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/blog/2013/01/01/food-taste-pizza-dumplings/</loc>
+    <loc>https://blog.sycx.me/blog/2013/01/01/food-taste-pizza-dumplings/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/blog/2012/12/21/cisco-ipsec-vpn-automatic-routing-table/</loc>
+    <loc>https://blog.sycx.me/blog/2012/12/21/cisco-ipsec-vpn-automatic-routing-table/</loc>
     <lastmod>2012-12-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/blog/2012/05/01/oct-hello-world/</loc>
+    <loc>https://blog.sycx.me/blog/2012/05/01/oct-hello-world/</loc>
     <lastmod>2012-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2011/04/thunder-batch-download-under-mac-applescript-offline-files/</loc>
+    <loc>https://blog.sycx.me/2011/04/thunder-batch-download-under-mac-applescript-offline-files/</loc>
     <lastmod>2011-04-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2011/03/my-first-ios-app-happylyric</loc>
+    <loc>https://blog.sycx.me/2011/03/my-first-ios-app-happylyric/</loc>
     <lastmod>2011-03-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2011/03/115urlaction-mac-115-the-next-batch-file-download</loc>
+    <loc>https://blog.sycx.me/2011/03/115urlaction-mac-115-the-next-batch-file-download/</loc>
     <lastmod>2011-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2011/02/howto-how-to-set-the-nodestopatch-voodoohda</loc>
+    <loc>https://blog.sycx.me/2011/02/howto-how-to-set-the-nodestopatch-voodoohda/</loc>
     <lastmod>2011-02-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2010/11/how-to-mac-version-of-world-of-warcraft-update-prompt-internal-error-of-the-analysis-and-solution</loc>
+    <loc>https://blog.sycx.me/2010/11/how-to-mac-version-of-world-of-warcraft-update-prompt-internal-error-of-the-analysis-and-solution/</loc>
     <lastmod>2010-11-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2010/11/services-quick-fix-file-name-garbled</loc>
+    <loc>https://blog.sycx.me/2010/11/services-quick-fix-file-name-garbled/</loc>
     <lastmod>2010-11-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2010/06/windows-ssh-pac-proxy-setting</loc>
+    <loc>https://blog.sycx.me/2010/06/windows-ssh-pac-proxy-setting/</loc>
     <lastmod>2010-06-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2010/05/move-snow-leopard-to-new-disk</loc>
+    <loc>https://blog.sycx.me/2010/05/move-snow-leopard-to-new-disk/</loc>
     <lastmod>2010-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2010/04/setting-computer-name-ipaddress-with-windows-bat</loc>
+    <loc>https://blog.sycx.me/2010/04/setting-computer-name-ipaddress-with-windows-bat/</loc>
     <lastmod>2010-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2010/04/mac-alarm-without-third-party-software</loc>
+    <loc>https://blog.sycx.me/2010/04/mac-alarm-without-third-party-software/</loc>
     <lastmod>2010-04-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/2010/04/mac-services-translate-with-google</loc>
+    <loc>https://blog.sycx.me/2010/04/mac-services-translate-with-google/</loc>
     <lastmod>2010-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/categories/</loc>
+    <loc>https://blog.sycx.me/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/categories/development/</loc>
+    <loc>https://blog.sycx.me/tags/development/</loc>
     <lastmod>2017-03-13T20:45:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/tags/development/</loc>
+    <loc>https://blog.sycx.me/categories/development/</loc>
     <lastmod>2017-03-13T20:45:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/categories/golang/</loc>
+    <loc>https://blog.sycx.me/tags/golang/</loc>
     <lastmod>2017-03-13T20:45:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/tags/golang/</loc>
+    <loc>https://blog.sycx.me/categories/golang/</loc>
     <lastmod>2017-03-13T20:45:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/post/</loc>
+    <loc>https://blog.sycx.me/post/</loc>
     <lastmod>2017-03-13T20:45:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/tags/</loc>
+    <loc>https://blog.sycx.me/tags/</loc>
+    <lastmod>2017-03-13T20:45:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.sycx.me/</loc>
+    <loc>https://blog.sycx.me/</loc>
     <lastmod>2017-03-13T20:45:22+08:00</lastmod>
     <priority>0</priority>
   </url>

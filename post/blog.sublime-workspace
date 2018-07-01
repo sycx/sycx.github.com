@@ -1,0 +1,1030 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tex",
+				"textureId"
+			],
+			[
+				"Media",
+				"MediaSurface"
+			],
+			[
+				"Alexa",
+				"Alexa日本排名15"
+			],
+			[
+				"live",
+				"livedoor"
+			],
+			[
+				"anime",
+				"animeanime.jp"
+			],
+			[
+				"livedoo",
+				"livedoor.com"
+			],
+			[
+				"Al",
+				"Alexa日本排名15"
+			],
+			[
+				"news",
+				"news站点"
+			],
+			[
+				"te",
+				"textureHdl"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"el",
+				"elif"
+			],
+			[
+				"trx",
+				"train_x_orig〔variable〕"
+			],
+			[
+				"train",
+				"train_x〔variable〕"
+			],
+			[
+				"test",
+				"test_x〔variable〕"
+			],
+			[
+				"tra",
+				"train_x〔variable〕"
+			],
+			[
+				"p",
+				"print_mislabeled_images〔function〕"
+			],
+			[
+				"dig",
+				"dig2"
+			],
+			[
+				"im",
+				"image_guid〔variable〕"
+			],
+			[
+				"resu",
+				"results〔argument〕"
+			],
+			[
+				"Info",
+				"INFO〔variable〕"
+			],
+			[
+				"request",
+				"request.url"
+			],
+			[
+				"Im",
+				"ImageDownloadPipeline〔class〕"
+			],
+			[
+				"req",
+				"request〔argument〕"
+			],
+			[
+				"ani",
+				"anime_name_jp〔variable〕"
+			],
+			[
+				"con",
+				"continue〔keyword〕"
+			],
+			[
+				"json",
+				"jsonfile"
+			],
+			[
+				"pro",
+				"processJson"
+			],
+			[
+				"uuid",
+				"uuidstr"
+			],
+			[
+				"uu",
+				"uuidstr〔variable〕"
+			],
+			[
+				"uui",
+				"uuidstr"
+			],
+			[
+				"an",
+				"anime_name_cn〔variable〕"
+			],
+			[
+				"ana",
+				"anime_name_jp〔variable〕"
+			],
+			[
+				"anim",
+				"anime_name_jp"
+			],
+			[
+				"loca",
+				"location〔variable〕"
+			],
+			[
+				"set",
+				"settings〔module〕"
+			],
+			[
+				"sc",
+				"scrapy〔module〕"
+			],
+			[
+				"tit",
+				"title_jp〔variable〕"
+			],
+			[
+				"livdo",
+				"livedoorItem〔module〕"
+			],
+			[
+				"titl",
+				"titles〔variable〕"
+			],
+			[
+				"log",
+				"logging.warning('has"
+			],
+			[
+				"apk",
+				"apksigner"
+			],
+			[
+				"KS_",
+				"KS_FILE"
+			],
+			[
+				"ks_",
+				"KS_KEY_ALIAS"
+			],
+			[
+				"ks",
+				"ks-key-alias"
+			],
+			[
+				"plu",
+				"plugin_initialized"
+			],
+			[
+				"Plugin",
+				"plugin_initialized"
+			],
+			[
+				"mimp",
+				"mipmapLevel"
+			],
+			[
+				"mip",
+				"mipmapLevel"
+			],
+			[
+				"bol",
+				"blockSize"
+			],
+			[
+				"en",
+				"encryptionDecryption"
+			],
+			[
+				"defi",
+				"define"
+			],
+			[
+				"EGL_S",
+				"EGL_SURFACE_TYPE"
+			],
+			[
+				"EGL_RE",
+				"EGL_RED_SIZE"
+			],
+			[
+				"Log",
+				"LOG"
+			],
+			[
+				"nu",
+				"NULL"
+			],
+			[
+				"ANDROID",
+				"ANDROID_NDK"
+			],
+			[
+				"glgen",
+				"glGenerateMipmap"
+			],
+			[
+				"Imagel",
+				"ImageLoadScaleFromFile"
+			],
+			[
+				"c",
+				"choose"
+			],
+			[
+				"use",
+				"uses-permission"
+			],
+			[
+				"IP",
+				"IP_ADDRESS"
+			],
+			[
+				"arm",
+				"arm_lib32"
+			],
+			[
+				"load",
+				"loadScript"
+			],
+			[
+				"app",
+				"app09〔variable〕"
+			],
+			[
+				"getapp",
+				"get_app_09_value〔function〕"
+			],
+			[
+				"Other",
+				"OtherApps〔variable〕"
+			],
+			[
+				"All",
+				"AllMasApps〔variable〕"
+			],
+			[
+				"get",
+				"get_app_09_value"
+			],
+			[
+				"py",
+				"pyMASreceipt"
+			],
+			[
+				"tar",
+				"targetResolutionId"
+			],
+			[
+				"res",
+				"resolutions"
+			],
+			[
+				"par",
+				"parseInt"
+			],
+			[
+				"ca",
+				"catch"
+			],
+			[
+				"gltex",
+				"glTexImage2D"
+			],
+			[
+				"max",
+				"maxTextureSize"
+			],
+			[
+				"_sh",
+				"_sharedEglConfig"
+			],
+			[
+				"sha",
+				"_sharedEglConfig"
+			],
+			[
+				"_",
+				"_sharedSurface"
+			],
+			[
+				"_ma",
+				"_mainSurfaceW"
+			],
+			[
+				"texture",
+				"textureHdl"
+			],
+			[
+				"st",
+				"step"
+			],
+			[
+				"of",
+				"offset"
+			],
+			[
+				"size",
+				"size_t"
+			],
+			[
+				"fla",
+				"float"
+			],
+			[
+				"di",
+				"dimXY"
+			],
+			[
+				"Gene",
+				"GenerateJpegThumbnailToPath"
+			],
+			[
+				"jpe",
+				"jpegHeight"
+			],
+			[
+				"M",
+				"MaxLoadSize"
+			],
+			[
+				"decomp",
+				"decompRet"
+			],
+			[
+				"in",
+				"inc\t#include <…>"
+			],
+			[
+				"righ",
+				"rightEyePath"
+			],
+			[
+				"lef",
+				"leftEyePath"
+			],
+			[
+				"ha",
+				"HashID"
+			],
+			[
+				"baa",
+				"aBasePath"
+			],
+			[
+				"_m",
+				"_mainContext"
+			],
+			[
+				"setup",
+				"SetupMainGLContext"
+			],
+			[
+				"NO",
+				"EGL_NO_CONTEXT"
+			],
+			[
+				"ev",
+				"eventID"
+			],
+			[
+				"create",
+				"CreatePixelBufferObject"
+			],
+			[
+				"GL_UN",
+				"GL_UNSIGNED_BYTE"
+			],
+			[
+				"GL_",
+				"GL_ARRAY_BUFFER"
+			],
+			[
+				"ou",
+				"outTex"
+			],
+			[
+				"EGL",
+				"EGLint"
+			],
+			[
+				"Wa",
+				"WARN"
+			],
+			[
+				"E",
+				"EGLDisplay"
+			],
+			[
+				"EGL_NO",
+				"EGL_NO_CONTEXT"
+			],
+			[
+				"EG",
+				"EGLDisplay"
+			],
+			[
+				"att",
+				"attribList"
+			],
+			[
+				"eglcon",
+				"EglConfig"
+			],
+			[
+				"eg",
+				"eglGetCurrentContext"
+			],
+			[
+				"pa",
+				"Path\tstring ν"
+			],
+			[
+				"No",
+				"Now\ttime.Time ƒ"
+			],
+			[
+				"us",
+				"username\tstring ν"
+			],
+			[
+				"han",
+				"Handle\thttp.Handler ƒ"
+			],
+			[
+				"new",
+				"NewOrm\torm.Ormer ƒ"
+			],
+			[
+				"u",
+				"username\tstring ν"
+			],
+			[
+				"be",
+				"BeforeExec\t Ɩ"
+			],
+			[
+				"r",
+				"ResponseWriter\thttp.ResponseWriter ν"
+			],
+			[
+				"statusf",
+				"StatusFound\t Ɩ"
+			],
+			[
+				"re",
+				"Redirect\t ƒ"
+			],
+			[
+				"red",
+				"RedirectToLogout\t ƒ"
+			],
+			[
+				"file",
+				"filename\tstring ν"
+			],
+			[
+				"ma",
+				"MainKey\tstring ƒ"
+			],
+			[
+				"m",
+				"MainKey\tstring ƒ"
+			],
+			[
+				"fil",
+				"FileName\tstring ν"
+			],
+			[
+				"sou",
+				"BookSourceTemplate\t Ɩ"
+			],
+			[
+				"boo",
+				"BookSourceUpload\t Ɩ"
+			],
+			[
+				"form",
+				"FormatInt\tstring ƒ"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 209.0,
+		"last_filter": "reload",
+		"selected_items":
+		[
+			[
+				"reload",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"table",
+				"Snippet: table"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"livere",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"packsett",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"markpreview",
+				"GitHub Flavored Markdown: Preview"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"prev",
+				"GitHub Flavored Markdown: Preview"
+			],
+			[
+				"installpa",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"xml",
+				"Indent XML"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"insert",
+				"InsertDate: Show Panel"
+			],
+			[
+				"date",
+				"InsertDate: Show Panel"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"",
+				"Auto indent"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"for",
+				"Format CSS: Expanded"
+			],
+			[
+				"case",
+				"Format CSS: Expanded (Break Selectors)"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"syntaxfold",
+				"SyntaxFold: Show Panel"
+			],
+			[
+				"keyb",
+				"Preferences: SyntaxFold Keybindings - Default"
+			],
+			[
+				"setting",
+				"Preferences: Settings - User"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"indent",
+				"Auto indent"
+			],
+			[
+				"pai",
+				"Package Control: Install Package"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inde",
+				"Indent XML"
+			],
+			[
+				"ja",
+				"Format: Javascript"
+			],
+			[
+				"css ",
+				"Format CSS: Expanded"
+			],
+			[
+				"js",
+				"Format: Javascript"
+			]
+		],
+		"width": 540.0
+	},
+	"console":
+	{
+		"height": 313.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/chyhfj/Downloads/ovr_sdk_mobile_1.0.3/VrAppSupport/MediaSurfacePlugin/Src/SurfaceTexture.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/UnityPlugin/Unity/IUnityInterface.h",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/gala360_unity.cpp",
+		"/Users/chyhfj/dev/logcat.txt",
+		"/Volumes/UnityApps/cc_go_social_unity/Assets/Plugins/Android/mainTemplate.gradle",
+		"/Volumes/UnityApps/cc_go_social_unity/Temp/gradleOut/src/main/AndroidManifest.xml",
+		"/Volumes/UnityApps/cc_go_social_unity/Temp/gradleOut/build.gradle",
+		"/Volumes/UnityApps/cc_go_social_unity/ProjectSettings/AndroidResolverDependencies.xml",
+		"/Volumes/UnityApps/cc_go_social_unity/Temp/gradleOut/local.properties",
+		"/Users/chyhfj/Documents/Apollo_Wiki/OpenGL Context In Unity.txt",
+		"/Volumes/UnityApps/cc_go_social_unity/Assets/Plugins/Android/AndroidManifest-Google.xml",
+		"/Volumes/UnityApps/cc_go_social_unity/Assets/Plugins/Android/proguard-unity.txt",
+		"/Users/chyhfj/Documents/Gala 图片渲染.md",
+		"/Users/chyhfj/Desktop/buildCompare.md",
+		"/Volumes/UnityApps/cc_go_social_unity/Assets/StreamingAssets/GoogleVR/Scripts/EventSystem/GvrBasePointer.cs",
+		"/Users/chyhfj/Development/AnimeNews/research.md",
+		"/Users/chyhfj/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/chyhfj/Library/Application Support/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/Users/chyhfj/Library/Application Support/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
+		"/Users/chyhfj/Library/Mobile Documents/iCloud~run~surge/Documents/SSLedge_Div.conf",
+		"/Users/chyhfj/Library/Application Support/Sublime Text 3/Packages/GoSublime/CHANGELOG.md",
+		"/Users/chyhfj/Downloads/PostBuildDemo/Unity-iPhone.xcodeproj/project.pbxproj",
+		"/Volumes/UnityApps/cc_go_social_unity_ios/Assets/OneSignal/Platforms/iOS/OneSignalUnityRuntime.m",
+		"/Users/chyhfj/bin/unity_ios.sh",
+		"/Volumes/UnityApps/cc_go_social_unity/README.md",
+		"/Users/chyhfj/bin/fix_xcarchive.sh",
+		"/Users/chyhfj/Development/verify.sh",
+		"/Users/chyhfj/Development/deep_learning/dnn_app_utils_v2.py",
+		"/Users/chyhfj/Development/deep_learning/main.py",
+		"/Users/chyhfj/Development/deep_learning/dn_functions.py",
+		"/Users/chyhfj/Development/deep_learning/dnn_utils.py",
+		"/Users/chyhfj/Library/Preferences/nsmb.conf",
+		"/Users/chyhfj/Library/Mobile Documents/iCloud~run~surge/Documents/SSLedge r wifi.conf",
+		"/Users/chyhfj/Downloads/gvr/jni/armeabi-v7a/gvrdis.IL",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Plugins/Android/AndroidManifest.xml",
+		"/Users/chyhfj/Downloads/gvr/jni/armeabi-v7a/gvrdis",
+		"/Users/chyhfj/Development/animecrawler/py_proj/py_proj/k.json",
+		"/Users/chyhfj/Development/animecrawler/py_proj/py_proj/handleData/livedoor.py",
+		"/Users/chyhfj/Development/animecrawler/py_proj/py_proj/handleData/dbtest.py",
+		"/Users/chyhfj/Development/animecrawler/py_proj/py_proj/handleData/anime_name.py",
+		"/Users/chyhfj/Development/animecrawler/py_proj/py_proj/handleData/db_setup.sh",
+		"/Users/chyhfj/Development/animecrawler/py_proj/py_proj/handleData/db_seichijunrei_schema.sql",
+		"/Users/chyhfj/Development/animecrawler/py_proj/py_proj/handleData/dbsetup.py",
+		"/Users/chyhfj/Development/animecrawler/py_proj/py_proj/handleData/schema.sql",
+		"/Users/chyhfj/Downloads/doc.kml",
+		"/Users/chyhfj/Development/animecrawler/py_proj/py_proj/items.py",
+		"/Users/chyhfj/Development/animecrawler/py_proj/k.json",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Plugins/Android/AndroidManifest-Google-Cardboard.xml",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Plugins/Android/AndroidManifest-Google.xml",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_appsrv/scripts/cc_split.py",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_appsrv/scripts/util.py",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_appsrv/site/node_modules/negotiator/index.js",
+		"/Users/chyhfj/Downloads/upload-rift.sh",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Plugins/Android/AndroidManifest-Cardboard.xml",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Resources/feed_conf_unity_Android_Cardboard.json",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Temp/StagingArea/Il2Cpp/il2cppOutput/Bulk_Assembly-CSharp_0.cpp",
+		"/Users/chyhfj/Downloads/Crashlytics.releasenotes",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Plugins/Android/mainTemplate.gradle",
+		"/Users/chyhfj/Downloads/unity_sign_apk.sh",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Temp/StagingArea/Il2Cpp/il2cppOutput/Bulk_Assembly-CSharp_3.cpp",
+		"/Users/chyhfj/temp_stack.log",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_appsrv/src/main/java/team/apollo/gala360/api/data/VirtualRoomStatus.java",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_appsrv/src/main/java/team/apollo/gala360/social/data/VirtualRoom.java",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_appsrv/src/main/java/team/apollo/gala360/constants/VrAppUserState.java",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_appsrv/src/test/java/team/apollo/gala360/api/ApiHttpClient.java",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_appsrv/src/main/java/team/apollo/gala360/social/RoomManagementStrategy.java",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_appsrv/src/main/java/team/apollo/gala360/social/VirtualRoomManager.java",
+		"/Users/chyhfj/Development/Apollo/AvatarDemo/.gitignore",
+		"/Users/chyhfj/Library/Mobile Documents/iCloud~run~surge/Documents/SSLedge r.conf",
+		"/Users/chyhfj/Downloads/OVRPlatformSDK_v1.16.0/Samples/Unity/VrVoiceChat/Assets/PlatformScripts/P2PManager.cs",
+		"/Users/chyhfj/Downloads/OVRPlatformSDK_v1.16.0/Samples/Unity/VrVoiceChat/Assets/PlatformScripts/VoipManager.cs",
+		"/Users/chyhfj/Downloads/OVRPlatformSDK_v1.16.0/Samples/Unity/VrVoiceChat/Assets/PlatformScripts/RoomManager.cs",
+		"/Users/chyhfj/Downloads/OVRPlatformSDK_v1.16.0/Samples/Unity/VrVoiceChat/Assets/PlatformScripts/PlatformManager.cs",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/.git/rebase-merge/git-rebase-todo",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Scripts/Input/ControllerManager.cs",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/gala360_opengl.cpp",
+		"/Users/chyhfj/bin/adbwifi.sh",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/CcXmpParser.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/LogUtil.h",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/ios64-build.sh",
+		"/Users/chyhfj/Development/Apollo/EmptyDemo/Assets/Plugins/Android/mgdActivity.java",
+		"/Users/chyhfj/Downloads/ovr_sdk_mobile_1.0.3/VrAppSupport/MediaSurfacePlugin/Src/MediaSurfacePlugin.cpp",
+		"/Users/chyhfj/Downloads/ovr_sdk_mobile_1.0.3/LibOVRKernel/Src/Kernel/OVR_GlUtils.cpp",
+		"/Users/chyhfj/.plug",
+		"/Library/LaunchDaemons/de.bernhard-baehr.sleepwatcher.plist",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Scripts/PhotoShpereBase.cs",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/CMakeLists-Windows-x64.txt",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/tools/CMakeLists.txt",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/src/CMakeLists.txt",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/CMakeLists-Mac-x64.txt",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/ImageData.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/TurboJpegHelper.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/gala360_plugin.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/gala360_plugin.h",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/main_pano_helper.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/util.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/gala360_render_api.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/gala360_opengl.h",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/UnityPlugin/RenderAPI_D3D9.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/UnityPlugin/RenderAPI_D3D11.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/Android.mk",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/cryptographic.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/mac64-build.sh",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/deploy_mac_editor.sh",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/util.h",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/main_file_crypto.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/ImageLoading.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/deploy_jni_plugin.sh",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/TurboJpegHelper.h",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/cryptographic.h",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/win64-build.sh",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/main_pano_crop.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/encryption.h",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/encryption.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/UnityPlugin/RenderAPI_OpenGLCoreES.cpp",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/CMakeLists-Linux-x64.txt",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/UnityPlugin/PlatformBase.h",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/.gitattributes",
+		"/Users/chyhfj/Downloads/OC_Event______API.txt",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Plugins/Android/AndroidManifest-Dev.xml",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Scripts/UI/SceneCanvas.cs",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/.git/config",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Assets/Scenes/MainScene_GearVR.unity",
+		"/usr/local/bin/unityYamlTextConv.py",
+		"/Users/chyhfj/Downloads/OVRPlatformSDK_v1.14.0/Samples/Unity/VrVoiceChat/Readme.md",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_native/glew/eglew.h",
+		"/etc/hosts",
+		"/Users/chyhfj/Development/Apollo/cc_go_social_unity/Asse"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o:///Users/chyhfj/go/src/boyareadingweb/routers":
+	{
+		"height": 100.0
+	},
+	"output.9o:///Users/chyhfj/go/src/github.com/sycx/bookserver":
+	{
+		"height": 100.0
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 100.0
+	},
+	"output.exec":
+	{
+		"height": 146.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "blog.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"build",
+				"Assets/Plugins/Android/src/build_plugins.sh"
+			],
+			[
+				"sig",
+				"static/css/signin.css"
+			],
+			[
+				"log",
+				"views/user/login.tpl"
+			],
+			[
+				"reg",
+				"views/user/register.tpl"
+			],
+			[
+				"login",
+				"views/user/login.tpl"
+			],
+			[
+				"wid",
+				"views/user/widgets.tpl"
+			],
+			[
+				"help.",
+				"views/user/help.tpl"
+			],
+			[
+				"help",
+				"views/user/help.tpl"
+			],
+			[
+				"memor",
+				"models/widget_memory.go"
+			],
+			[
+				"inpu",
+				"views/user/widgets/input.tpl"
+			],
+			[
+				"__",
+				"widgets/drag-and-drop.wdgt/__settings__.js"
+			],
+			[
+				"widgets",
+				"controllers/widgets.go"
+			],
+			[
+				"dra",
+				"views/user/widgets/editDragDropWidget.tpl"
+			],
+			[
+				"dragtpl",
+				"views/user/widgets/editDragDropWidget.tpl"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 299.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 307.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,22 +1,22 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.19" />
+  <meta name="generator" content="Hugo 0.42.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  
   <title>Cisco IPSec VPN Automatic Routing Table &middot; sycx blog</title>
-  
 
   
-  <link rel="stylesheet" href="http://blog.sycx.me/css/poole.css">
-  <link rel="stylesheet" href="http://blog.sycx.me/css/syntax.css">
-  <link rel="stylesheet" href="http://blog.sycx.me/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
 
   
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
@@ -26,42 +26,32 @@
   <link href="" rel="alternate" type="application/rss+xml" title="sycx blog" />
 
   
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-19868922-3', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 </head>
 
-	<body class="theme-base-0c layout-reverse">
-		<div class="sidebar">
+  <body class="theme-base-0c layout-reverse">
+  <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.sycx.me/"><h1>sycx blog</h1></a>
+      <a href="https://blog.sycx.me/"><h1>sycx blog</h1></a>
       <p class="lead">
       碎月有把杀猪刀 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
       </p>
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      
-        <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li>
-      
+      <li><a href="https://blog.sycx.me/">Home</a> </li>
+      <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li>
     </ul>
 
-    <p>&copy; 2017. All rights reserved. </p>
+    <p>&copy; 2018. All rights reserved. </p>
   </div>
 </div>
 
-
-		<div class="content container">
-			<div class="post">
-			 	<h1>Cisco IPSec VPN Automatic Routing Table</h1>
-			  <span class="post-date">Fri, Dec 21, 2012</span>
-			      
+    <div class="content container">
+    <div class="post">
+  <h1>Cisco IPSec VPN Automatic Routing Table</h1>
+  <span class="post-date">Fri, Dec 21, 2012</span>
+  
 
 <h2 id="what-s-wrong">What&rsquo;s wrong?</h2>
 
@@ -88,21 +78,15 @@ ga('send', 'pageview');
 <ol>
 <li><p>Backup your <code>racoon.conf</code> </p></li>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo cp /etc/racoon/racoon.conf<span style="color: #333333">{</span>,.bak<span style="color: #333333">}</span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp /etc/racoon/racoon.conf<span style="color:#333">{</span>,.bak<span style="color:#333">}</span></code></pre></div>
 
 <li><p>Make a directory <code>/etc/racoon/remote</code> to put our custom config files</p></li>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo mkdir /etc/racoon/remote
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mkdir /etc/racoon/remote</code></pre></div>
 
 <li><p>Patch <code>racoon.conf</code> to include our directory</p></li>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo sh -c <span style="background-color: #fff0f0">&#39;echo &quot;include \&quot;/etc/racoon/remote/*.conf\&quot; ;&quot; &gt;&gt; /etc/racoon/racoon.conf&#39;</span>
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo sh -c <span style="background-color:#fff0f0">&#39;echo &#34;include \&#34;/etc/racoon/remote/*.conf\&#34; ;&#34; &gt;&gt; /etc/racoon/racoon.conf&#39;</span></code></pre></div>
     
 </ol>
 ## Make custom vpn conf file per server
@@ -112,40 +96,52 @@ ga('send', 'pageview');
 
 <li><p><strong>racoon</strong> will create a configuration file based your vpn server's IP under <code>/var/run/racoon/</code>, Copy that file to our directory</p></li>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp /var/run/racoon/YOUR_VPN_SERVER_IP.conf /etc/racoon/remote/</code></pre></div>
  
 <li><p>Edit  <code>/etc/racoon/remote/YOUR_VPN_SERVER_IP.conf</code>, insert two lines below:</p></li>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>script <span style="background-color: #fff0f0">&quot;/etc/ppp/ip-up&quot;</span> phase1_up;	
-script <span style="background-color: #fff0f0">&quot;/etc/ppp/ip-down&quot;</span> phase1_down;
-</pre></div>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">script <span style="background-color:#fff0f0">&#34;/etc/ppp/ip-up&#34;</span> phase1_up;	
+script <span style="background-color:#fff0f0">&#34;/etc/ppp/ip-down&#34;</span> phase1_down;</code></pre></div>
 
 <li><p>Have fun!</p></li>
 </ol>
 
-			</div>
+</div>
 
-			
-				<h2>Comments</h2>
-				<div id="disqus_thread"></div>
-<script type="text/javascript">
-     
-    var disqus_shortname = 'sycx'; 
-
-     
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sycx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-			
-		</div>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-19868922-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
   </body>
 </html>
