@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>我的第一个iOS App -HappyLyric &middot; sycx blog</title>
+  <title>OVROverlay Draw order &middot; sycx blog</title>
 
   
   <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/print.css" media="print">
@@ -40,7 +40,7 @@
 
     <ul class="sidebar-nav">
       <li><a href="https://blog.sycx.me/">Home</a> </li>
-      <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
+      <li><a href="/post/ovr-overlay-draw-order/"> OVROverlay Draw order </a></li><li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li>
     </ul>
 
     <p>&copy; 2019. All rights reserved. </p>
@@ -49,21 +49,56 @@
 
     <div class="content container">
     <div class="post">
-  <h1>我的第一个iOS App -HappyLyric</h1>
-  <span class="post-date">Sat, Mar 19, 2011</span>
-  <p>最初这个app的目的是练手+自用，当时App Store上的歌词类软件没一个令我满意的
-项目开始于大年初一，于正月底完成。
-写完自己用的很high的同时，也就想着顺便传到App Store上
-然后就是总计历时18天的上架审核
-两次提交皆因歌词的版权问题被拒，最后含泪砍功能才得以通过。
-期间也理解了歌词类软件渣的原因；</p>
+  <h1>OVROverlay Draw order</h1>
+  <span class="post-date">Tue, Jul 3, 2018</span>
+  
 
-<p>由于自动网络下载歌词的功能被砍了
-结果，app成了一个纯粹的LRC Viewer, 需要通过iTunes File Sharing自己放入.lrc文件。</p>
+<p>We want render clear text. we need use Oculus overlay</p>
 
-<p>[app 423535479]</p>
+<p>In order what OVROverlay does. that talk about the normal drawing in Unity.</p>
 
-<p>[appimg 423535479]</p>
+<h2 id="drawing-order-in-unity">Drawing order in Unity</h2>
+
+<ol>
+<li>opacity geometry</li>
+<li>skybox</li>
+<li>transparent</li>
+</ol>
+
+<p>now, we have <code>eye-buffer</code> texture.</p>
+
+<p>It&rsquo;s now Oculus&rsquo;s part to render this texture on screen.</p>
+
+<h2 id="ovroverlay">OVROverlay</h2>
+
+<p>=======</p>
+
+<p>Draw order</p>
+
+<p>Gala360:</p>
+
+<p>Orthographic camera &ndash; render &ndash;  UI Canvas =&gt; UI Texture</p>
+
+<p>UI Texture -&gt; OVR Overlay -&gt; draw as [Overlay Cylinder] 0
+Cursor -&gt; OVR Overlay -&gt; draw as [Overlay Quad] 1
+Skybox -&gt; OVR Overlay -&gt; draw as [Underlay Cubemap] 2</p>
+
+<p>====== With Laser v1 ======</p>
+
+<p>Laser -&gt; draw as [Unity eyetexture]
+UI Texture =&gt; draw as [Underlay Cylinder]
+Skybox -&gt; draw as [Underlay Cubemap]</p>
+
+<p>====== With Laser v2 ======</p>
+
+<p>UI Texture =&gt; draw as [Overlay Cylinder]
+Skybox -&gt; draw as [Underlay Cubemap]</p>
+
+<p>Laser -&gt; draw as [Overlay ??]</p>
+
+<p>OVRPlugin 1.26;  overlay performance seems not changed. ignore this update.
+Avatar SDK:
++++</p>
 
 </div>
 

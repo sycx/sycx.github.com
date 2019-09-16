@@ -6,10 +6,33 @@
     <description>Recent content in Golang on sycx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Mar 2017 20:45:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.sycx.me/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>近况与未来</title>
+      <link>https://blog.sycx.me/post/now_and_future/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.sycx.me/post/now_and_future/</guid>
+      <description>活的跟咸鱼似得我，本以为人生会如此一路咸鱼下去。
+最近，在富有上进心的女朋友不怨劳苦，辛勤鞭策之下， 我终于翻了个面下定决心，要做个有为青年
+女朋友 对没错，咸鱼如我居然能交到女朋友，实在是运气好到爆炸。
+我这人遇到好事呢，习惯偷偷暗爽，有心炫耀呢，总是咸鱼犯懒不了了之。不过呢，既然决定要告别咸鱼状态，那么我就不能在这么干，要努力大胆晒出来。
+一开始认识她时，就觉得这人跟我好合拍：一样的喜欢二次元，一样的很懂技术，聊起天来什么梗都能接得住，人长得漂亮，居然还会画画，这些人设属性加起来，简直跟Galgame里的角色一样梦幻般的角色。
+我若有尾巴，当她答应跟我交往时，我肯定尾巴都翘上天了。
+交往至今，最近让我想摆脱咸鱼状态的原因之一，就是我开始感到压力了..
+ 比死宅，女朋友看的动画比我多… 落败 比技术，女朋友连管的Team都比我大… 落败 比影响力，女朋友粉丝比我多… 落败 比画画，女朋友画的连载漫画都快200期了… 落败 比上进心，女朋友天天闲不下来… 落败 省略若干…  都说近朱者赤，有这么一个人在身边做榜样，咸鱼自然是不能再继续咸鱼
+什么？ 你觉得我女朋友这么厉害 想认识认识？ 来，点下面链接就是了
+twitter: @udspj
+我 最近三年，我一直在做VR相关app，今年年中，因现实原因，下定决心脱离中国，前往日本发展，目前进度处于敲碗等在留资格中
+这里，不得不又提一下我女朋友，感谢女友帮忙介绍工作，使我连简历都没投过，就有了一份日本工作，能如此顺利到日本，我的女朋友实在功不可没。
+在日本工作是怎样的体验？因在留还没下来，只能说过几个月才有能力回答了
+未来 异国工作，未来如何，还茫茫然不可知，人生要变成什么样，暂时也没有结论。不过至少，先写起博客吧
+蹭个热点写写SwiftUI如何？</description>
+    </item>
     
     <item>
       <title>猫耳耳机简易评测</title>

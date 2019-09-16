@@ -6,7 +6,7 @@
     <description>Recent content in Tags on sycx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Mar 2017 20:45:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.sycx.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Development</title>
       <link>https://blog.sycx.me/tags/development/</link>
-      <pubDate>Mon, 13 Mar 2017 20:45:22 +0800</pubDate>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.sycx.me/tags/development/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>Golang</title>
       <link>https://blog.sycx.me/tags/golang/</link>
-      <pubDate>Mon, 13 Mar 2017 20:45:22 +0800</pubDate>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.sycx.me/tags/golang/</guid>
       <description></description>

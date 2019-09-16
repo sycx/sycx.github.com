@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on sycx blog</title>
+    <link>https://blog.sycx.me/categories/unity/</link>
+    <description>Recent content in Unity on sycx blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.sycx.me/categories/unity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OVROverlay Draw order</title>
+      <link>https://blog.sycx.me/post/ovr-overlay-draw-order/</link>
+      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.sycx.me/post/ovr-overlay-draw-order/</guid>
+      <description>We want render clear text. we need use Oculus overlay
+In order what OVROverlay does. that talk about the normal drawing in Unity.
+Drawing order in Unity  opacity geometry skybox transparent  now, we have eye-buffer texture.
+It&amp;rsquo;s now Oculus&amp;rsquo;s part to render this texture on screen.
+OVROverlay =======
+Draw order
+Gala360:
+Orthographic camera &amp;ndash; render &amp;ndash; UI Canvas =&amp;gt; UI Texture
+UI Texture -&amp;gt; OVR Overlay -&amp;gt; draw as [Overlay Cylinder] 0 Cursor -&amp;gt; OVR Overlay -&amp;gt; draw as [Overlay Quad] 1 Skybox -&amp;gt; OVR Overlay -&amp;gt; draw as [Underlay Cubemap] 2</description>
+    </item>
+    
+  </channel>
+</rss>
