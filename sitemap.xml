@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.sycx.me/post/test/</loc>
+    <lastmod>2020-05-06T08:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.sycx.me/post/now_and_future/</loc>
     <lastmod>2019-09-16T00:00:00+00:00</lastmod>
   </url>
@@ -112,8 +117,20 @@
   </url>
   
   <url>
+    <loc>https://blog.sycx.me/tags/live/</loc>
+    <lastmod>2020-05-06T08:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.sycx.me/categories/live/</loc>
+    <lastmod>2020-05-06T08:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.sycx.me/post/</loc>
-    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-06T08:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -125,7 +142,7 @@
   
   <url>
     <loc>https://blog.sycx.me/</loc>
-    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-06T08:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
