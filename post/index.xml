@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on sycx blog</title>
@@ -6,18 +6,25 @@
     <description>Recent content in Posts on sycx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 May 2020 08:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Jan 2021 22:00:29 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.sycx.me/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>测试文章</title>
-      <link>https://blog.sycx.me/post/test/</link>
-      <pubDate>Wed, 06 May 2020 08:00:00 +0000</pubDate>
+      <title>蛀牙了,蛀很大</title>
+      <link>https://blog.sycx.me/post/visit-dentist-in-japan/</link>
+      <pubDate>Sat, 16 Jan 2021 22:00:29 +0900</pubDate>
       
-      <guid>https://blog.sycx.me/post/test/</guid>
-      <description>测试一下，都忘了怎么发文章了</description>
+      <guid>https://blog.sycx.me/post/visit-dentist-in-japan/</guid>
+      <description>上牙犬齿有个小洞，蛮多年了一直也没去管它，主要是人在大陆时，实在不想去医院，太折磨人
+来日本后也有动过心思，要么去看看，毕竟这边医疗条件好，不用还挺亏
+奈何病毒肆虐，在牙与命之间，我还是选了后者
+时间飞逝，在家窝了快一年，病情居然有了变化
+某日刷牙 忽然注意到 牙洞居然扩了有两倍大！！
+一番纠结过后 还是选择去看牙医
+搜索了下家附近的牙医，真是不搜不知道，一搜吓一跳，牙医诊所数量居然比便利店还要多
+【未完待续&amp;hellip;】</description>
     </item>
     
     <item>
@@ -43,10 +50,10 @@
       <guid>https://blog.sycx.me/post/cat-ear-headphones-review/</guid>
       <description>一句话： 这货重449g。
 完。
-前几年还比较天真相信众筹的时候，只凭一张设计图就定了这耳机，苦等多年后就等来个.. 呃.. 玩具
+ 前几年还比较天真相信众筹的时候，只凭一张设计图就定了这耳机，苦等多年后就等来个.. 呃.. 玩具
 我戴上的第一感觉是： 重， 脖子好酸， 颈椎病要发作了.. 就凭这重量，死刑。
 猫耳部位是扬声器,可以音乐外放.. 外放.. 瞬间感觉low爆了， 去掉这两个扬声器， 减轻点重量也好啊弱智设计师
-最近又想培养培养写作习惯了， 于是从以前草稿箱捞出篇了上面这篇废文。</description>
+ 最近又想培养培养写作习惯了， 于是从以前草稿箱捞出篇了上面这篇废文。</description>
     </item>
     
     <item>
@@ -56,11 +63,10 @@
       
       <guid>https://blog.sycx.me/blog/2013/01/01/food-taste-pizza-dumplings/</guid>
       <description>第一眼见到它的时候，我不由得为它的干净利落赞叹不已。如此简洁的食物，实在是不多见。
-
 拿披萨当做饺子皮，做成饺子样，这就是披萨饺。
 原本热情奔放的披萨，一朝沾染上了含蓄性格，害羞的蜷缩成一团，将自身的一切美好藏在内里，徒留质朴的面饼示人。非得你一刀将其躯壳斩开，才能见得到其满腹的美好，这就是披萨饺。
 这种性格，对于人类来讲，一般称为闷骚，所以说披萨饺又名闷骚披萨（雾
-   店名 Papa Johns     菜名 腊肠蘑菇披萨饺   价格 32 CNY   其它 饮料4选1，无限续杯    </description>
+    店名 Papa Johns     菜名 腊肠蘑菇披萨饺   价格 32 CNY   其它 饮料4选1，无限续杯    </description>
     </item>
     
     <item>
@@ -70,11 +76,10 @@
       
       <guid>https://blog.sycx.me/blog/2012/12/21/cisco-ipsec-vpn-automatic-routing-table/</guid>
       <description>What&amp;rsquo;s wrong? In PPTP/L2TP world:
- /etc/ppp/ip-up will be run on VPN startup
- /etc/ppp/ip-down will be run on VPN shutdown  But Cisco IPSec just ignore these files, why?
+ /etc/ppp/ip-up will be run on VPN startup /etc/ppp/ip-down will be run on VPN shutdown  But Cisco IPSec just ignore these files, why?
 After doing some Googling, I figured out the difference:
  PPTP/L2TP managed by pppd Cisco IPSec managed by racoon  And, here is the solution
-Base environment configure  Backup your racoon.conf  sudo cp /etc/racoon/racoon.conf{,.bak} Make a directory /etc/racoon/remote to put our custom config files</description>
+Base environment configure sudo cp /etc/racoon/racoon.conf{,.bak} sudo mkdir /etc/racoon/remote sudo sh -c &amp;#39;echo &amp;#34;include \&amp;#34;/etc/racoon/remote/*.conf\&amp;#34; ;&amp;#34; &amp;gt;&amp;gt; /etc/racoon/racoon.</description>
     </item>
     
     <item>
@@ -95,24 +100,16 @@ Base environment configure  Backup your racoon.conf  sudo cp /etc/racoon/racoon.
       <guid>https://blog.sycx.me/2011/04/thunder-batch-download-under-mac-applescript-offline-files/</guid>
       <description>[Update] 2011年6月3日： 添加了反序功能（默认开启），对非BT类批量下载链接进行倒序，功能开关请直接改代码。
 代码整理，并增加了一些注释。
-下载：ThunderLixian-110603
-2011年4月28日： 给AppleScript方法添加了BT类任务支持
+下载：ThunderLixian-1106032011年4月28日： 给AppleScript方法添加了BT类任务支持
 新代码请自行打开Service查看，懒得贴上来了..
-新Service下载：ThunderLixian-BTSupport
-用法：对BT任务点击 &amp;ldquo;显示BT列表&amp;rdquo;，之后勾选要下载的文件，然后运行Service。
+新Service下载：ThunderLixian-BTSupport用法：对BT任务点击 &amp;ldquo;显示BT列表&amp;rdquo;，之后勾选要下载的文件，然后运行Service。
 [NEW]Bookmarklet: 研究了下JavaScript，现学现卖，于是有了个更通用的解决方案
-添加书签： 迅雷批量
-将上方按钮拖到书签栏
-
+添加书签： 迅雷批量将上方按钮拖到书签栏
 用法： 如图：
-
-已知限制：  Safari和Chrome测试可用，但是Firefox3.6无效，原因不知。 依然不支持BT类任务，哪天我有下到BT资源可能会解决。 
-[Old]AppleScript: 创建： 打开Automator,创建一个Service 拖放一个Action &amp;ldquo;Run AppleScript&amp;rdquo; 复制下方代码进去，保存。 如图： 
-或者直接下载文件：ThunderLixian.workflow 解压放到 ~/Library/Services/
-使用： 用Safari打开迅雷离线网页,勾选你要下载的文件，然后运行Service 
-如此，便会自动调用iGetter批量下载了。
-局限： 这个Service是随便写来自用的，只达到刚好够用的标准，所以很有局限性：  所勾选的文件请必须是已下载完成的，而且不支持BT类文件 调用iGetter下载，要用其它下载工具得自己改代码哦～ 只支持Safari 
-初版代码： tell application &amp;#34;Safari&amp;#34; if (exists document &amp;#34;迅雷会员-离线下载&amp;#34;) then set doc to document &amp;#34;迅雷会员-离线下载&amp;#34; set src to &amp;#34;var syO = document.getElementsByName(&amp;#39;ck&amp;#39;); var syVal = syO.</description>
+已知限制： 或者直接下载文件：ThunderLixian.workflow解压放到 ~/Library/Services/
+使用： 用Safari打开迅雷离线网页,勾选你要下载的文件，然后运行Service 如此，便会自动调用iGetter批量下载了。
+局限： 这个Service是随便写来自用的，只达到刚好够用的标准，所以很有局限性：
+ tell application &amp;quot;iGetter&amp;quot; set newDownList to {} repeat with i from 1 to number of items in downList set this_item to item i of downList -- insert actions here set newItem to {url:this_item} copy newItem to the end of newDownList end repeat DownloadURL newDownList end tell end if  end tell</description>
     </item>
     
     <item>
@@ -134,10 +131,7 @@ Base environment configure  Backup your racoon.conf  sudo cp /etc/racoon/racoon.
       
       <guid>https://blog.sycx.me/2011/03/115urlaction-mac-115-the-next-batch-file-download/</guid>
       <description>一个Automator的Action 用法参考下图：
-
-下载：115URLAction
-源代码： github
-感谢： 115SpeedUp项目</description>
+下载：115URLAction源代码： github感谢： 115SpeedUp项目</description>
     </item>
     
     <item>
@@ -146,15 +140,12 @@ Base environment configure  Backup your racoon.conf  sudo cp /etc/racoon/racoon.
       <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://blog.sycx.me/2011/02/howto-how-to-set-the-nodestopatch-voodoohda/</guid>
-      <description>大部分参考自：http://www.projectosx.com/forum/index.php?showtopic=465
-进Linux ，开 Terminal ，执行 cd ~/Desktop &amp;amp;&amp;amp; mkdir CodecDump &amp;amp;&amp;amp; for c in /proc/asound/card/codec#; do f=&amp;ldquo;${c/\/*card/card}&amp;ldquo;; cat &amp;ldquo;$c&amp;rdquo; &amp;gt; CodecDump/${f//\//-}.txt; done &amp;amp;&amp;amp; zip -r CodecDump.zip CodecDump 将桌面上的 CodecDump.zip 带回OS X
+      <description>大部分参考自：http://www.projectosx.com/forum/index.php?showtopic=465进Linux ，开 Terminal ，执行
 解开CodecDump.zip ,会有一些txt文件，打开他们，查看第一行，找到含有你声卡型号的文件
 例如我的ALC888就在 card0-codec#0.txt里
-
-下载我修改过的脚本 verbit
-解压到card0-codec#0.txt所在目录
+下载我修改过的脚本 verbit解压到card0-codec#0.txt所在目录
 开Terminal，切换到Dump文件所在目录
-执行命令 ./verbit card0-codec#0.txt 
+执行命令
 打开VoodooHDA.kext/Contents/Info.plist
 NodesToPatch里需要设置的三个数值 Codec、Node、Config如上图所示
 若不需要某个Node，则将相应的Config值设为 0x40f000f0
@@ -169,18 +160,26 @@ Config值手动修改指南：
       <pubDate>Thu, 25 Nov 2010 00:00:00 +0000</pubDate>
       
       <guid>https://blog.sycx.me/2010/11/how-to-mac-version-of-world-of-warcraft-update-prompt-internal-error-of-the-analysis-and-solution/</guid>
-      <description>今天台服魔兽更新了4.0.3a,相信很多MAC玩家都会遇到更新问题 發生內部錯誤，Blizzard更新程式無法進行更新。請聯絡Blizzard的技術支援部門。 如下图
-
-很多人问，这该如何解决，很多人这么建议 运行 Repair 程序修复 不过，一般都是修复失败的结果 于是，大部分人的解决办法是 切换到Windows下完成更新，然后到《X-Only》下载最新的App 但是，这个办法总是麻烦，而且上述问题依然存在，每次更新总得这么麻烦一次
+      <description>今天台服魔兽更新了4.0.3a,相信很多MAC玩家都会遇到更新问题
+很多人问，这该如何解决，很多人这么建议
 ====================
-分析部分(analyze part): 那么有没有办法一劳永逸解决这个问题呢？抱着这个想法，我趁着这次更新，研究了一番这个问题
-首先，单单一个“内部错误”的错误提示没有提供任何有价值的信息，需要查查看有没有Log记录精确点的问题所在
-很容易在WOW目录下找到一个Logs文件夹，找到了一个关键文件 World of Warcraft/Logs/Blizzard Updater Log.html 于是我马上见到了关键的错误信息 錯誤: 更新檔&amp;rdquo;mac-game-hdfiles/World of Warcraft.app/Contents/MacOS/World of Warcraft&amp;ldquo;無法安裝。  (MD5 mismatch: expected 0x7058660C35AE508717519CF21B7A3AF0, actual 0xFB9666B037DCB8782339A1DCB2F3400B.)(PTCApply_BSDiff failed.) 这句话说明，补丁升级需要目标文件的MD5值为 0x7058660C35AE508717519CF21B7A3AF0 ，但是现有文件的MD5却是 0xFB9666B037DCB8782339A1DCB2F3400B 两者不匹配，版本不对，升级无法继续  那么，文件“World of Warcraft” 在哪里呢 首先，我定位到魔兽目录下的World of Warcraft.app文件，试着计算它的MD5值  计算结果是：7058660c35ae508717519cf21b7a3af0
+分析部分(analyze part): 很容易在WOW目录下找到一个Logs文件夹，找到了一个关键文件
 这不是没问题吗？那为什么Updater计算出来的会是 0xFB9666B037DCB8782339A1DCB2F3400B
 是程序计算错误吗？不，肯定不是，因为很多人都能正常更新。
 那么就是说 Updater检查的不是这个文件，那它检查的是哪里的文件？
 MPQ！MPQ里也有这个文件
-于是我定位到了4个文件 World of Warcraft/Data/zhTW/base-zhTW.MPQ  World of Warcraft/Data/zhTW/backup-zhTW.MPQ  World of Warcraft/Data/enTW/base-enTW.</description>
+于是我定位到了4个文件
+用MPQ Editor打开base-zhTW.MPQ,解压World of Warcraft.app找到 World of Warcraft.app/Contents/MacOS/World of Warcraft,计算它的MD5值fb9666b037dcb8782339a1dcb2f3400b !!! 我找到它了
+那么，为什么，MPQ里面的文件的MD5值为什么会不一样呢
+查看MPQ里的这个app的info.plist文件，我注意到它的版本是 4.0.0.12911 真是古老的版本
+那么出错的只有World of Warcraft.app这个文件吗？其它几个文件有没有错？经过对比，4个MPQ文件里的app版本统统错了
+那么解决办法出来了，把这MPQ里的5个app文件替换掉
+修复问题之前，想下出现这个问题的原因是什么
+我得出了一个结论：
+用MPQ Editor打开base-zhTW.MPQ,将5个.app文件拖入其中Step 3: 之后保持Locale ID为Neutral,点击Rulesets按钮，选择World of Warcraft游戏 Step 4:文件覆盖提示，选择Yes All Step 5:重要，一定要记得选择 Operations 菜单下的 Change(attributes)命令 Step 6:对另外三个.MPQ文件重复Step 2~Step 5的操作
+Step 7:最后，回到Mac，将修改后的4个MPQ文件覆盖回原来位置
+现在，打开Launcher,你已经可以正常更新了，恭喜！
+然后，记住：下次不要用Windows更新了&amp;amp;下次你也没办法在Windows下更新了。</description>
     </item>
     
     <item>
@@ -190,20 +189,14 @@ MPQ！MPQ里也有这个文件
       
       <guid>https://blog.sycx.me/2010/11/services-quick-fix-file-name-garbled/</guid>
       <description>使用OS X的时候，下载文件总是会遇到乱码的情况：
-
 搜索找不到令人满意的解决方案，于是我自己动手写了个服务(Services)
 图解：
 在乱码的文件上右击，选择ConvertFileName
-
 之后会弹出确认框,确认无误点击OK
-
 效果如下
-
 也支持文件夹改名
-
 ==Download=============
-ConvertFileName.workflow
-解压至 ~/Library/Services/
+ConvertFileName.workflow解压至 ~/Library/Services/
 Tip:此服务用于因URL解码错误，呈“%xx”形式的文件名修复.默认设置尝试UTF-8/GB2312/GBK三种编码
 如果解码失败，请参考文件源，自行修改文件，添加相关的编码
 ======================</description>
@@ -215,7 +208,7 @@ Tip:此服务用于因URL解码错误，呈“%xx”形式的文件名修复.默
       <pubDate>Wed, 02 Jun 2010 00:00:00 +0000</pubDate>
       
       <guid>https://blog.sycx.me/2010/06/windows-ssh-pac-proxy-setting/</guid>
-      <description>首先，给出整个设置的流程图：   SSH客户端的设置  下载安装 Bitvise Tunnelier Login选项卡填上服务器地址，用户名，密码 Option选项卡On Login处去掉Open Terminal和Open SFTP Services选项卡开启SOCKS / HTTP Proxy Forwarding  Listen Interface处，只本机使用就保持默认的127.0.0.1 ；要共享多机使用就填你的内网IP或外网IP Listen Port自己指定个端口   Save Profile保存配置    设置http代理转向  Bitvise Tunnelier提供的只是socks5代理，我们使用Privoxy提供一个HTTP代理服务，将HTTP协议请求转换为socks5协议，并将连接转发到Bitvise Tunnelier 下载安装 Privoxy 打开Main Configuration  搜索forward-socks5 ，找到一行 # forward-socks5 / 127.0.0.1:8118，去掉行首“#”注释符，IP及端口改为在上一步Bitvise所设置的 如果需要共享多机使用，则再搜索listen-address，找到一行listen-address 127.0.0.1:8118 ； 将IP改成你的内网或外网IP      PAC的设置  从 autoproxy2pac 上获取pac文件，代理方式选择HTTP, IP和端口填上一步Privoxy中listen-address的参数，下载文件或者获取在线版本地址 设置internet选项  打开internet选项，选择 连接 选项卡 使用拨号上网的点击 设置，局域网通过路由上网的点击 局域网设置 勾选 使用自动配置脚本，在其下方地址处填入PAC文件的URL地址</description>
+      <description>首先，给出整个设置的流程图：</description>
     </item>
     
     <item>
@@ -224,8 +217,8 @@ Tip:此服务用于因URL解码错误，呈“%xx”形式的文件名修复.默
       <pubDate>Tue, 18 May 2010 00:00:00 +0000</pubDate>
       
       <guid>https://blog.sycx.me/2010/05/move-snow-leopard-to-new-disk/</guid>
-      <description>今天,我将Snow Leopard系统迁移到了另一个硬盘上,整个过程是如此令我惊奇的简单 只需从安装盘启动,打开磁盘工具,按如下拖动,点击恢复,30分钟解决  重起,引导进新硬盘上的系统,对于我等黑苹果用户,再给新硬盘上装上引导工具
-然后,完成了,可以把原来的系统干掉了 第三方工具?那是什么?</description>
+      <description>今天,我将Snow Leopard系统迁移到了另一个硬盘上,整个过程是如此令我惊奇的简单
+然后,完成了,可以把原来的系统干掉了</description>
     </item>
     
     <item>
@@ -237,7 +230,9 @@ Tip:此服务用于因URL解码错误，呈“%xx”形式的文件名修复.默
       <description>管着两间学生机房，每间机器数量64台，每次网刻后设置计算机名和IP总是件麻烦的事情
 于是就写了个批处理方便设置了
 功能说明：运行后获取输入的两位数字的机器号后，将计算机名改为PCxx, IP改为192.168.0.1xx
- set /p cNum=请输入机号(两位数字)： ::添加计算机名前缀PC set name=PC%cNum%   输入机号(两位数字)： ::添加计算机名前缀PC set name=PC%cNum%  ::设置计算机名 reg add &amp;ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\ComputerName\ActiveComputerName&amp;rdquo; /v ComputerName /t reg_sz /d %name% /f &amp;gt;nul 2&amp;gt;nul reg add &amp;ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters&amp;rdquo; /v &amp;ldquo;NV Hostname&amp;rdquo; /t reg_sz /d %name% /f &amp;gt;nul 2&amp;gt;nul reg add &amp;ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters&amp;rdquo; /v Hostname /t reg_sz /d %name% /f &amp;gt;nul 2&amp;gt;nul ::尝试修复重名问题 reg add &amp;ldquo;HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam&amp;rdquo; /v @ /t REG_SZ /d &amp;ldquo;%name%&amp;rdquo; /f &amp;gt;nul 2&amp;gt;nul reg add &amp;ldquo;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName&amp;rdquo; /v &amp;ldquo;ComputerName&amp;rdquo; /t REG_SZ /d &amp;ldquo;%name%&amp;rdquo; /f &amp;gt;nul 2&amp;gt;nul reg add &amp;ldquo;HKLM\SYSTEM\CurrentControlSet\Services\Eventlog&amp;rdquo; /v &amp;ldquo;ComputerName&amp;rdquo; /t REG_SZ /d &amp;ldquo;%name%&amp;rdquo; /f &amp;gt;nul 2&amp;gt;nul</description>
+限制：只支持最大99台机器 {% codeblock %}@echo off echo. echo. echo. set /p cNum=请输入机号(两位数字)：
+::添加计算机名前缀PC set name=PC%cNum%
+::设置计算机名 reg add &amp;ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\ComputerName\ActiveComputerName&amp;rdquo; /v ComputerName /t reg_sz /d %name% /f &amp;gt;nul 2&amp;gt;nul reg add &amp;ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters&amp;rdquo; /v &amp;ldquo;NV Hostname&amp;rdquo; /t reg_sz /d %name% /f &amp;gt;nul 2&amp;gt;nul reg add &amp;ldquo;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters&amp;rdquo; /v Hostname /t reg_sz /d %name% /f &amp;gt;nul 2&amp;gt;nul ::尝试修复重名问题 reg add &amp;ldquo;HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam&amp;rdquo; /v @ /t REG_SZ /d &amp;ldquo;%name%&amp;rdquo; /f &amp;gt;nul 2&amp;gt;nul reg add &amp;ldquo;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName&amp;rdquo; /v &amp;ldquo;ComputerName&amp;rdquo; /t REG_SZ /d &amp;ldquo;%name%&amp;rdquo; /f &amp;gt;nul 2&amp;gt;nul reg add &amp;ldquo;HKLM\SYSTEM\CurrentControlSet\Services\Eventlog&amp;rdquo; /v &amp;ldquo;ComputerName&amp;rdquo; /t REG_SZ /d &amp;ldquo;%name%&amp;rdquo; /f &amp;gt;nul 2&amp;gt;nul</description>
     </item>
     
     <item>
@@ -246,7 +241,7 @@ Tip:此服务用于因URL解码错误，呈“%xx”形式的文件名修复.默
       <pubDate>Fri, 23 Apr 2010 00:00:00 +0000</pubDate>
       
       <guid>https://blog.sycx.me/2010/04/mac-alarm-without-third-party-software/</guid>
-      <description>在iTunes创建一个播放列表wakeup,列表中添加当闹钟的音乐文件 Automator创建一个应用程序，实现启动iTunes播放wakeup列表 iCal设定事件，定好提醒时间，提醒方式选择打开上一步创建的程序    最后，设置自动开机时间，比提醒时间早个5分钟左右  为了避免年纪轻轻就得心脏病，我需要声音能由小到大有个渐变过程 一开始我在Automator流程里加了几个设置音量并暂停的重复操作    但是这样的实现方式看着就不舒服，而且声音变化不够平滑 正好在学objective-C，试着写一个小程序实现，可惜我这个门外汉实在搞不懂设置系统音量应该调用什么函数 用google搜索资料倒是意外得到了一个shell命令 osascript -e &amp;#34;set Volume 0&amp;#34; Volume值范围是 0.0-10.0 Update: Volume值范围是 0.0-7.0 Update2: 在AppleScript里查到了&amp;rdquo;set volume&amp;rdquo;的详细定义,改用&amp;rdquo;[set volume output volume integer] &amp;ldquo;命令,integer的值范围是0-100; 于是改用shell脚本实现音量平缓变化  shell脚本代码如下 for((i=0;i&amp;amp;lt;=100;++i)) do osascript -e &amp;#34;set Volume output volume $i&amp;#34; sleep 0.2 done</description>
+      <description></description>
     </item>
     
     <item>
@@ -256,7 +251,18 @@ Tip:此服务用于因URL解码错误，呈“%xx”形式的文件名修复.默
       
       <guid>https://blog.sycx.me/2010/04/mac-services-translate-with-google/</guid>
       <description>依照笑来老师的教程添加了几个Services 今天试图添加一个Translate with Google的时候却遇到了点问题
-Google translate的Prefix是这样的 &amp;ldquo;http://translate.google.cn/#auto|zh-CN|&amp;ldquo; 按教程到了Display Webpages步骤却会将网址编码转换为 &amp;ldquo;http://translate.google.cn/%23auto%7Czh-CN%7C&amp;ldquo; 问题在于Google translate不支持编码后的‘#’  研究了下于是用AppleScript解决  以下是代码 on run {input, parameters}  set thePre to &amp;ldquo;http://translate.google.cn/#auto|zh-CN|&amp;quot; set theUrl to thePre &amp;amp; input  tell application &amp;ldquo;Safari&amp;rdquo; activate make new document set the URL of front document to theUrl end tell  return input end run</description>
+Google translate的Prefix是这样的</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://blog.sycx.me/post/line-webhook-ssl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.sycx.me/post/line-webhook-ssl/</guid>
+      <description>We occourd a bug recentlly. Users reported that our Line App stoppted responsed. No matter user do anything in Line App( send text message , tap menu in app), users get not responsed.
+At the first, we are checking logs on our server. there is nothing in the log. It seems like Line has probelem to talk to our server.
+So we check settings in Line Consolse. In the Webhoook settings, when we click the Verify button, It reporting an error meesage: &amp;ldquo;An error occurred when sending the webhook.</description>
     </item>
     
   </channel>

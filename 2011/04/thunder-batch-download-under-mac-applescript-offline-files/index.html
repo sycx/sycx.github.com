@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.42.2" />
+  <meta name="generator" content="Hugo 0.70.0" />
 
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Mac下批量下载迅雷离线文件-AppleScript &middot; sycx blog</title>
+  <meta name="description" content="" />
 
   
   <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/print.css" media="print">
@@ -23,8 +24,6 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="sycx blog" />
-
   
 </head>
 
@@ -34,132 +33,71 @@
     <div class="sidebar-about">
       <a href="https://blog.sycx.me/"><h1>sycx blog</h1></a>
       <p class="lead">
-      碎月成星 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
+        读书不读全，写文写一半，我是烂尾王 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
       </p>
     </div>
 
     <ul class="sidebar-nav">
       <li><a href="https://blog.sycx.me/">Home</a> </li>
-      <li><a href="/post/test/"> 测试文章 </a></li><li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
+      <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/visit-dentist-in-japan/"> 蛀牙了,蛀很大 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
     </ul>
 
-    <p>&copy; 2020. All rights reserved. </p>
+    <p>&copy; 2021. All rights reserved. </p>
   </div>
 </div>
 
-    <div class="content container">
+    <main class="content container">
     <div class="post">
   <h1>Mac下批量下载迅雷离线文件-AppleScript</h1>
-  <span class="post-date">Thu, Apr 7, 2011</span>
-  
-
-<h2 id="update">[Update]</h2>
-
+  <time datetime=2011-04-07T00:00:00Z class="post-date">Thu, Apr 7, 2011</time>
+  <h2 id="update">[Update]</h2>
 <h3 id="2011年6月3日">2011年6月3日：</h3>
-
 <p>添加了反序功能（默认开启），对非BT类批量下载链接进行倒序，功能开关请直接改代码。</p>
-
 <p>代码整理，并增加了一些注释。</p>
-
-<p>下载：<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixian-110603.zip">ThunderLixian-110603</a></p>
-
+<p>下载：<!-- raw HTML omitted -->ThunderLixian-110603<!-- raw HTML omitted --></p>
 <h3 id="2011年4月28日">2011年4月28日：</h3>
-
 <p>给AppleScript方法添加了BT类任务支持</p>
-
 <p>新代码请自行打开Service查看，懒得贴上来了..</p>
-
-<p>新Service下载：<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixian-BTSupport.zip">ThunderLixian-BTSupport</a></p>
-
+<p>新Service下载：<!-- raw HTML omitted -->ThunderLixian-BTSupport<!-- raw HTML omitted --></p>
 <p>用法：对BT任务点击 &ldquo;显示BT列表&rdquo;，之后勾选要下载的文件，然后运行Service。</p>
-
-<h2 id="new-bookmarklet">[NEW]Bookmarklet:</h2>
-
+<h2 id="newbookmarklet">[NEW]Bookmarklet:</h2>
 <p>研究了下JavaScript，现学现卖，于是有了个更通用的解决方案</p>
-
 <h3 id="添加书签">添加书签：</h3>
-
-<p><a style="text-decoration: none; background: #f4f4f4; border-radius: 5px; color: #666; border: 1px solid #999; padding: 5px; cursor: move;" href="javascript:(function(){cA=document.getElementsByClassName('con')[0];hA=document.getElementById('hackArea');if(hA){cA.removeChild(hA);}hA=document.createElement('div');hA.id='hackArea';sO=document.getElementsByName('ck');sV=sO.length;for(i=0;i&lt;sV;i++){if(sO[i].checked==true){tI=sO[i].value;lI='dl_url'+tI.toString();nI='durl'+tI.toString();oL=document.getElementById(lI).value;lN=document.getElementById(nI).value;link=document.createElement('A');link.href=oL;link.innerHTML=lN;hA.appendChild(link);hA.appendChild(document.createElement('br'));}}cA.appendChild(hA);})()">迅雷批量</a></p>
-
+<p><!-- raw HTML omitted -->迅雷批量<!-- raw HTML omitted --></p>
 <p>将上方按钮拖到书签栏</p>
-
-<p><a href="http://blog.sycx.me/uploads/2011/04/ThunderLixianBookmark1.png"><img class="alignnone size-full wp-image-191" title="ThunderLixianBookmark1" src="http://blog.sycx.me/uploads/2011/04/ThunderLixianBookmark1.png" alt="" width="329" height="369" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="用法">用法：</h3>
-
 <p>如图：</p>
-
-<p><a href="http://blog.sycx.me/uploads/2011/04/ThunderLixianBookmark2.png"><img class="alignnone size-full wp-image-192" title="ThunderLixianBookmark2" src="http://blog.sycx.me/uploads/2011/04/ThunderLixianBookmark2.png" alt="" width="358" height="598" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="已知限制">已知限制：</h3>
-
-<p><ol>
-    <li>Safari和Chrome测试可用，但是Firefox3.6无效，原因不知。</li>
-    <li>依然不支持BT类任务，哪天我有下到BT资源可能会解决。</li>
-</ol></p>
-
-<h2 id="old-applescript">[Old]AppleScript:</h2>
-
-<h3 id="创建">创建：</h3>
-
-<p>打开Automator,创建一个Service
-拖放一个Action &ldquo;Run AppleScript&rdquo;
-复制下方代码进去，保存。
-如图：
-<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixianSample.png"><img class="alignnone size-full wp-image-181" title="ThunderLixianSample" src="http://blog.sycx.me/uploads/2011/04/ThunderLixianSample.png" alt="" width="607" height="707" /></a></p>
-
-<p>或者直接下载文件：<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixian.workflow.zip">ThunderLixian.workflow</a> 解压放到 ~/Library/Services/</p>
-
+<!-- raw HTML omitted -->
+<p>或者直接下载文件：<!-- raw HTML omitted -->ThunderLixian.workflow<!-- raw HTML omitted --> 解压放到 ~/Library/Services/</p>
 <h3 id="使用">使用：</h3>
-
 <p>用Safari打开迅雷离线网页,勾选你要下载的文件，然后运行Service
-<a href="http://blog.sycx.me/uploads/2011/04/ThunderLixianSample2.png"><img class="alignnone size-full wp-image-183" title="ThunderLixianSample2" src="http://blog.sycx.me/uploads/2011/04/ThunderLixianSample2.png" alt="" width="524" height="329" /></a></p>
-
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>如此，便会自动调用iGetter批量下载了。</p>
-
 <h3 id="局限">局限：</h3>
-
-<p>这个Service是随便写来自用的，只达到刚好够用的标准，所以很有局限性：
-<ol>
-    <li>所勾选的文件请必须是已下载完成的，而且不支持BT类文件</li>
-    <li>调用iGetter下载，要用其它下载工具得自己改代码哦～</li>
-    <li>只支持Safari</li>
-</ol></p>
-
-<h3 id="初版代码">初版代码：</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-applescript" data-lang="applescript"><span style="color:#080;font-weight:bold">tell</span> <span style="color:#007020">application</span> <span style="background-color:#fff0f0">&#34;Safari&#34;</span>
-	<span style="color:#080;font-weight:bold">if</span> (<span style="color:#007020">exists</span> <span style="color:#00c">document</span> <span style="background-color:#fff0f0">&#34;迅雷会员-离线下载&#34;</span>) <span style="color:#080;font-weight:bold">then</span>
-		<span style="color:#080;font-weight:bold">set</span> <span style="color:#963">doc</span> <span style="color:#080;font-weight:bold">to</span> <span style="color:#00c">document</span> <span style="background-color:#fff0f0">&#34;迅雷会员-离线下载&#34;</span>
-		<span style="color:#080;font-weight:bold">set</span> <span style="color:#963">src</span> <span style="color:#080;font-weight:bold">to</span> <span style="background-color:#fff0f0">&#34;var syO = document.getElementsByName(&#39;ck&#39;);
-</span><span style="background-color:#fff0f0">var syVal = syO.length;
-</span><span style="background-color:#fff0f0">var syList=[];
-</span><span style="background-color:#fff0f0">for(var i=0; i&amp;lt; syVal;i++){
-</span><span style="background-color:#fff0f0">    if(syO[i].checked == true){
-</span><span style="background-color:#fff0f0">    var taskid = syO[i].value;
-</span><span style="background-color:#fff0f0">    var linkId = &#39;dl_url&#39;+taskid.toString();
-</span><span style="background-color:#fff0f0">    var oneLink = document.getElementById(linkId).value;
-</span><span style="background-color:#fff0f0">    syList.push(oneLink);
-</span><span style="background-color:#fff0f0">    }}
-</span><span style="background-color:#fff0f0">syList;&#34;</span>
-		<span style="color:#080;font-weight:bold">set</span> <span style="color:#963">downList</span> <span style="color:#080;font-weight:bold">to</span> <span style="color:#963">do</span> <span style="color:#963">JavaScript</span> <span style="color:#963">src</span> <span style="color:#080;font-weight:bold">in</span> <span style="color:#963">doc</span>
-
-		<span style="color:#080;font-weight:bold">tell</span> <span style="color:#007020">application</span> <span style="background-color:#fff0f0">&#34;iGetter&#34;</span>
-			<span style="color:#080;font-weight:bold">set</span> <span style="color:#963">newDownList</span> <span style="color:#080;font-weight:bold">to</span> {}
-			<span style="color:#080;font-weight:bold">repeat</span> <span style="color:#963">with</span> <span style="color:#963">i</span> <span style="color:#080;font-weight:bold">from</span> <span style="color:#00d;font-weight:bold">1</span> <span style="color:#080;font-weight:bold">to</span> <span style="color:#963">number</span> <span style="color:#080;font-weight:bold">of</span> <span style="color:#007020">items</span> <span style="color:#080;font-weight:bold">in</span> <span style="color:#963">downList</span>
-				<span style="color:#080;font-weight:bold">set</span> <span style="color:#963">this_item</span> <span style="color:#080;font-weight:bold">to</span> <span style="color:#007020">item</span> <span style="color:#963">i</span> <span style="color:#080;font-weight:bold">of</span> <span style="color:#963">downList</span>
-				<span style="color:#888">-- insert actions here</span>
-				<span style="color:#080;font-weight:bold">set</span> <span style="color:#963">newItem</span> <span style="color:#080;font-weight:bold">to</span> {<span style="color:#963">url</span>:<span style="color:#963">this_item</span>}
-				<span style="color:#007020">copy</span> <span style="color:#963">newItem</span> <span style="color:#080;font-weight:bold">to</span> <span style="color:#007020">the</span> <span style="color:#080;font-weight:bold">end</span> <span style="color:#080;font-weight:bold">of</span> <span style="color:#963">newDownList</span>
-			<span style="color:#080;font-weight:bold">end</span> <span style="color:#080;font-weight:bold">repeat</span>
-			<span style="color:#963">DownloadURL</span> <span style="color:#963">newDownList</span>
-		<span style="color:#080;font-weight:bold">end</span> <span style="color:#080;font-weight:bold">tell</span>
-	<span style="color:#080;font-weight:bold">end</span> <span style="color:#080;font-weight:bold">if</span>
-<span style="color:#080;font-weight:bold">end</span> <span style="color:#080;font-weight:bold">tell</span></code></pre></div>
+<p>这个Service是随便写来自用的，只达到刚好够用的标准，所以很有局限性：</p>
+<!-- raw HTML omitted -->
+<pre><code>    tell application &quot;iGetter&quot;
+        set newDownList to {}
+        repeat with i from 1 to number of items in downList
+            set this_item to item i of downList
+            -- insert actions here
+            set newItem to {url:this_item}
+            copy newItem to the end of newDownList
+        end repeat
+        DownloadURL newDownList
+    end tell
+end if
+</code></pre>
+<p>end tell</p>
+<pre><code></code></pre>
 </div>
 
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -178,10 +116,11 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+    </main>
 
     
-<script>
+      
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -192,5 +131,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
   </body>
 </html>

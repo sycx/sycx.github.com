@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on sycx blog</title>
@@ -6,35 +6,44 @@
     <description>Recent content in Tags on sycx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Jan 2021 22:00:29 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.sycx.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Development</title>
-      <link>https://blog.sycx.me/tags/development/</link>
-      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      <title>Japan</title>
+      <link>https://blog.sycx.me/tags/Japan/</link>
+      <pubDate>Sat, 16 Jan 2021 22:00:29 +0900</pubDate>
       
-      <guid>https://blog.sycx.me/tags/development/</guid>
+      <guid>https://blog.sycx.me/tags/Japan/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Golang</title>
+      <title>Life</title>
+      <link>https://blog.sycx.me/tags/Life/</link>
+      <pubDate>Sat, 16 Jan 2021 22:00:29 +0900</pubDate>
+      
+      <guid>https://blog.sycx.me/tags/Life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://blog.sycx.me/tags/Development/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.sycx.me/tags/Development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
       <link>https://blog.sycx.me/tags/golang/</link>
       <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.sycx.me/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Live</title>
-      <link>https://blog.sycx.me/tags/live/</link>
-      <pubDate>Wed, 06 May 2020 08:00:00 +0000</pubDate>
-      
-      <guid>https://blog.sycx.me/tags/live/</guid>
       <description></description>
     </item>
     

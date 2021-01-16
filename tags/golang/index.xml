@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Golang on sycx blog</title>
+    <title>golang on sycx blog</title>
     <link>https://blog.sycx.me/tags/golang/</link>
-    <description>Recent content in Golang on sycx blog</description>
+    <description>Recent content in golang on sycx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0000</lastBuildDate>
@@ -34,10 +34,10 @@
       <guid>https://blog.sycx.me/post/cat-ear-headphones-review/</guid>
       <description>一句话： 这货重449g。
 完。
-前几年还比较天真相信众筹的时候，只凭一张设计图就定了这耳机，苦等多年后就等来个.. 呃.. 玩具
+ 前几年还比较天真相信众筹的时候，只凭一张设计图就定了这耳机，苦等多年后就等来个.. 呃.. 玩具
 我戴上的第一感觉是： 重， 脖子好酸， 颈椎病要发作了.. 就凭这重量，死刑。
 猫耳部位是扬声器,可以音乐外放.. 外放.. 瞬间感觉low爆了， 去掉这两个扬声器， 减轻点重量也好啊弱智设计师
-最近又想培养培养写作习惯了， 于是从以前草稿箱捞出篇了上面这篇废文。</description>
+ 最近又想培养培养写作习惯了， 于是从以前草稿箱捞出篇了上面这篇废文。</description>
     </item>
     
   </channel>

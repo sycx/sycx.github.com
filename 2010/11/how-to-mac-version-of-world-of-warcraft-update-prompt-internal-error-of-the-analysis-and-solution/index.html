@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.42.2" />
+  <meta name="generator" content="Hugo 0.70.0" />
 
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>HOW TO: Mac版魔兽世界更新提示“内部错误”的分析以及解决办法 &middot; sycx blog</title>
+  <meta name="description" content="" />
 
   
   <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/print.css" media="print">
@@ -23,8 +24,6 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="sycx blog" />
-
   
 </head>
 
@@ -34,140 +33,73 @@
     <div class="sidebar-about">
       <a href="https://blog.sycx.me/"><h1>sycx blog</h1></a>
       <p class="lead">
-      碎月成星 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
+        读书不读全，写文写一半，我是烂尾王 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
       </p>
     </div>
 
     <ul class="sidebar-nav">
       <li><a href="https://blog.sycx.me/">Home</a> </li>
-      <li><a href="/post/test/"> 测试文章 </a></li><li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
+      <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/visit-dentist-in-japan/"> 蛀牙了,蛀很大 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
     </ul>
 
-    <p>&copy; 2020. All rights reserved. </p>
+    <p>&copy; 2021. All rights reserved. </p>
   </div>
 </div>
 
-    <div class="content container">
+    <main class="content container">
     <div class="post">
   <h1>HOW TO: Mac版魔兽世界更新提示“内部错误”的分析以及解决办法</h1>
-  <span class="post-date">Thu, Nov 25, 2010</span>
-  
-
-<p>今天台服魔兽更新了4.0.3a,相信很多MAC玩家都会遇到更新问题
-<blockquote>發生內部錯誤，Blizzard更新程式無法進行更新。請聯絡Blizzard的技術支援部門。</blockquote>
-如下图</p>
-
-<p><a href="http://farm8.staticflickr.com/7084/7132084417_bc05f0d2dd.jpg"><img class="alignnone size-full wp-image-102" title="MacWOW-00" src="http://farm8.staticflickr.com/7084/7132084417_bc05f0d2dd.jpg" alt="" width="361" height="539" /></a></p>
-
-<p>很多人问，这该如何解决，很多人这么建议
-<blockquote>运行 Repair 程序修复</blockquote>
-不过，一般都是修复失败的结果
-于是，大部分人的解决办法是
-<blockquote>切换到Windows下完成更新，然后到<a href="http://www.x-only.net/Article/56.aspx" target="_blank">《X-Only》</a>下载最新的App</blockquote>
-但是，这个办法总是麻烦，而且上述问题依然存在，每次更新总得这么麻烦一次</p>
-
+  <time datetime=2010-11-25T00:00:00Z class="post-date">Thu, Nov 25, 2010</time>
+  <p>今天台服魔兽更新了4.0.3a,相信很多MAC玩家都会遇到更新问题</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>很多人问，这该如何解决，很多人这么建议</p>
+<!-- raw HTML omitted -->
 <p>====================</p>
-
-<h2 id="分析部分-analyze-part">分析部分(analyze part):</h2>
-
-<p><p style="padding-left: 30px;">那么有没有办法一劳永逸解决这个问题呢？抱着这个想法，我趁着这次更新，研究了一番这个问题</p>
-首先，单单一个“内部错误”的错误提示没有提供任何有价值的信息，需要查查看有没有Log记录精确点的问题所在</p>
-
-<p>很容易在WOW目录下找到一个Logs文件夹，找到了一个关键文件
-<blockquote><span>World of <span>Warcraft</span>/Logs/Blizzard Updater Log.html</span></blockquote>
-于是我马上见到了关键的错误信息
-<blockquote><span>錯誤: 更新檔&rdquo;mac-game-<span>hdfiles</span>/World of <span>Warcraft</span>.app/Contents/<span>MacOS</span>/World of <span>Warcraft</span>&ldquo;無法安裝。</span>
-<span> (MD5 mismatch: expected 0x7058660C35AE508717519CF21B7A3AF0, actual 0xFB9666B037DCB8782339A1DCB2F3400B.)(<span>PTCApply</span>_<span>BSDiff</span> failed.)</span></blockquote>
-这句话说明，补丁升级需要目标文件的MD5值为 0x7058660C35AE508717519CF21B7A3AF0 ，但是现有文件的MD5却是 0xFB9666B037DCB8782339A1DCB2F3400B
-两者不匹配，版本不对，升级无法继续
-<span> 那么，文件“World of <span>Warcraft</span>” 在哪里呢</span>
-首先，我定位到魔兽目录下的World of Warcraft.app文件，试着计算它的MD5值
-<a href="http://farm9.staticflickr.com/8017/7132083853_a50b197bb7.jpg"><img class="alignnone size-full wp-image-103" title="MacWOW-000" src="http://farm9.staticflickr.com/8017/7132083853_a50b197bb7.jpg" alt="" width="468" height="454" /></a>
-计算结果是：7058660c35ae508717519cf21b7a3af0</p>
-
+<h2 id="分析部分analyze-part">分析部分(analyze part):</h2>
+<!-- raw HTML omitted -->
+<p>很容易在WOW目录下找到一个Logs文件夹，找到了一个关键文件</p>
+<!-- raw HTML omitted -->
 <p>这不是没问题吗？那为什么Updater计算出来的会是 0xFB9666B037DCB8782339A1DCB2F3400B</p>
-
 <p>是程序计算错误吗？不，肯定不是，因为很多人都能正常更新。</p>
-
 <p>那么就是说 Updater检查的不是这个文件，那它检查的是哪里的文件？</p>
-
 <p>MPQ！MPQ里也有这个文件</p>
-
-<p>于是我定位到了4个文件
-<blockquote><span>World of <span>Warcraft</span>/Data/<span>zhTW</span>/base-<span>zhTW</span>.MPQ</span>
-<span> World of <span>Warcraft</span>/Data/<span>zhTW</span>/backup-<span>zhTW</span>.MPQ</span>
-<span> World of <span>Warcraft</span>/Data/<span>enTW</span>/base-<span>enTW</span>.MPQ</span>
-World of Warcraft/Data/enTW/backup-enTW.MPQ</blockquote>
-Mac下没有好用的MPQ工具，于是我切换到Windows</p>
-
-<p><span>用MPQ Editor打开base-<span>zhTW</span>.MPQ,解压World of <span>Warcraft</span>.app</span>
-<a href="http://farm9.staticflickr.com/8013/6986000420_e6b6ecf391_b.jpg"><img class="alignnone size-full wp-image-105" title="MacWOW-01" src="http://farm9.staticflickr.com/8013/6986000420_e6b6ecf391_b.jpg" alt="" width="820" height="537" /></a></p>
-
-<p><span>找到 World of <span>Warcraft</span>.app/Contents/<span>MacOS</span>/World of <span>Warcraft</span> ,计算它的MD5值</span>
-<a href="http://farm8.staticflickr.com/7229/7132083585_a85aa84a3a_b.jpg"><img class="alignnone size-full wp-image-106" title="MacWOW-02" src="http://farm8.staticflickr.com/7229/7132083585_a85aa84a3a_b.jpg" alt="" width="837" height="453" /></a>
+<p>于是我定位到了4个文件</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->用MPQ Editor打开base-<!-- raw HTML omitted -->zhTW<!-- raw HTML omitted -->.MPQ,解压World of <!-- raw HTML omitted -->Warcraft<!-- raw HTML omitted -->.app<!-- raw HTML omitted -->
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->找到 World of <!-- raw HTML omitted -->Warcraft<!-- raw HTML omitted -->.app/Contents/<!-- raw HTML omitted -->MacOS<!-- raw HTML omitted -->/World of <!-- raw HTML omitted -->Warcraft<!-- raw HTML omitted --> ,计算它的MD5值<!-- raw HTML omitted -->
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->
 fb9666b037dcb8782339a1dcb2f3400b !!! 我找到它了</p>
-
 <p>那么，为什么，MPQ里面的文件的MD5值为什么会不一样呢</p>
-
 <p>查看MPQ里的这个app的info.plist文件，我注意到它的版本是 4.0.0.12911 真是古老的版本</p>
-
-<p><span>那么出错的只有World of <span>Warcraft</span>.app这个文件吗？其它几个文件有没有错？</span></p>
-
+<p><!-- raw HTML omitted -->那么出错的只有World of <!-- raw HTML omitted -->Warcraft<!-- raw HTML omitted -->.app这个文件吗？其它几个文件有没有错？<!-- raw HTML omitted --></p>
 <p>经过对比，4个MPQ文件里的app版本统统错了</p>
-
 <p>那么解决办法出来了，把这MPQ里的5个app文件替换掉</p>
-
 <p>修复问题之前，想下出现这个问题的原因是什么</p>
-
-<p>我得出了一个<strong><span style="color: #ff0000;">结论</span></strong>：
-<blockquote><span style="color: #ff0000;"><strong>Blizzard Updater每次更新只会升级当前系统的相关文件</strong></span></blockquote>
-也就是说，你在Windows下更新，Blizzard Updater只会更新MPQ里Windows版的文件，对Mac版的5个.app文件置之不理，因此下次你用Mac版更新就会因为MPQ里的文件版本过旧而遭遇“内部错误”
-<blockquote><strong>只要你在Windows下成功更新一次，以后也只能在Windows下更新</strong></blockquote></p>
-
-<h1 id="blockquote-strong-同理-在mac下成功更新一次-下次用windows更新的话-相信你也会遇到-内部错误-strong-blockquote"><blockquote><strong>同理，在Mac下成功更新一次，下次用Windows更新的话，相信你也会遇到“内部错误”</strong></blockquote></h1>
-
-<p><h2><strong>解决方案(solution part)：</strong></h2>
-<strong><em>Step1: </em></strong>复制当前正确版本的5个app文件
-<blockquote><span>World of <span>Warcraft</span>/Blizzard <span>Downloader</span>.app</span>
-World of Warcraft/Blizzard Updater.app
-<span> World of <span>Warcraft</span>/World of <span>Warcraft</span>.app</span>
-<span> World of <span>Warcraft</span>/World of <span>Warcraft</span> Launcher.app</span>
-World of Warcraft/World of Warcraft Repair.app</blockquote>
-以及4个.MPQ文件
-<blockquote><span>World of <span>Warcraft</span>/Data/<span>zhTW</span>/base-<span>zhTW</span>.MPQ</span>
-<span> World of <span>Warcraft</span>/Data/<span>zhTW</span>/backup-<span>zhTW</span>.MPQ</span>
-<span> World of <span>Warcraft</span>/Data/<span>enTW</span>/base-<span>enTW</span>.MPQ</span>
-World of Warcraft/Data/enTW/backup-enTW.MPQ</blockquote>
-<strong><em>Step2</em></strong>: 进入Windows系统，下载MPQ Editor, &lt;<a href="http://www.zezula.net/en/mpq/download.html">传送门：下载页</a>&gt;</p>
-
-<p><span>用MPQ Editor打开base-<span>zhTW</span>.MPQ,将5个.app文件拖入其中</span>
-<a href="http://farm8.staticflickr.com/7198/6985998824_0fcd19ec4d_b.jpg"><img class="alignnone size-full wp-image-107" title="MacWOW-03" src="http://farm8.staticflickr.com/7198/6985998824_0fcd19ec4d_b.jpg" alt="" width="887" height="834" /></a>
-<strong><em> </em></strong></p>
-
-<p><strong><em>Step 3</em></strong>: 之后保持Locale ID为Neutral,点击Rulesets按钮，选择World of Warcraft游戏
-<a href="http://farm9.staticflickr.com/8145/7132082615_02f6134571_b.jpg"><img class="alignnone size-full wp-image-108" title="MacWOW-04" src="http://farm9.staticflickr.com/8145/7132082615_02f6134571_b.jpg" alt="" width="876" height="691" /></a>
-<em><strong> </strong></em></p>
-
-<p><em><strong>Step 4:</strong></em> 文件覆盖提示，选择Yes All
-<a href="http://farm8.staticflickr.com/7245/6985997312_48c8aa42d0_b.jpg"><img class="alignnone size-full wp-image-110" title="MacWOW-05" src="http://farm8.staticflickr.com/7245/6985997312_48c8aa42d0_b.jpg" alt="" width="872" height="413" /></a>
-<span style="color: #ff0000;"><em><strong> </strong></em></span></p>
-
-<p><span style="color: #ff0000;"><em><strong>Step 5:</strong></em> 重要</span>，一定要记得选择 Operations 菜单下的 <span style="color: #ff0000;">Change(attributes)</span> 命令
-<a href="http://farm9.staticflickr.com/8143/6985998046_bbaf89c6af_b.jpg"><img class="alignnone size-full wp-image-111" title="MacWOW-06" src="http://farm9.staticflickr.com/8143/6985998046_bbaf89c6af_b.jpg" alt="" width="707" height="473" /></a></p>
-
-<p><strong><em>Step 6:</em></strong> 对另外三个.MPQ文件重复Step 2~Step 5的操作</p>
-
-<p><strong><em>Step 7:</em></strong>最后，回到Mac，将修改后的4个MPQ文件覆盖回原来位置</p>
-
+<p>我得出了一个<!-- raw HTML omitted --><!-- raw HTML omitted -->结论<!-- raw HTML omitted --><!-- raw HTML omitted -->：</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->用MPQ Editor打开base-<!-- raw HTML omitted -->zhTW<!-- raw HTML omitted -->.MPQ,将5个.app文件拖入其中<!-- raw HTML omitted -->
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Step 3<!-- raw HTML omitted --><!-- raw HTML omitted -->: 之后保持Locale ID为Neutral,点击Rulesets按钮，选择World of Warcraft游戏
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Step 4:<!-- raw HTML omitted --><!-- raw HTML omitted --> 文件覆盖提示，选择Yes All
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Step 5:<!-- raw HTML omitted --><!-- raw HTML omitted --> 重要<!-- raw HTML omitted -->，一定要记得选择 Operations 菜单下的 <!-- raw HTML omitted -->Change(attributes)<!-- raw HTML omitted --> 命令
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Step 6:<!-- raw HTML omitted --><!-- raw HTML omitted --> 对另外三个.MPQ文件重复Step 2~Step 5的操作</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Step 7:<!-- raw HTML omitted --><!-- raw HTML omitted -->最后，回到Mac，将修改后的4个MPQ文件覆盖回原来位置</p>
 <p>现在，打开Launcher,你已经可以正常更新了，恭喜！</p>
-
 <p>然后，记住：下次不要用Windows更新了&amp;下次你也没办法在Windows下更新了。</p>
 
 </div>
 
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -186,10 +118,11 @@ World of Warcraft/Data/enTW/backup-enTW.MPQ</blockquote>
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+    </main>
 
     
-<script>
+      
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -200,5 +133,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
   </body>
 </html>

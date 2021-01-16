@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.42.2" />
+  <meta name="generator" content="Hugo 0.70.0" />
 
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Mac不用第三方软件实现闹钟功能 &middot; sycx blog</title>
+  <meta name="description" content="" />
 
   
   <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/print.css" media="print">
@@ -23,8 +24,6 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="sycx blog" />
-
   
 </head>
 
@@ -34,64 +33,31 @@
     <div class="sidebar-about">
       <a href="https://blog.sycx.me/"><h1>sycx blog</h1></a>
       <p class="lead">
-      碎月成星 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
+        读书不读全，写文写一半，我是烂尾王 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
       </p>
     </div>
 
     <ul class="sidebar-nav">
       <li><a href="https://blog.sycx.me/">Home</a> </li>
-      <li><a href="/post/test/"> 测试文章 </a></li><li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
+      <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/visit-dentist-in-japan/"> 蛀牙了,蛀很大 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
     </ul>
 
-    <p>&copy; 2020. All rights reserved. </p>
+    <p>&copy; 2021. All rights reserved. </p>
   </div>
 </div>
 
-    <div class="content container">
+    <main class="content container">
     <div class="post">
   <h1>Mac不用第三方软件实现闹钟功能</h1>
-  <span class="post-date">Fri, Apr 23, 2010</span>
-  <p><ul>
-    <li>在iTunes创建一个播放列表wakeup,列表中添加当闹钟的音乐文件</li>
-    <li>Automator创建一个应用程序，实现启动iTunes播放wakeup列表</li>
-    <li>iCal设定事件，定好提醒时间，提醒方式选择打开上一步创建的程序</li>
-</ul>
-<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9E163uPIFI/AAAAAAAAAGA/P2A_R10-rj4/s1600/wakeup_snapshot2.png"><img src="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9E163uPIFI/AAAAAAAAAGA/P2A_R10-rj4/s320/wakeup_snapshot2.png" border="0" alt="" /></a></div>
-<ul>
-    <li>最后，设置自动开机时间，比提醒时间早个5分钟左右</li>
-</ul>
-为了避免年纪轻轻就得心脏病，我需要声音能由小到大有个渐变过程
-一开始我在Automator流程里加了几个设置音量并暂停的重复操作
-<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9EmUFhmShI/AAAAAAAAAF4/3zZtpKSibhA/s1600/Wakeup_snapshot1.png"><img src="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S9EmUFhmShI/AAAAAAAAAF4/3zZtpKSibhA/s320/Wakeup_snapshot1.png" border="0" alt="" /></a></div>
-<div>
-<div>
-<div>但是这样的实现方式看着就不舒服，而且声音变化不够平滑</div>
-<div>正好在学objective-C，试着写一个小程序实现，可惜我这个门外汉实在搞不懂设置系统音量应该调用什么函数
-用google搜索资料倒是意外得到了一个shell命令
-<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">osascript -e <span style="background-color:#fff0f0">&#34;set Volume 0&#34;</span></code></pre></div>
-<del datetime="2010-10-21T03:20:19+00:00">Volume值范围是 0.0-10.0</del>
-Update: Volume值范围是 0.0-7.0
-Update2: 在AppleScript里查到了&rdquo;set volume&rdquo;的详细定义,改用&rdquo;[<strong>set volume output volume</strong> integer] &ldquo;命令,integer的值范围是0-100;
-于是改用shell脚本实现音量平缓变化
-<div class="separator" style="clear: both; text-align: center;"><a style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;" href="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s1600/Wakeup_snapshot.png"><img src="http://3.bp.blogspot.com/_Vo5KzvUXSkY/S9EjcZSGaLI/AAAAAAAAAFw/gnOUFav1hhI/s400/Wakeup_snapshot.png" border="0" alt="" width="360" height="400" /></a></div>
-<div class="separator" style="clear: both; text-align: left;">shell脚本代码如下</div>
-<pre style="background-color: #eeeeee; border: 1px dashed #999999; color: black; font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 12px; line-height: 14px; overflow: auto; padding: 5px; width: 100%;"><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;font-weight:bold">for</span><span style="color:#333">((</span><span style="color:#963">i</span><span style="color:#333">=</span><span style="color:#60e;font-weight:bold">0</span>;i&amp;lt;<span style="color:#333">=</span><span style="color:#60e;font-weight:bold">100</span>;++i<span style="color:#333">))</span>
-<span style="color:#080;font-weight:bold">do</span>
-osascript -e <span style="background-color:#fff0f0">&#34;set Volume output volume </span><span style="color:#963">$i</span><span style="background-color:#fff0f0">&#34;</span>
-sleep <span style="color:#60e;font-weight:bold">0</span>.2
-<span style="color:#080;font-weight:bold">done</span></code></pre></div>
-<span style="font-family: arial;"><span style="font-size: small;">
-</span></span></p>
-
-<p></div>
-</div>
-</div></p>
+  <time datetime=2010-04-23T00:00:00Z class="post-date">Fri, Apr 23, 2010</time>
+  <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
 </div>
 
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -110,10 +76,11 @@ sleep <span style="color:#60e;font-weight:bold">0</span>.2
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+    </main>
 
     
-<script>
+      
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -124,5 +91,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
   </body>
 </html>

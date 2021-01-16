@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Line on sycx blog</title>
+    <link>https://blog.sycx.me/categories/Line/</link>
+    <description>Recent content in Line on sycx blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 May 2020 20:09:44 +0900</lastBuildDate>
+    
+	<atom:link href="https://blog.sycx.me/categories/Line/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Line Webhook Ssl Error</title>
+      <link>https://blog.sycx.me/post/line-webhook-ssl-error/</link>
+      <pubDate>Wed, 27 May 2020 20:09:44 +0900</pubDate>
+      
+      <guid>https://blog.sycx.me/post/line-webhook-ssl-error/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

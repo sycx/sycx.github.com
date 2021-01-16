@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.42.2" />
+  <meta name="generator" content="Hugo 0.70.0" />
 
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>添加一个”Services&#34;-Translate with Google &middot; sycx blog</title>
+  <meta name="description" content="" />
 
   
   <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/print.css" media="print">
@@ -23,8 +24,6 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="sycx blog" />
-
   
 </head>
 
@@ -34,54 +33,33 @@
     <div class="sidebar-about">
       <a href="https://blog.sycx.me/"><h1>sycx blog</h1></a>
       <p class="lead">
-      碎月成星 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
+        读书不读全，写文写一半，我是烂尾王 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
       </p>
     </div>
 
     <ul class="sidebar-nav">
       <li><a href="https://blog.sycx.me/">Home</a> </li>
-      <li><a href="/post/test/"> 测试文章 </a></li><li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
+      <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/visit-dentist-in-japan/"> 蛀牙了,蛀很大 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
     </ul>
 
-    <p>&copy; 2020. All rights reserved. </p>
+    <p>&copy; 2021. All rights reserved. </p>
   </div>
 </div>
 
-    <div class="content container">
+    <main class="content container">
     <div class="post">
   <h1>添加一个”Services&#34;-Translate with Google</h1>
-  <span class="post-date">Mon, Apr 12, 2010</span>
-  <p>依照<a href="http://www.lixiaolai.com/">笑来</a>老师的<a href="http://www.lixiaolai.com/apple/index.php/archives/211.html">教程</a>添加了几个Services
+  <time datetime=2010-04-12T00:00:00Z class="post-date">Mon, Apr 12, 2010</time>
+  <p>依照<!-- raw HTML omitted -->笑来<!-- raw HTML omitted -->老师的<!-- raw HTML omitted -->教程<!-- raw HTML omitted -->添加了几个Services
 今天试图添加一个Translate with Google的时候却遇到了点问题</p>
-
-<p>Google translate的Prefix是这样的
-<div style="text-align: center;">&ldquo;<span style="color: #cc0000;"><a href="http://translate.google.cn/#auto|zh-CN|">http://translate.google.cn/#auto|zh-CN|</a></span>&ldquo;</div>
-按教程到了Display Webpages步骤却会将网址编码转换为
-<div style="text-align: center;">&ldquo;<span style="color: #cc0000;"><a href="http://translate.google.cn/%23auto%7Czh-CN%7C">http://translate.google.cn/%23auto%7Czh-CN%7C</a></span>&ldquo;</div>
-问题在于Google translate不支持编码后的‘#’
-<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S8MrbqOuBPI/AAAAAAAAAFg/-lif9lRAU9Y/s1600/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2010-04-12+%E4%B8%8B%E5%8D%8810.16.47.png"><img src="http://2.bp.blogspot.com/_Vo5KzvUXSkY/S8MrbqOuBPI/AAAAAAAAAFg/-lif9lRAU9Y/s400/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2010-04-12+%E4%B8%8B%E5%8D%8810.16.47.png" border="0" alt="" width="400" height="182" /></a></div>
-研究了下于是用AppleScript解决
-<div class="separator" style="clear: both; text-align: center;"><a style="margin-left: 1em; margin-right: 1em;" href="http://1.bp.blogspot.com/_Vo5KzvUXSkY/S8MsijWZPtI/AAAAAAAAAFo/uI8Bv3FNHJg/s1600/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2010-04-12+%E4%B8%8B%E5%8D%8810.20.25.png"><img src="http://1.bp.blogspot.com/_Vo5KzvUXSkY/S8MsijWZPtI/AAAAAAAAAFo/uI8Bv3FNHJg/s400/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2010-04-12+%E4%B8%8B%E5%8D%8810.20.25.png" border="0" alt="" width="400" height="342" /></a></div>
-<div class="separator" style="clear: both; text-align: left;">以下是代码</div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 28.8px; text-indent: -28.9px;">on run {input, parameters}</div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; min-height: 14.0px; text-indent: -57.7px;"><span style="white-space: pre;"> </span></div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; text-indent: -57.7px;"><span style="white-space: pre;"> </span>set thePre to &ldquo;<a href="http://translate.google.cn/#auto|zh-CN|&quot;">http://translate.google.cn/#auto|zh-CN|&quot;</a></div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; text-indent: -57.7px;"><span style="white-space: pre;"> </span>set theUrl to thePre &amp; input</div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; min-height: 14.0px; text-indent: -57.7px;"><span style="white-space: pre;"> </span></div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; text-indent: -57.7px;"><span style="white-space: pre;"> </span>tell application &ldquo;Safari&rdquo;</div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 86.4px; text-indent: -86.4px;"><span style="white-space: pre;"> </span>activate</div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 86.4px; text-indent: -86.4px;"><span style="white-space: pre;"> </span>make new document</div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 86.4px; text-indent: -86.4px;"><span style="white-space: pre;"> </span>set the URL of front document to theUrl</div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; text-indent: -57.7px;"><span style="white-space: pre;"> </span>end tell</div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; min-height: 14.0px; text-indent: -57.7px;"><span style="white-space: pre;"> </span></div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 57.6px; min-height: 14.0px; text-indent: -57.7px;"><span style="white-space: pre;"> <span style="white-space: normal;">return input</span></span></div>
-<div style="color: #942193; font: 12.0px Courier; margin: 0.0px 0.0px 0.0px 28.8px; text-indent: -28.9px;">end run</div></p>
+<p>Google translate的Prefix是这样的</p>
+<!-- raw HTML omitted -->
 
 </div>
 
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -100,10 +78,11 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+    </main>
 
     
-<script>
+      
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -114,5 +93,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
   </body>
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.70.0" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title> &middot; sycx blog</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.sycx.me/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class="theme-base-0c layout-reverse">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://blog.sycx.me/"><h1>sycx blog</h1></a>
+      <p class="lead">
+        读书不读全，写文写一半，我是烂尾王 <br/>Twitter:<a href="http://twitter.com/sycx">@sycx</a>
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://blog.sycx.me/">Home</a> </li>
+      <li><a href="/post/cat-ear-headphones-review/"> 猫耳耳机简易评测 </a></li><li><a href="/post/visit-dentist-in-japan/"> 蛀牙了,蛀很大 </a></li><li><a href="/post/now_and_future/"> 近况与未来 </a></li>
+    </ul>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</div>
+
+    <main class="content container">
+    <div class="post">
+  <h1></h1>
+  <time datetime=0001-01-01T00:00:00Z class="post-date">Mon, Jan 1, 0001</time>
+  <p>We occourd a bug recentlly.
+Users reported that our Line App stoppted responsed.  No matter user do anything in Line App( send text message , tap menu in app), users get not responsed.</p>
+<p>At the first,  we are checking logs on our server. there is nothing in the log.
+It seems like Line has probelem to talk to our server.</p>
+<p>So we check settings in Line Consolse.
+In the Webhoook settings, when we click the Verify button, It reporting an error meesage: &ldquo;An error occurred when sending the webhook.&rdquo;</p>
+<p>Hmmm.. The Google search tell me this should be an SSL error on our server.
+We open Webhook URL in browser. No error, Nothing worong. It seems it&rsquo;s total OK.</p>
+<p>We put our Webhook URL in SSL checker. The checker reporting our server is missing Mid-Cert.</p>
+<p>Aha.. Mid cert missing.</p>
+<p>But why it is missing, and why nobody notice it is missing.</p>
+<p>It&rsquo;s because we are updated SSL Cert yearstday.  and to verify our updated is OK, we simply open our website in browser.
+The browser is so smart which can automitcaly download the missing mid cert.</p>
+
+</div>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "sycx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </main>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-19868922-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </body>
+</html>
